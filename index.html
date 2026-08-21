@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>领谱生成歌声音乐演示 | Lead Sheet &amp; Prompts to Song Generation DEMO</title>
+<meta name="description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs. Audio demo page.">
+<meta property="og:title" content="Lead Sheet &amp; Prompts to Song Generation DEMO">
+<meta property="og:description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127925;</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  // Applied before first paint so the saved theme never flashes.
+  (function () {
+    try {
+      var t = localStorage.getItem('velo-theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('velo-lang') || 'both';
+      document.documentElement.setAttribute('data-lang', l);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#demo">跳到 DEMO / Skip to demos</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+        </svg>
+      </span>
+      <span class="brand-text">LeadSheet2Song</span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#task">任务 Task</a>
+      <a href="#motivation">动机 Motivation</a>
+      <a href="#control">对照组 Control</a>
+      <a href="#models">模型 Models</a>
+      <a href="#demo">DEMO</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <div class="seg" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh">中</button>
+        <button type="button" data-lang-btn="en">EN</button>
+        <button type="button" data-lang-btn="both">双语</button>
+      </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="切换深浅色主题 / Toggle theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/>
+        </svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ───────────────────────── Hero ───────────────────────── -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Audio Demo Page</p>
+      <h1 class="hero-title">
+        <span class="lang lang-zh">领谱生成歌声音乐演示</span>
+        <span class="lang lang-en">Lead Sheet &amp; Prompts to Song Generation</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="lang lang-zh">输入领谱（Lead Sheet）、提示词（prompts）与参考音色音频（refer timbre），生成纯人声歌声（Vocal）与带伴奏的歌曲（Song）。</span>
+        <span class="lang lang-en">Given a lead sheet, prompts, and reference timbre audio, generate pure human voice singing (Vocal) and accompanied songs (Song).</span>
+      </p>
+      <div class="hero-chips">
+        <span class="chip">Lead Sheet · ABC notation</span>
+        <span class="chip">Prompts</span>
+        <span class="chip">Reference Timbre</span>
+        <span class="chip chip-accent">→ Vocal + Song</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#demo">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12 8 5.2Z"/></svg>
+          <span class="lang lang-zh">收听 DEMO</span><span class="lang lang-en">Listen to demos</span>
+        </a>
+        <a class="btn btn-ghost" href="#motivation">
+          <span class="lang lang-zh">为什么要做这件事</span><span class="lang lang-en">Why this matters</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- ───────────────────────── Task ───────────────────────── -->
+    <section id="task" class="section">
+      <h2 class="h2"><span class="num">01</span><span class="lang lang-zh">任务介绍</span><span class="lang lang-en">Task Introduction</span></h2>
+
+      <div class="pipeline" aria-hidden="true">
+        <div class="pipe-col">
+          <span class="pipe-label"><span class="lang lang-zh">输入</span><span class="lang lang-en">Input</span></span>
+          <div class="pipe-box">Lead Sheet</div>
+          <div class="pipe-box">Prompts</div>
+          <div class="pipe-box">Reference Timbre</div>
+        </div>
+        <div class="pipe-arrow">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h42M36 5l7 7-7 7"/></svg>
+        </div>
+        <div class="pipe-col pipe-model">
+          <span class="pipe-label">Model</span>
+          <div class="pipe-box pipe-box-accent">LeadSheet2Song</div>
+        </div>
+        <div class="pipe-arrow">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h42M36 5l7 7-7 7"/></svg>
+        </div>
+        <div class="pipe-col">
+          <span class="pipe-label"><span class="lang lang-zh">输出</span><span class="lang lang-en">Output</span></span>
+          <div class="pipe-box">Vocal</div>
+          <div class="pipe-box">Song</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p class="lang lang-zh">输入 领谱（Lead Sheet）、提示词（prompts）和参考音色音频（refer timbre），生成纯人声歌声（Vocal），和带伴奏的歌曲（Song）。</p>
+        <p class="lang lang-en">Given a lead sheet, prompts, and reference timbre audio, generate pure human voice singing (Vocal) and accompanied songs (Song).</p>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Motivation ───────────────────────── -->
+    <section id="motivation" class="section">
+      <h2 class="h2"><span class="num">02</span><span class="lang lang-zh">任务动机</span><span class="lang lang-en">Task Motivation</span></h2>
+
+      <article class="card card-motivation">
+        <h3 class="h3">
+          <span class="tag tag-warn">Limitation 1</span>
+          <span class="lang lang-zh">现有 Text-to-Music 模型的局限：无法演唱指定旋律</span>
+          <span class="lang lang-en">Limitation of Existing Text-to-Music Models: Inability to Sing Given Melodies</span>
+        </h3>
+        <div class="prose">
+          <div class="lang lang-zh">
+            <p>现有的文本到音乐模型，包括歌词生成歌曲、文本描述生成音乐等系统，不支持旋律（音高）与音素的联合条件输入。这类模型既不具备可控的旋律生成能力，也无法实现长距离下歌声音高与音素的联合跟随。</p>
+            <p>为解决该问题，本文模型引入了领谱（lead-sheet）条件输入模式。领谱由音素与 ABC 格式乐谱构成，约束生成的人声匹配用户指定的旋律与歌词结构。</p>
+            <p>除此之外，ABC 记谱是可读、可编辑的文本格式。它既可由大语言模型生成，也支持用户手动编写，无需依赖数字音频工作站（DAW）。</p>
+          </div>
+          <div class="lang lang-en">
+            <p>Existing text-to-music models, including lyric-to-song and text-description-to-music systems, do not support joint conditioning on melody (pitch) and phonemes. They lack controllable melody generation capability as well as long-range joint tracking of vocal pitch and phonemes.</p>
+            <p>To address this limitation, our model introduces a lead-sheet conditioning modality. The lead-sheet consists of phonemes and ABC-formatted musical notation, which constrains the generated vocal output to conform to the melody and lyric structure specified by users.</p>
+            <p>Furthermore, ABC notation is human-readable and human-editable text format. It can be generated by large language models or manually authored by end-users, without requiring any digital-audio-workstation (DAW) infrastructure.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-motivation">
+        <h3 class="h3">
+          <span class="tag tag-warn">Limitation 2</span>
+          <span class="lang lang-zh">SVS 模型作为刚性「人声乐器」，实际应用场景受限</span>
+          <span class="lang lang-en">SVS Models as Rigid “Vocal Instruments” with Limited Practical Applicability</span>
+        </h3>
+        <div class="prose">
+          <div class="lang lang-zh">
+            <p>现有歌声合成（SVS）模型相当于刚性的严肃的「人声乐器」，会忠实地还原输入乐谱。想要得到高质量的演唱作品，高度依赖精准、高质量的 MIDI 乐谱。</p>
+            <p>但在真实使用场景下，绝大多数终端用户不会编写 MIDI 乐谱，不熟悉 DAW 工具，也不愿耗费精力制作精细的 MIDI 序列。</p>
+            <p>与此同时，由大模型生成或是从数据集获取的 ABC 乐谱普遍存在大量质量缺陷，音频-音素对齐效果粗糙。这类低质量输入会显著降低 SVS 系统的生成效果。</p>
+            <p>为此，本文采用文本到音乐的模型范式，充分发挥生成式模型的创造性与多样性。该方案允许对输入主乐谱进行有限度的二次演绎，在保留用户给定的旋律-音素结构的前提下，产出音乐表现力更强的结果。</p>
+            <p class="callout">类比视频美颜滤镜的思路：即便输入的领谱本身质量不佳，本方法仍可以生成听感悦耳的音乐作品。</p>
+          </div>
+          <div class="lang lang-en">
+            <p>Existing singing-voice-synthesis (SVS) models function as rigid “vocal instruments” that faithfully render input musical scores. High-fidelity singing outputs heavily rely on precise, high-quality MIDI scores.</p>
+            <p>Nevertheless, in real-world scenarios, most end-users cannot author MIDI scores, are unfamiliar with DAW tools, and are unwilling to invest effort in crafting fine-grained MIDI sequences.</p>
+            <p>Moreover, ABC scores produced by large models or sourced from datasets commonly suffer from severe quality defects and coarse audio-phoneme alignment. Such low-quality inputs degrade the generation quality of SVS systems significantly.</p>
+            <p>Accordingly, we adopt the text-to-music paradigm to leverage the creativity and diversity of generative models. Our approach permits bounded reinterpretation of input lead-sheet inputs, producing musically expressive outputs that preserve user-specified melody-phoneme structures.</p>
+            <p class="callout">Analogous to the beautification filter for videos, our method can yield aesthetically pleasing vocal outputs even when the input lead-sheet itself is of suboptimal quality.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ───────────────────────── Control group ───────────────────────── -->
+    <section id="control" class="section">
+      <h2 class="h2"><span class="num">03</span><span class="lang lang-zh">对照组介绍</span><span class="lang lang-en">Control Group</span></h2>
+      <div class="prose">
+        <p class="lang lang-zh">对照组使用完全一致的输入歌词与提示词条件，对照组内所有模型均配置严格匹配的参数量与超参数。</p>
+        <p class="lang lang-en">The control group shared identical input lyrics and prompt conditions, where all models were assigned strictly the same parameter sizes and hyperparameters.</p>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Models ───────────────────────── -->
+    <section id="models" class="section">
+      <h2 class="h2"><span class="num">04</span><span class="lang lang-zh">模型介绍</span><span class="lang lang-en">Model Introduction</span></h2>
+      <div class="model-grid">
+        <article class="card model-card is-ours">
+          <div class="model-head">
+            <span class="model-name">M6</span>
+            <span class="tag tag-ours">Ours</span>
+          </div>
+          <p class="lang lang-zh">自研的 LeadSheet2Song 模型，M6 为内部模型代号。</p>
+          <p class="lang lang-en">The self-developed LeadSheet2Song model, where M6 is the internal model code name.</p>
+        </article>
+        <article class="card model-card">
+          <div class="model-head">
+            <span class="model-name">LeVo2</span>
+            <span class="tag">Baseline</span>
+          </div>
+          <p class="lang lang-zh">开源 SongGeneration2 模型。</p>
+          <p class="lang lang-en">The open-source SongGeneration2 model.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Demos ───────────────────────── -->
+    <section id="demo" class="section">
+      <h2 class="h2"><span class="num">05</span><span class="lang lang-zh">音频试听</span><span class="lang lang-en">DEMO</span></h2>
+
+      <div class="demo-intro">
+        <h3 class="h3-plain">
+          <span class="lang lang-zh">对照组：有 / 无领谱条件</span>
+          <span class="lang lang-en">Control Group: With and without lead-sheet conditioning</span>
+        </h3>
+        <p class="muted">
+          <span class="lang lang-zh">同一时间只会播放一条音频。点击每条音轨右侧的 <strong>下载</strong> 图标可将 MP3 保存到本地。</span>
+          <span class="lang lang-en">Only one track plays at a time. Use the <strong>download</strong> icon on the right of each track to save the MP3 locally.</span>
+        </p>
+      </div>
+
+      <div id="demo-root" class="demo-root">
+        <noscript>
+          <p class="notice">
+            此页面的播放器需要 JavaScript。 / This demo player requires JavaScript to be enabled.
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>
+      <span class="lang lang-zh">领谱生成歌声音乐演示 · LeadSheet2Song</span>
+      <span class="lang lang-en">Lead Sheet &amp; Prompts to Song Generation · LeadSheet2Song</span>
+    </p>
+    <p class="muted small">
+      <span class="lang lang-zh">所有音频仅用于学术研究演示。</span>
+      <span class="lang lang-en">All audio is provided for academic research demonstration only.</span>
+    </p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/demos.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

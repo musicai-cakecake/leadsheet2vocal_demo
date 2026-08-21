@@ -1,0 +1,9 @@
+{
+  "idx": "125_43d1560b1026_chorus_5",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] And I want your body on my body every way.I want your body on my body, heaven, baby",
+  "descriptions": "male, adult, modal, light, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, falsetto, melisma, glissando-scoop, vibrato, smooth, warm, clear, tender, romantic",
+  "m6_uid": "43d1560b10268e70d6e291711feb5ebe/chorus_5",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

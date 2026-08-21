@@ -1,0 +1,9 @@
+{
+  "idx": "10_9ccf0f5965c7_verse_6",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[verse] And maybe my God has a trot in her walk, and her coach bags are knockoff, her hair is all dressed up",
+  "descriptions": "female, adult, breathy, vibrato-none, general american, soft, solo, folk, english, fully sung, reverb-none, delay-none, chest, mixed, glissando-scoop, vocal-fry, airy, delicate, sweet, calm, melancholic",
+  "m6_uid": "9ccf0f5965c76a7e7e490122293c57b5/verse_6",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}
