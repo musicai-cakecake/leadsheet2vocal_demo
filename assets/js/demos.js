@@ -470,3 +470,118 @@ window.DEMO_DATA = {
     }
   ]
 };
+
+/* ───────────────── Same lead sheet, different prompts ─────────────────
+ * 两组结果共享上方对应样例的歌词与领谱。Prompts 1 是样例原始提示词，
+ * Prompts 2 来自其它歌曲，并且该组推理不使用参考音频。
+ */
+(function () {
+  var promptVariants = [
+    {
+      sampleId: '27_970e62901597_verse_3',
+      prompts2: '[Musicality-very-high], female, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, plate, present, chest, mixed, technique-none, clear, bright, smooth, energetic, romantic.',
+      prompts1Duration: 13.4,
+      prompts2Duration: 13.6
+    },
+    {
+      sampleId: '64_eefb7a15ea1c_verse_2',
+      prompts2: '[Musicality-very-high], male, adult, breathy, vibrato-moderate, african american vernacular (aave), dynamics-moderate, solo, r&b, english, fully sung, plate, present, chest, mixed, falsetto, melisma, riffs-runs, breath-adlib, husky, airy, smooth, melancholic, tender.',
+      prompts1Duration: 16.2,
+      prompts2Duration: 20.4
+    },
+    {
+      sampleId: '82_499b072a4486_verse_9',
+      prompts2: '[Musicality-very-high], female, adult, breathy, light, general american, highly-varied, solo, pop, english, fully sung, hall, delay-none, chest, head, vibrato, breath-adlib, airy, delicate, clear, dreamy, nostalgic.',
+      prompts1Duration: 10.6,
+      prompts2Duration: 11.4
+    },
+    {
+      sampleId: '82_52a558a32aaa_verse_2',
+      prompts2: '[Musicality-very-high], male, adult, modal, light, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, falsetto, melisma, glissando-scoop, vibrato, smooth, warm, clear, tender, romantic.',
+      prompts1Duration: 15.7,
+      prompts2Duration: 14.4
+    },
+    {
+      sampleId: '92_ea76abe2f1d5_chorus_3',
+      prompts2: '[Musicality-very-high], female, adult, breathy, vibrato-none, general american, soft, solo, pop, english, fully sung, room, delay-none, chest, mixed, vocal-fry, breath-adlib, airy, cool, dark, mysterious.',
+      prompts1Duration: 20.9,
+      prompts2Duration: 18.5
+    },
+    {
+      sampleId: '97_4b80f4b0bf1d_chorus_2',
+      prompts2: '[Musicality-very-high], male, adult, raspy, heavy, african american vernacular (aave), highly-varied, solo, gospel, english, fully sung, hall, present, chest, falsetto, belt, vibrato, melisma, husky, gritty, powerful, melancholic, tender.',
+      prompts1Duration: 7.7,
+      prompts2Duration: 7.1
+    }
+  ];
+
+  var sourceGroups = {};
+  window.DEMO_DATA.groups.forEach(function (group) {
+    sourceGroups[group.sampleId] = group;
+  });
+
+  window.PROMPT_DEMO_DATA = {
+    columns: window.DEMO_DATA.columns,
+    groups: promptVariants.map(function (item, index) {
+      var source = sourceGroups[item.sampleId];
+      var prompts1Root = 'M6_1000samples_with_mixed/' + item.sampleId + '/';
+      var prompts2Root = 'M6_1000samples_with_other_prompts/' + item.sampleId + '/';
+
+      return {
+        id: 'prompt-group-' + (index + 1),
+        title: { zh: '样例 ' + (index + 1), en: 'Group ' + (index + 1) },
+        sampleId: item.sampleId,
+        lyrics: source.lyrics,
+        prompts: [
+          {
+            label: { zh: '提示词 1', en: 'Prompts 1' },
+            value: source.prompt
+          },
+          {
+            label: { zh: '提示词 2', en: 'Prompts 2' },
+            value: item.prompts2
+          }
+        ],
+        leadSheet: source.leadSheet,
+        systems: [
+          {
+            model: 'M6 · Prompts 1',
+            note: {
+              zh: '原始提示词 · 使用参考音频',
+              en: 'original prompts · with reference audio'
+            },
+            variant: 'ours',
+            tracks: {
+              vocal: {
+                src: prompts1Root + 'gen_vocal.mp3',
+                duration: item.prompts1Duration
+              },
+              song: {
+                src: prompts1Root + 'gen_mixed.mp3',
+                duration: item.prompts1Duration
+              }
+            }
+          },
+          {
+            model: 'M6 · Prompts 2',
+            note: {
+              zh: '替换提示词 · 不使用参考音频',
+              en: 'replaced prompts · no reference audio'
+            },
+            variant: 'baseline',
+            tracks: {
+              vocal: {
+                src: prompts2Root + 'gen_vocal.mp3',
+                duration: item.prompts2Duration
+              },
+              song: {
+                src: prompts2Root + 'gen_mixed.mp3',
+                duration: item.prompts2Duration
+              }
+            }
+          }
+        ]
+      };
+    })
+  };
+})();

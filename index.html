@@ -9,7 +9,7 @@
 <meta property="og:description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127925;</text></svg>">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260823-prompts">
 <script>
   // Applied before first paint so the saved theme never flashes.
   (function () {
@@ -236,6 +236,25 @@
           </p>
         </noscript>
       </div>
+
+      <div class="demo-intro prompt-comparison-intro">
+        <h3 class="h3-plain">
+          <span class="lang lang-zh">对照组：相同领谱，不同提示词</span>
+          <span class="lang lang-en">Control Group: Same lead sheet, different prompts</span>
+        </h3>
+        <p class="muted">
+          <span class="lang lang-zh">保持歌词与领谱一致，对比两组不同 Prompts 生成的纯人声与带伴奏歌曲。Prompts 2 来自其他歌曲，且不使用参考音频。</span>
+          <span class="lang lang-en">The lyrics and lead sheet remain fixed while two different prompts generate Vocal and Song outputs. Prompts 2 comes from another song and uses no reference audio.</span>
+        </p>
+      </div>
+
+      <div id="prompt-demo-root" class="demo-root">
+        <noscript>
+          <p class="notice">
+            此页面的播放器需要 JavaScript。 / This demo player requires JavaScript to be enabled.
+          </p>
+        </noscript>
+      </div>
     </section>
 
   </div>
@@ -256,7 +275,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/demos.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/demos.js?v=20260823-prompts"></script>
+<script src="assets/js/app.js?v=20260823-prompts"></script>
 </body>
 </html>

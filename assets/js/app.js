@@ -325,7 +325,8 @@
     section.appendChild(head);
 
     /* --- metadata --- */
-    var hasMeta = group.lyrics || group.prompt || group.leadSheet;
+    var hasMeta = group.lyrics || group.prompt ||
+      (group.prompts && group.prompts.length) || group.leadSheet;
     if (hasMeta) {
       var meta = el('div', 'meta');
       if (group.lyrics) {
@@ -334,6 +335,19 @@
       }
       if (group.prompt) {
         meta.appendChild(metaRow('提示词', 'Prompt', el('div', null, group.prompt)));
+      }
+      if (group.prompts && group.prompts.length) {
+        group.prompts.forEach(function (prompt, index) {
+          var label = prompt.label || {
+            zh: '提示词 ' + (index + 1),
+            en: 'Prompts ' + (index + 1)
+          };
+          meta.appendChild(metaRow(
+            label.zh,
+            label.en,
+            el('div', null, prompt.value || '')
+          ));
+        });
       }
       if (group.leadSheet) {
         meta.appendChild(metaRow('领谱', 'Lead sheet', renderLeadSheet(group.leadSheet)));
@@ -416,9 +430,8 @@
     return section;
   }
 
-  function renderDemos() {
-    var mount = document.getElementById('demo-root');
-    var data = window.DEMO_DATA;
+  function renderDemoCollection(mountId, data) {
+    var mount = document.getElementById(mountId);
     if (!mount) return;
     if (!data || !data.groups || !data.groups.length) {
       mount.appendChild(el('p', 'notice', '未找到演示数据 / No demo data found (assets/js/demos.js).'));
@@ -431,6 +444,11 @@
     var frag = document.createDocumentFragment();
     data.groups.forEach(function (g) { frag.appendChild(renderGroup(g, columns)); });
     mount.appendChild(frag);
+  }
+
+  function renderDemos() {
+    renderDemoCollection('demo-root', window.DEMO_DATA);
+    renderDemoCollection('prompt-demo-root', window.PROMPT_DEMO_DATA);
   }
 
   /* ═══════════════ Nav scroll-spy ═══════════════ */

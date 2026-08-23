@@ -315,6 +315,11 @@ a:hover { text-decoration: underline; }
 /* ---------- Demo ---------- */
 .demo-intro { margin-bottom: 26px; }
 .demo-intro .muted { font-size: 14px; margin: 0; }
+.prompt-comparison-intro {
+  margin-top: 54px;
+  padding-top: 42px;
+  border-top: 1px solid var(--border);
+}
 
 .demo-group {
   background: var(--surface); border: 1px solid var(--border);
@@ -536,6 +541,7 @@ a:hover { text-decoration: underline; }
   .group-head, .meta-row, .track-row { padding-inline: 15px; }
   .group-actions { margin-left: 0; width: 100%; }
   .seg button { padding: 6px 7px; }
+  .prompt-comparison-intro { margin-top: 42px; padding-top: 32px; }
 }
 
 @media print {
