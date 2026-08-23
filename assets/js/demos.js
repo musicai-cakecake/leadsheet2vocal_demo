@@ -179,6 +179,294 @@ window.DEMO_DATA = {
           }
         }
       ]
+    },
+
+    /* ───────────────────────── Group 4 ───────────────────────── */
+    {
+      id: 'group-4',
+      title: { zh: '样例 4', en: 'Group 4' },
+      sampleId: '27_970e62901597_verse_3',
+      lyrics: '[verse] This could be the final moment you have left.Say what\'s on your mind with your last breath.And even when you crack, you don\'t need to react',
+      prompt: '[Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, technique-none, warm, smooth, dark, tense.',
+      leadSheet: '<bos>  <sec_bos>  [verse]  <tempo_110_120>  <meter_2/4>  <key_C#min> \\n| ·z4\\n| ·A,, dh ih s ·B,, k uh d b ·C, iy ·F, dh ah f ay\\n| ·E,2 n ·C, ah l m ow ·G,, m ah n\\n| ·B,,/ t y uw ·B,, * ·B,, hh ae v l ·C,3/2 eh f t\\n| ·z4\\n| ·C, s ey w ·C, ah t s ·C, aa n ·F, y ao r m\\n| ·E,2 ay ·C, n d w ih dh y ·G,, ao\\n| ·B,,2 r l ae s ·B,, t b r eh ·C, th ·-\\n| ·C,2 ·z2\\n| ·A, ae ·F, n iy v ih n w eh n y uw k r ae k ·G, y ·F, uw d\\n| ·G,2 ow n ·G, t ·F,/ n iy ·G,/ d ·-\\n| ·G, * ·F, t uw ·G,2 r\\n| ·G,2 iy ae ·z2 <eos>',
+      systems: [
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 只输出 vocal', en: 'with lead-sheet · vocal only' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples/27_970e62901597_verse_3/gen_vocal.mp3', duration: 13.4 },
+            song: null
+          }
+        },
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 输出 vocal 与 song', en: 'with lead-sheet · vocal + song' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples_with_mixed/27_970e62901597_verse_3/gen_vocal.mp3', duration: 13.4 },
+            song: { src: 'M6_1000samples_with_mixed/27_970e62901597_verse_3/gen_mixed.mp3', duration: 13.4 }
+          }
+        },
+        {
+          model: 'LeVo2',
+          note: { zh: '无 lead-sheet 条件 · 开源 SongGeneration2', en: 'without lead-sheet · open-source SongGeneration2' },
+          variant: 'baseline',
+          tracks: {
+            vocal: { src: 'LeVo2_1000samples/27_970e62901597_verse_3/gen_vocal.mp3', duration: 31.1 },
+            song: { src: 'LeVo2_1000samples/27_970e62901597_verse_3/gen_song.mp3', duration: 31.1 }
+          }
+        },
+        {
+          model: 'GT',
+          note: { zh: '真实样本 · 数据集原始录音', en: 'ground truth · original recording' },
+          variant: 'gt',
+          tracks: {
+            vocal: { src: 'M6_1000samples/27_970e62901597_verse_3/gt_vocal.mp3', duration: 13.3 },
+            song: { src: 'M6_1000samples/27_970e62901597_verse_3/gt_mixed.mp3', duration: 13.3 }
+          }
+        }
+      ]
+    },
+
+    /* ───────────────────────── Group 5 ───────────────────────── */
+    {
+      id: 'group-5',
+      title: { zh: '样例 5', en: 'Group 5' },
+      sampleId: '64_eefb7a15ea1c_verse_2',
+      lyrics: '[verse] Severed heart, my mistake.I will wait forever.I don\'t know if I\'m awake or if I\'m undercover',
+      prompt: '[Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, hall, delay-none, chest, technique-none, smooth, clear, mellow, melancholic, calm.',
+      leadSheet: '<bos>  <sec_bos>  [verse]  <tempo_190_200>  <meter_4/4>  <key_Dmin> \\n| ·z6 ·F,2 s eh ·-\\n| ·F,/ * ·G,3 * ·G,4 v er d hh aa ·- ·G,/ * ·-\\n| ·G, * ·F,2 r t ·G,2 m ay ·- ·G,/ * ·F,2 m ih s ·- ·F,/ *\\n| ·F,3/2 t ey ·G,4 k ay w ih ·- ·G,/ * ·z2\\n| ·z ·F,3 l w ·G,3 ey ·F, t ·-\\n| ·F,2 * ·(3:2:2 ·E,2 f er eh ·E, v ·- ·E, * ·D,3 er ·-\\n| ·D,6 ·z2\\n| ·A,2 ay ·G,2 d ow n ·G,4 t n ow ·-\\n| ·G,3/2 * ·F, ih f ay m ·G,3/2 ah ·F,3 w ·G, ey ·-\\n| ·G,4 * ·F, k ·=B,2 ao r ih f ay m ·F, ah ·-\\n| ·F,3/2 * ·G,2 n ·- ·G,/ * ·F,3 d er ·E, k ah ·-\\n| ·E, * ·D,7 v er\\n| ·z8 <eos>',
+      systems: [
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 只输出 vocal', en: 'with lead-sheet · vocal only' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples/64_eefb7a15ea1c_verse_2/gen_vocal.mp3', duration: 16.2 },
+            song: null
+          }
+        },
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 输出 vocal 与 song', en: 'with lead-sheet · vocal + song' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples_with_mixed/64_eefb7a15ea1c_verse_2/gen_vocal.mp3', duration: 16.2 },
+            song: { src: 'M6_1000samples_with_mixed/64_eefb7a15ea1c_verse_2/gen_mixed.mp3', duration: 16.2 }
+          }
+        },
+        {
+          model: 'LeVo2',
+          note: { zh: '无 lead-sheet 条件 · 开源 SongGeneration2', en: 'without lead-sheet · open-source SongGeneration2' },
+          variant: 'baseline',
+          tracks: {
+            vocal: { src: 'LeVo2_1000samples/64_eefb7a15ea1c_verse_2/gen_vocal.mp3', duration: 20.9 },
+            song: { src: 'LeVo2_1000samples/64_eefb7a15ea1c_verse_2/gen_song.mp3', duration: 20.9 }
+          }
+        },
+        {
+          model: 'GT',
+          note: { zh: '真实样本 · 数据集原始录音', en: 'ground truth · original recording' },
+          variant: 'gt',
+          tracks: {
+            vocal: { src: 'M6_1000samples/64_eefb7a15ea1c_verse_2/gt_vocal.mp3', duration: 16.4 },
+            song: { src: 'M6_1000samples/64_eefb7a15ea1c_verse_2/gt_mixed.mp3', duration: 16.4 }
+          }
+        }
+      ]
+    },
+
+    /* ───────────────────────── Group 6 ───────────────────────── */
+    {
+      id: 'group-6',
+      title: { zh: '样例 6', en: 'Group 6' },
+      sampleId: '82_499b072a4486_verse_9',
+      lyrics: '[verse] These fading soul roads of the streets, you\'ll find the world, but it\'s searching for me',
+      prompt: '[Musicality-very-high], male, adult, harsh, vibrato-none, general american, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, head, growl, distortion, vocal-fry, gritty, dark, angry.',
+      leadSheet: '<bos>  <sec_bos>  [verse]  <tempo_100_110>  <meter_3/4>  <key_Bmin> \\n| ·z6\\n| ·^D,,7/2 dh iy ·E,,2 z f ey ·- ·E,,/ *\\n| ·=F,,3 dx ih ·F,,3 ng s ow\\n| ·E,,3/2 l r ·^D,,3/2 ow d ·D,,3/2 z ah ·=D,,3/2 v dh ah s\\n| ·E,,3 tr iy ·E,, t s y ·z2\\n| ·^D,,3 uw l ·D,, f ay ·C,,2 n d dh ah\\n| ·=C,,3 w er l ·^C,,3/2 d b ah t ih t s ·D,,3/2 *\\n| ·D,,3/2 s er ·E,,2 ch ih ng ·- ·E,,/ * ·C,, f ao ·> ·E,, r m iy ·-\\n| ·E,,3 ·D,,3 <eos>',
+      systems: [
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 只输出 vocal', en: 'with lead-sheet · vocal only' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples/82_499b072a4486_verse_9/gen_vocal.mp3', duration: 10.6 },
+            song: null
+          }
+        },
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 输出 vocal 与 song', en: 'with lead-sheet · vocal + song' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples_with_mixed/82_499b072a4486_verse_9/gen_vocal.mp3', duration: 10.6 },
+            song: { src: 'M6_1000samples_with_mixed/82_499b072a4486_verse_9/gen_mixed.mp3', duration: 10.6 }
+          }
+        },
+        {
+          model: 'LeVo2',
+          note: { zh: '无 lead-sheet 条件 · 开源 SongGeneration2', en: 'without lead-sheet · open-source SongGeneration2' },
+          variant: 'baseline',
+          tracks: {
+            vocal: { src: 'LeVo2_1000samples/82_499b072a4486_verse_9/gen_vocal.mp3', duration: 36.7 },
+            song: { src: 'LeVo2_1000samples/82_499b072a4486_verse_9/gen_song.mp3', duration: 36.7 }
+          }
+        },
+        {
+          model: 'GT',
+          note: { zh: '真实样本 · 数据集原始录音', en: 'ground truth · original recording' },
+          variant: 'gt',
+          tracks: {
+            vocal: { src: 'M6_1000samples/82_499b072a4486_verse_9/gt_vocal.mp3', duration: 10.6 },
+            song: { src: 'M6_1000samples/82_499b072a4486_verse_9/gt_mixed.mp3', duration: 10.6 }
+          }
+        }
+      ]
+    },
+
+    /* ───────────────────────── Group 7 ───────────────────────── */
+    {
+      id: 'group-7',
+      title: { zh: '样例 7', en: 'Group 7' },
+      sampleId: '82_52a558a32aaa_verse_2',
+      lyrics: '[verse] Thousand shall fall at thy side, and ten thousand at thy right hand.But it shall not come nigh thee.Only when thy night shall thou behold and see the reward of the wicked',
+      prompt: '[Musicality-very-high], male, adult, growl, vibrato-none, general american, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, distortion, vocal-fry, gritty, dark, angry.',
+      leadSheet: '<bos>  <sec_bos>  [verse]  <tempo_ge200>  <meter_6/8>  <key_Bbmin> \\n| ·z6\\n| ·z3/4 ·E, th aw ·- ·E,/4 * ·B,,3/4 z ah n d ·C, sh ae l ·- ·C,/4 * ·A,, f ao l ·z/4 ·F,3/4 ae\\n| ·G,, t dh ay s ay ·z ·C,3/4 * ·E, d ae n t ·E,3/4 eh n th aw ·D,/ z ah n d ·z\\n| ·E,3/4 ae t ·=G,, dh ay ·E, r ay ·A,, t hh ae n d ·- ·A,,/4 * ·z3/4 ·D,/4 b ah t ih ·E,/ t sh ·D,/ ae l n ·-\\n| ·D,/4 * ·E,7/4 aa t ·E, k ·E, ah m n ay dh iy ·z2\\n| ·=G,3/4 ow n l ·=G,, iy w eh n ·- ·G,,/4 * ·z3/4 ·_G,,3/4 dh ay ·F,,3/4 * ·B,, n ay ·A,,3/4 t sh ae ·-\\n| ·A,,/ * ·< ·G,,/ l dh ·G,3/4 aw b ih ·A, hh ow l d ·- ·A,/4 * ·z ·z/4 ·E, ae n s ·C,3/4 iy dh ah ·-\\n| ·C, * ·B, r ·=E, ih w ao r d ah v ·z3/2 ·F,,3/2 dh ah w ih k ah d\\n| ·z6 <eos>',
+      systems: [
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 只输出 vocal', en: 'with lead-sheet · vocal only' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples/82_52a558a32aaa_verse_2/gen_vocal.mp3', duration: 15.8 },
+            song: null
+          }
+        },
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 输出 vocal 与 song', en: 'with lead-sheet · vocal + song' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples_with_mixed/82_52a558a32aaa_verse_2/gen_vocal.mp3', duration: 15.7 },
+            song: { src: 'M6_1000samples_with_mixed/82_52a558a32aaa_verse_2/gen_mixed.mp3', duration: 15.7 }
+          }
+        },
+        {
+          model: 'LeVo2',
+          note: { zh: '无 lead-sheet 条件 · 开源 SongGeneration2', en: 'without lead-sheet · open-source SongGeneration2' },
+          variant: 'baseline',
+          tracks: {
+            vocal: { src: 'LeVo2_1000samples/82_52a558a32aaa_verse_2/gen_vocal.mp3', duration: 20.5 },
+            song: { src: 'LeVo2_1000samples/82_52a558a32aaa_verse_2/gen_song.mp3', duration: 20.5 }
+          }
+        },
+        {
+          model: 'GT',
+          note: { zh: '真实样本 · 数据集原始录音', en: 'ground truth · original recording' },
+          variant: 'gt',
+          tracks: {
+            vocal: { src: 'M6_1000samples/82_52a558a32aaa_verse_2/gt_vocal.mp3', duration: 15.0 },
+            song: { src: 'M6_1000samples/82_52a558a32aaa_verse_2/gt_mixed.mp3', duration: 15.0 }
+          }
+        }
+      ]
+    },
+
+    /* ───────────────────────── Group 8 ───────────────────────── */
+    {
+      id: 'group-8',
+      title: { zh: '样例 8', en: 'Group 8' },
+      sampleId: '92_ea76abe2f1d5_chorus_3',
+      lyrics: '[chorus] Kim Do I dot? Kim Do I blue light? Kim Do I dot? Kim Do I blue light? Kim Do I dot? Kim Do I blue light? Kim Do I dot? Kim Do I blue light?',
+      prompt: '[Musicality-very-high], female, adult, modal, vibrato-moderate, general american, dynamics-moderate, solo, r&b, english, fully sung, room, delay-none, chest, mixed, vibrato, melisma, smooth, warm, clear, tender, calm.',
+      leadSheet: '<bos>  <sec_bos>  [chorus]  <tempo_110_120>  <meter_4/4>  <key_Fmin> \\n| ·z8\\n| ·z ·A, * ·C k ih ·B, m d uw ·z ·A, ay ·z2\\n| ·z ·A, * ·B,/ d aa t k ih ·C/ m ·B, d uw ay ·z ·F, b l uw ·z ·A, l ay\\n| ·z ·A, t k ih m ·B,/ d uw ·C/ ay ·B, * ·z ·A, d aa t ·z2\\n| ·z ·A, k ih m d ·C uw ay ·B, * ·z ·F,/ b l uw ·F,/ * ·z ·A,/ l ay ·A,/ t\\n| ·z ·A,/ k ih ·A,/ m d ·C/ uw ay ·C/ * ·B, * ·z ·A, d aa t ·z2\\n| ·z ·A, k ih ·C m d uw ay ·B, * ·z ·F, b l uw ·z ·A, l ay t\\n| ·z ·A, k ih ·B,/ m d uw ay ·C/ * ·B, * ·z ·A, d aa t ·z2\\n| ·z ·A, k ih m ·B,/ d uw ay ·C/ * ·B,2 * ·F, b l uw ·z ·A, l ay t\\n| ·z8 <eos>',
+      systems: [
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 只输出 vocal', en: 'with lead-sheet · vocal only' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples/92_ea76abe2f1d5_chorus_3/gen_vocal.mp3', duration: 20.9 },
+            song: null
+          }
+        },
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 输出 vocal 与 song', en: 'with lead-sheet · vocal + song' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples_with_mixed/92_ea76abe2f1d5_chorus_3/gen_vocal.mp3', duration: 20.9 },
+            song: { src: 'M6_1000samples_with_mixed/92_ea76abe2f1d5_chorus_3/gen_mixed.mp3', duration: 20.9 }
+          }
+        },
+        {
+          model: 'LeVo2',
+          note: { zh: '无 lead-sheet 条件 · 开源 SongGeneration2', en: 'without lead-sheet · open-source SongGeneration2' },
+          variant: 'baseline',
+          tracks: {
+            vocal: { src: 'LeVo2_1000samples/92_ea76abe2f1d5_chorus_3/gen_vocal.mp3', duration: 33.2 },
+            song: { src: 'LeVo2_1000samples/92_ea76abe2f1d5_chorus_3/gen_song.mp3', duration: 33.2 }
+          }
+        },
+        {
+          model: 'GT',
+          note: { zh: '真实样本 · 数据集原始录音', en: 'ground truth · original recording' },
+          variant: 'gt',
+          tracks: {
+            vocal: { src: 'M6_1000samples/92_ea76abe2f1d5_chorus_3/gt_vocal.mp3', duration: 20.8 },
+            song: { src: 'M6_1000samples/92_ea76abe2f1d5_chorus_3/gt_mixed.mp3', duration: 20.8 }
+          }
+        }
+      ]
+    },
+
+    /* ───────────────────────── Group 9 ───────────────────────── */
+    {
+      id: 'group-9',
+      title: { zh: '样例 9', en: 'Group 9' },
+      sampleId: '97_4b80f4b0bf1d_chorus_2',
+      lyrics: '[chorus] Kaback, blood and distortion.Kaback, blood and distortion',
+      prompt: '[Musicality-very-high], male, adult, harsh, vibrato-none, accent-none, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, growl, distortion, gritty, angry, dark.',
+      leadSheet: '<bos>  <sec_bos>  [chorus]  <tempo_150_160>  <meter_2/4>  <key_Bbmin> \\n| ·z4 <keychange>  <key_Bbmin> \\n| ·E,, b l ah ·A,, d ae ·D,,2 n\\n| ·A,,3/2 d ih ·A,,3/2 s t ·B,, ao r sh\\n| ·B,, ah ·A,,3 n\\n| ·z4\\n| ·z ·B,, b ·B,,2 l ah\\n| ·z2 ·A,, d ae ·G,, * ·-\\n| ·G,, * ·=G,, n d ih s ·A,, t ao ·F,, r sh ah n ·-\\n| ·F,,2 ·z2\\n| ·z4 <eos>',
+      systems: [
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 只输出 vocal', en: 'with lead-sheet · vocal only' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples/97_4b80f4b0bf1d_chorus_2/gen_vocal.mp3', duration: 7.5 },
+            song: null
+          }
+        },
+        {
+          model: 'M6',
+          note: { zh: '有 lead-sheet 条件 · 输出 vocal 与 song', en: 'with lead-sheet · vocal + song' },
+          variant: 'ours',
+          tracks: {
+            vocal: { src: 'M6_1000samples_with_mixed/97_4b80f4b0bf1d_chorus_2/gen_vocal.mp3', duration: 7.7 },
+            song: { src: 'M6_1000samples_with_mixed/97_4b80f4b0bf1d_chorus_2/gen_mixed.mp3', duration: 7.7 }
+          }
+        },
+        {
+          model: 'LeVo2',
+          note: { zh: '无 lead-sheet 条件 · 开源 SongGeneration2', en: 'without lead-sheet · open-source SongGeneration2' },
+          variant: 'baseline',
+          tracks: {
+            vocal: { src: 'LeVo2_1000samples/97_4b80f4b0bf1d_chorus_2/gen_vocal.mp3', duration: 28.8 },
+            song: { src: 'LeVo2_1000samples/97_4b80f4b0bf1d_chorus_2/gen_song.mp3', duration: 28.8 }
+          }
+        },
+        {
+          model: 'GT',
+          note: { zh: '真实样本 · 数据集原始录音', en: 'ground truth · original recording' },
+          variant: 'gt',
+          tracks: {
+            vocal: { src: 'M6_1000samples/97_4b80f4b0bf1d_chorus_2/gt_vocal.mp3', duration: 7.5 },
+            song: { src: 'M6_1000samples/97_4b80f4b0bf1d_chorus_2/gt_mixed.mp3', duration: 7.5 }
+          }
+        }
+      ]
     }
   ]
 };

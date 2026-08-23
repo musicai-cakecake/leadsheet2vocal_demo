@@ -1,0 +1,36 @@
+==========================================================================
+ 替换 prompts 实验  eefb7a15ea1c314a7c56d53deea3cc39/verse_2
+==========================================================================
+
+ 变量说明：歌词与 leadsheet 来自本样本，prompts 来自**其它歌曲**，
+           且**不使用参考音频** —— 故 prompts 是唯一的音色/风格来源。
+
+【1】description（歌词，本样本自己的）
+    [verse] Severed heart, my mistake.I will wait forever.I don't know if I'm awake or if I'm undercover
+
+【2】type_info（prompts）★ 已替换为其它歌曲的
+    模型看到的 : [Musicality-very-high], male, adult, breathy, vibrato-moderate, african american vernacular (aave), dynamics-moderate, solo, r&b, english, fully sung, plate, present, chest, mixed, falsetto, melisma, riffs-runs, breath-adlib, husky, airy, smooth, melancholic, tender.
+    来源 uid   : b05132324a8c0b7f8cd0b9a6f13f9285/verse_9
+    本样本原本 : [Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, hall, delay-none, chest, technique-none, smooth, clear, mellow, melancholic, calm.   ← 未使用，仅供对照
+
+【3】leadsheet（本样本自己的，音符事件级）
+    小节数 14   token 数 308
+    <bos>  <sec_bos>  [verse]  <tempo_190_200>  <meter_4/4>  <key_Dmin> 
+| ·z6 ·F,2 s eh ·-
+| ·F,/ * ·G,3 * ·G,4 v er d hh aa ·- ·G,/ * ·-
+| ·G, * ·F,2 r t ·G,2 m ay ·- ·G,/ * ·F,2 m ih s ·- ·F,/ *
+| ·F,3/2 t ey ·G,4 k ay w ih ·- ·G,/ * ·z2
+| ·z ·F,3 l w ·G,3 ey ·F, t ·-
+| ·F,2 * ·(3:2:2 ·E,2 f er eh ·E, v ·- ·E, * ·D,3 er ·-
+| ·D,6 ·z2
+| ·A,2 ay ·G,2 d ow n ·G,4 t n ow ·-
+| ·G,3/2 * ·F, ih f ay m ·G,3/2 ah ·F,3 w ·G, ey ·-
+| ·G,4 * ·F, k ·=B,2 ao r ih f ay m ·F, ah ·-
+| ·F,3/2 * ·G,2 n ·- ·G,/ * ·F,3 d er ·E, k ah ·-
+| ·E, * ·D,7 v er
+| ·z8 <eos>
+
+【4】参考音频：★ 不使用（全 PAD）
+
+【5】时长：GT 16.313 s，生成预算 37.63 s
+==========================================================================

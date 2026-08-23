@@ -1,0 +1,23 @@
+{
+  "uid": "eefb7a15ea1c314a7c56d53deea3cc39/verse_2",
+  "sample_id": "eefb7a15ea1c314a7c56d53deea3cc39",
+  "section_key": "verse_2",
+  "struct_tag": "[verse]",
+  "experiment": "replace_prompts",
+  "prompts_replaced": true,
+  "prompts_source_uid": "b05132324a8c0b7f8cd0b9a6f13f9285/verse_9",
+  "reference_audio_used": false,
+  "description": "[verse] Severed heart, my mistake.I will wait forever.I don't know if I'm awake or if I'm undercover",
+  "type_info": "[Musicality-very-high], male, adult, breathy, vibrato-moderate, african american vernacular (aave), dynamics-moderate, solo, r&b, english, fully sung, plate, present, chest, mixed, falsetto, melisma, riffs-runs, breath-adlib, husky, airy, smooth, melancholic, tender.",
+  "type_info_own_for_reference": "[Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, hall, delay-none, chest, technique-none, smooth, clear, mellow, melancholic, calm.",
+  "prompts_flat_other_raw": "[Pure-Vocal], male, adult, breathy, vibrato-moderate, african american vernacular (aave), dynamics-moderate, solo, r&b, english, fully sung, plate, present, chest, mixed, falsetto, melisma, riffs-runs, breath-adlib, husky, airy, smooth, melancholic, tender",
+  "prompts_flat_own_raw": "[Pure-Vocal], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, hall, delay-none, chest, technique-none, smooth, clear, mellow, melancholic, calm",
+  "leadsheet_header": "[Q:1/4=194][M:4/4][K:Dmin]",
+  "n_leadsheet_tokens": 308,
+  "n_bars": 14,
+  "leadsheet_decoded": "<bos>  <sec_bos>  [verse]  <tempo_190_200>  <meter_4/4>  <key_Dmin> \n| ·z6 ·F,2 s eh ·-\n| ·F,/ * ·G,3 * ·G,4 v er d hh aa ·- ·G,/ * ·-\n| ·G, * ·F,2 r t ·G,2 m ay ·- ·G,/ * ·F,2 m ih s ·- ·F,/ *\n| ·F,3/2 t ey ·G,4 k ay w ih ·- ·G,/ * ·z2\n| ·z ·F,3 l w ·G,3 ey ·F, t ·-\n| ·F,2 * ·(3:2:2 ·E,2 f er eh ·E, v ·- ·E, * ·D,3 er ·-\n| ·D,6 ·z2\n| ·A,2 ay ·G,2 d ow n ·G,4 t n ow ·-\n| ·G,3/2 * ·F, ih f ay m ·G,3/2 ah ·F,3 w ·G, ey ·-\n| ·G,4 * ·F, k ·=B,2 ao r ih f ay m ·F, ah ·-\n| ·F,3/2 * ·G,2 n ·- ·G,/ * ·F,3 d er ·E, k ah ·-\n| ·E, * ·D,7 v er\n| ·z8 <eos>",
+  "gt_duration_sec": 16.313,
+  "gt_frames": 409,
+  "gen_duration_budget_sec": 37.63,
+  "lyric_raw": "Severed heart, my mistake. I will wait forever. I don't know if I'm awake or if I'm undercover."
+}

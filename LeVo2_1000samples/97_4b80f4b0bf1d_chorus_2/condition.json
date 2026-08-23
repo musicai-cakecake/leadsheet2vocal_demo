@@ -1,0 +1,9 @@
+{
+  "idx": "97_4b80f4b0bf1d_chorus_2",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] Kaback, blood and distortion.Kaback, blood and distortion",
+  "descriptions": "male, adult, harsh, vibrato-none, accent-none, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, growl, distortion, gritty, angry, dark",
+  "m6_uid": "4b80f4b0bf1d4a3eb2449cd3a0abe8e4/chorus_2",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

@@ -1,0 +1,23 @@
+{
+  "uid": "970e629015973a66ea9ac8e9db5d27b9/verse_3",
+  "sample_id": "970e629015973a66ea9ac8e9db5d27b9",
+  "section_key": "verse_3",
+  "struct_tag": "[verse]",
+  "experiment": "replace_prompts",
+  "prompts_replaced": true,
+  "prompts_source_uid": "2647f303035ceec5200e9ef15d2c9464/chorus_5",
+  "reference_audio_used": false,
+  "description": "[verse] This could be the final moment you have left.Say what's on your mind with your last breath.And even when you crack, you don't need to react",
+  "type_info": "[Musicality-very-high], female, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, plate, present, chest, mixed, technique-none, clear, bright, smooth, energetic, romantic.",
+  "type_info_own_for_reference": "[Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, technique-none, warm, smooth, dark, tense.",
+  "prompts_flat_other_raw": "[Pure-Vocal], female, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, plate, present, chest, mixed, technique-none, clear, bright, smooth, energetic, romantic",
+  "prompts_flat_own_raw": "[Pure-Vocal], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, technique-none, warm, smooth, dark, tense",
+  "leadsheet_header": "[Q:1/4=115][M:2/4][K:C#min]",
+  "n_leadsheet_tokens": 250,
+  "n_bars": 14,
+  "leadsheet_decoded": "<bos>  <sec_bos>  [verse]  <tempo_110_120>  <meter_2/4>  <key_C#min> \n| ·z4\n| ·A,, dh ih s ·B,, k uh d b ·C, iy ·F, dh ah f ay\n| ·E,2 n ·C, ah l m ow ·G,, m ah n\n| ·B,,/ t y uw ·B,, * ·B,, hh ae v l ·C,3/2 eh f t\n| ·z4\n| ·C, s ey w ·C, ah t s ·C, aa n ·F, y ao r m\n| ·E,2 ay ·C, n d w ih dh y ·G,, ao\n| ·B,,2 r l ae s ·B,, t b r eh ·C, th ·-\n| ·C,2 ·z2\n| ·A, ae ·F, n iy v ih n w eh n y uw k r ae k ·G, y ·F, uw d\n| ·G,2 ow n ·G, t ·F,/ n iy ·G,/ d ·-\n| ·G, * ·F, t uw ·G,2 r\n| ·G,2 iy ae ·z2 <eos>",
+  "gt_duration_sec": 13.32,
+  "gt_frames": 334,
+  "gen_duration_budget_sec": 31.64,
+  "lyric_raw": "This could be the final moment you have left. Say what's on your mind with your last breath. And even when you crack, you don't need to react."
+}

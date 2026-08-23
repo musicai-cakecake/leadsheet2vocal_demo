@@ -1,0 +1,9 @@
+{
+  "idx": "98_c513311d142e_chorus_1",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] And all we do is weep, weep.We're grinding when you sleep, you sleep.And all we do is weep, weep.We're grinding when you sleep, you sleep",
+  "descriptions": "male, adult, modal, light, african american vernacular (aave), highly-varied, solo, r&b, english, fully sung, plate, delay-none, chest, mixed, falsetto, riffs-runs, vibrato, warm, husky, full, nostalgic, energetic",
+  "m6_uid": "c513311d142e3ee4c17351770c61e6d8/chorus_1",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

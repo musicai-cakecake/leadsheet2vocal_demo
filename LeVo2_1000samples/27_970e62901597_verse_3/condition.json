@@ -1,0 +1,9 @@
+{
+  "idx": "27_970e62901597_verse_3",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[verse] This could be the final moment you have left.Say what's on your mind with your last breath.And even when you crack, you don't need to react",
+  "descriptions": "male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, technique-none, warm, smooth, dark, tense",
+  "m6_uid": "970e629015973a66ea9ac8e9db5d27b9/verse_3",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

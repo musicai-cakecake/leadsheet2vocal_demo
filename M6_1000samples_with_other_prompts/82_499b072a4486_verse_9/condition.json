@@ -1,0 +1,23 @@
+{
+  "uid": "499b072a448613cb73f8430775bc331e/verse_9",
+  "sample_id": "499b072a448613cb73f8430775bc331e",
+  "section_key": "verse_9",
+  "struct_tag": "[verse]",
+  "experiment": "replace_prompts",
+  "prompts_replaced": true,
+  "prompts_source_uid": "431e1e3eca587a88863aea292ca3f8c4/verse_1",
+  "reference_audio_used": false,
+  "description": "[verse] These fading soul roads of the streets, you'll find the world, but it's searching for me",
+  "type_info": "[Musicality-very-high], female, adult, breathy, light, general american, highly-varied, solo, pop, english, fully sung, hall, delay-none, chest, head, vibrato, breath-adlib, airy, delicate, clear, dreamy, nostalgic.",
+  "type_info_own_for_reference": "[Musicality-very-high], male, adult, harsh, vibrato-none, general american, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, head, growl, distortion, vocal-fry, gritty, dark, angry.",
+  "prompts_flat_other_raw": "[Pure-Vocal], female, adult, breathy, light, general american, highly-varied, solo, pop, english, fully sung, hall, delay-none, chest, head, vibrato, breath-adlib, airy, delicate, clear, dreamy, nostalgic",
+  "prompts_flat_own_raw": "[Pure-Vocal], male, adult, harsh, vibrato-none, general american, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, head, growl, distortion, vocal-fry, gritty, dark, angry",
+  "leadsheet_header": "[Q:1/4=107][M:3/4][K:Bmin]",
+  "n_leadsheet_tokens": 225,
+  "n_bars": 10,
+  "leadsheet_decoded": "<bos>  <sec_bos>  [verse]  <tempo_100_110>  <meter_3/4>  <key_Bmin> \n| ·z6\n| ·^D,,7/2 dh iy ·E,,2 z f ey ·- ·E,,/ *\n| ·=F,,3 dx ih ·F,,3 ng s ow\n| ·E,,3/2 l r ·^D,,3/2 ow d ·D,,3/2 z ah ·=D,,3/2 v dh ah s\n| ·E,,3 tr iy ·E,, t s y ·z2\n| ·^D,,3 uw l ·D,, f ay ·C,,2 n d dh ah\n| ·=C,,3 w er l ·^C,,3/2 d b ah t ih t s ·D,,3/2 *\n| ·D,,3/2 s er ·E,,2 ch ih ng ·- ·E,,/ * ·C,, f ao ·> ·E,, r m iy ·-\n| ·E,,3 ·D,,3 <eos>",
+  "gt_duration_sec": 10.56,
+  "gt_frames": 265,
+  "gen_duration_budget_sec": 26.12,
+  "lyric_raw": "These fading soul roads of the streets, you'll find the world, but it's searching for me."
+}

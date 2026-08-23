@@ -1,0 +1,23 @@
+{
+  "uid": "dc46f6c894179908ad9d7cef7c729b8f/chorus_2",
+  "sample_id": "dc46f6c894179908ad9d7cef7c729b8f",
+  "section_key": "chorus_2",
+  "struct_tag": "[chorus]",
+  "experiment": "replace_prompts",
+  "prompts_replaced": true,
+  "prompts_source_uid": "9dd09cd85d19ef216ae35cd0031f3923/chorus_1",
+  "reference_audio_used": false,
+  "description": "[chorus] Hey Jess, I watch you wake up and get dressed.You left the room, receding like my hairline",
+  "type_info": "[Musicality-very-high], female, adult, breathy, vibrato-none, general american, soft, solo, pop, english, fully sung, room, delay-none, mixed, head, breath-adlib, glissando-scoop, airy, delicate, cool, melancholic, dreamy.",
+  "type_info_own_for_reference": "[Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, rock, english, fully sung, room, delay-none, chest, mixed, breath-adlib, glissando-scoop, clear, nasal, thin, nostalgic, melancholic.",
+  "prompts_flat_other_raw": "[Pure-Vocal], female, adult, breathy, vibrato-none, general american, soft, solo, pop, english, fully sung, room, delay-none, mixed, head, breath-adlib, glissando-scoop, airy, delicate, cool, melancholic, dreamy",
+  "prompts_flat_own_raw": "[Pure-Vocal], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, rock, english, fully sung, room, delay-none, chest, mixed, breath-adlib, glissando-scoop, clear, nasal, thin, nostalgic, melancholic",
+  "leadsheet_header": "[Q:1/4=171][M:4/4][K:A]",
+  "n_leadsheet_tokens": 225,
+  "n_bars": 9,
+  "leadsheet_decoded": "<bos>  <sec_bos>  [chorus]  <tempo_170_180>  <meter_4/4>  <key_A> \n| ·z4 ·G,3 hh ey jh ·F, eh s ·-\n| ·F,8 ·-\n| ·F, * ·< ·A, ay w aa ch ·G,/ y ·F, uw w ·F,3/2 ey k ·^D,3/2 ah ·E,3/2 p ae ·-\n| ·E,/ * ·G,3 n g eh ·F,2 t dr eh s ·- ·F,/ * ·z2\n| ·A,2 t y uw l eh ·F,4 * ·z ·E, f t dh ah r uw m r ih s\n| ·(3:2:2 ·A,2 iy dx ih ·G, * ·- ·G,/ * ·E,2 ng l ay ·- ·E,/ * ·E,2 k m ay ·F, hh eh ·-\n| ·F,3/2 * ·E,3 r l ay ·C3/2 n ·z2\n| ·z8 <eos>",
+  "gt_duration_sec": 11.28,
+  "gt_frames": 283,
+  "gen_duration_budget_sec": 27.56,
+  "lyric_raw": "Hey Jess, I watch you wake up and get dressed. You left the room, receding like my hairline."
+}

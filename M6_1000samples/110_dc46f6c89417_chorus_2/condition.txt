@@ -1,0 +1,38 @@
+==========================================================================
+ 输入条件  dc46f6c894179908ad9d7cef7c729b8f/chorus_2
+ 条件模式  正式（真实歌词 + 参考音频）
+==========================================================================
+
+【1】description（歌词条件，模型看到的原文）
+    [chorus] Hey Jess, I watch you wake up and get dressed.You left the room, receding like my hairline
+
+【2】type_info（风格 tag 条件）
+    [Musicality-very-high], male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, rock, english, fully sung, room, delay-none, chest, mixed, breath-adlib, glissando-scoop, clear, nasal, thin, nostalgic, melancholic.
+
+【3】leadsheet（旋律 + 音素条件）  ← 本实验真正要验证的通路
+    header : [Q:1/4=171][M:4/4][K:A]
+    规模   : 225 tokens / 9 小节
+    解码后 : <bos>  <sec_bos>  [chorus]  <tempo_170_180>  <meter_4/4>  <key_A> 
+| ·z4 ·G,3 hh ey jh ·F, eh s ·-
+| ·F,8 ·-
+| ·F, * ·< ·A, ay w aa ch ·G,/ y ·F, uw w ·F,3/2 ey k ·^D,3/2 ah ·E,3/2 p ae ·-
+| ·E,/ * ·G,3 n g eh ·F,2 t dr eh s ·- ·F,/ * ·z2
+| ·A,2 t y uw l eh ·F,4 * ·z ·E, f t dh ah r uw m r ih s
+| ·(3:2:2 ·A,2 iy dx ih ·G, * ·- ·G,/ * ·E,2 ng l ay ·- ·E,/ * ·E,2 k m ay ·F, hh eh ·-
+| ·F,3/2 * ·E,3 r l ay ·C3/2 n ·z2
+| ·z8 <eos>
+
+【4】prompt_audio（参考音频，只给音色，不含本段内容）
+    来源   : dc46f6c894179908ad9d7cef7c729b8f/chorus_4（同曲另一段落的前 250 帧真实 codec token）
+
+【5】长度
+    GT     : 11.28 s / 283 帧
+    生成预算: 27.56 s（给足空间让模型自己发 EOS）
+
+--------------------------------------------------------------------------
+【参考】该段真实歌词（isolate 模式下模型**看不到**，仅供你对照听）
+    Hey Jess, I watch you wake up and get dressed. You left the room, receding like my hairline.
+
+对比方式：gt_vocal.mp3（真值人声）  vs  gen_vocal.flac（模型生成）
+         gt_mixed.mp3 是原始混音，用来听旋律语境。
+==========================================================================

@@ -1,0 +1,39 @@
+==========================================================================
+ 输入条件  c513311d142e3ee4c17351770c61e6d8/chorus_1
+ 条件模式  正式（真实歌词 + 参考音频）
+==========================================================================
+
+【1】description（歌词条件，模型看到的原文）
+    [chorus] And all we do is weep, weep.We're grinding when you sleep, you sleep.And all we do is weep, weep.We're grinding when you sleep, you sleep
+
+【2】type_info（风格 tag 条件）
+    [Musicality-very-high], male, adult, modal, light, african american vernacular (aave), highly-varied, solo, r&b, english, fully sung, plate, delay-none, chest, mixed, falsetto, riffs-runs, vibrato, warm, husky, full, nostalgic, energetic.
+
+【3】leadsheet（旋律 + 音素条件）  ← 本实验真正要验证的通路
+    header : [Q:1/4=103][M:4/4][K:Db]
+    规模   : 328 tokens / 10 小节
+    解码后 : <bos>  <sec_bos>  [chorus]  <tempo_100_110>  <meter_4/4>  <key_Db> 
+| ·z7/2 ·E,/ ae ·E * ·> ·D n ao ·(3:2:2 ·E2 * ·D l w
+| ·F3/2 iy d uw ih ·D2 * ·- ·D/ * ·F2 z w iy p w iy ·D2 * ·-
+| ·D2 * ·z3/2 ·G,/ p w iy ·(3:2:2 ·E2 r g r ay ·D n ·E * ·D *
+| ·F2 d ih ·D ng ·> ·D w eh n y uw s ·F3/2 l iy ·D2 p y uw s ·- ·D/ * ·-
+| ·D2 * ·z3/2 ·F,/ l iy p ae ·E n ao ·> ·D l w iy d ·(3:2:2 ·E2 uw ·D ih z
+| ·F w iy p w iy p w iy ·F * ·D2 r ·F2 g r ay n d ih ·D2 ng ·-
+| ·D2 * ·z3/2 ·A,/ w eh ·(3:2:4 ·E2 * ·D * ·E2 * ·D n y uw s
+| ·F l iy ·> ·D * ·- ·(3 ·D * ·E p ·D y uw s l ·F iy ·F/ * ·D2 * ·- ·D/ *
+| ·E2 p ·z6 <eos>
+
+【4】prompt_audio（参考音频，只给音色，不含本段内容）
+    来源   : c513311d142e3ee4c17351770c61e6d8/chorus_2（同曲另一段落的前 250 帧真实 codec token）
+
+【5】长度
+    GT     : 21.18 s / 530 帧
+    生成预算: 47.36 s（给足空间让模型自己发 EOS）
+
+--------------------------------------------------------------------------
+【参考】该段真实歌词（isolate 模式下模型**看不到**，仅供你对照听）
+    And all we do is weep, weep. We're grinding when you sleep, you sleep. And all we do is weep, weep. We're grinding when you sleep, you sleep.
+
+对比方式：gt_vocal.mp3（真值人声）  vs  gen_vocal.flac（模型生成）
+         gt_mixed.mp3 是原始混音，用来听旋律语境。
+==========================================================================

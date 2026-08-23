@@ -1,0 +1,23 @@
+{
+  "uid": "4b80f4b0bf1d4a3eb2449cd3a0abe8e4/chorus_2",
+  "sample_id": "4b80f4b0bf1d4a3eb2449cd3a0abe8e4",
+  "section_key": "chorus_2",
+  "struct_tag": "[chorus]",
+  "experiment": "replace_prompts",
+  "prompts_replaced": true,
+  "prompts_source_uid": "065010fb31c7fa58d1a125ec2a336758/verse_5",
+  "reference_audio_used": false,
+  "description": "[chorus] Kaback, blood and distortion.Kaback, blood and distortion",
+  "type_info": "[Musicality-very-high], male, adult, raspy, heavy, african american vernacular (aave), highly-varied, solo, gospel, english, fully sung, hall, present, chest, falsetto, belt, vibrato, melisma, husky, gritty, powerful, melancholic, tender.",
+  "type_info_own_for_reference": "[Musicality-very-high], male, adult, harsh, vibrato-none, accent-none, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, growl, distortion, gritty, angry, dark.",
+  "prompts_flat_other_raw": "[Pure-Vocal], male, adult, raspy, heavy, african american vernacular (aave), highly-varied, solo, gospel, english, fully sung, hall, present, chest, falsetto, belt, vibrato, melisma, husky, gritty, powerful, melancholic, tender",
+  "prompts_flat_own_raw": "[Pure-Vocal], male, adult, harsh, vibrato-none, accent-none, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, growl, distortion, gritty, angry, dark",
+  "leadsheet_header": "[Q:1/4=150][M:2/4][K:Bbmin]",
+  "n_leadsheet_tokens": 151,
+  "n_bars": 11,
+  "leadsheet_decoded": "<bos>  <sec_bos>  [chorus]  <tempo_150_160>  <meter_2/4>  <key_Bbmin> \n| ·z4 <keychange>  <key_Bbmin> \n| ·E,, b l ah ·A,, d ae ·D,,2 n\n| ·A,,3/2 d ih ·A,,3/2 s t ·B,, ao r sh\n| ·B,, ah ·A,,3 n\n| ·z4\n| ·z ·B,, b ·B,,2 l ah\n| ·z2 ·A,, d ae ·G,, * ·-\n| ·G,, * ·=G,, n d ih s ·A,, t ao ·F,, r sh ah n ·-\n| ·F,,2 ·z2\n| ·z4 <eos>",
+  "gt_duration_sec": 7.51,
+  "gt_frames": 189,
+  "gen_duration_budget_sec": 20.02,
+  "lyric_raw": "Kaback, blood and distortion. Kaback, blood and distortion."
+}

@@ -1,0 +1,23 @@
+{
+  "uid": "c513311d142e3ee4c17351770c61e6d8/chorus_1",
+  "sample_id": "c513311d142e3ee4c17351770c61e6d8",
+  "section_key": "chorus_1",
+  "struct_tag": "[chorus]",
+  "experiment": "replace_prompts",
+  "prompts_replaced": true,
+  "prompts_source_uid": "8fc239f950cc1c9e9b5b6eb03309809d/verse_1",
+  "reference_audio_used": false,
+  "description": "[chorus] And all we do is weep, weep.We're grinding when you sleep, you sleep.And all we do is weep, weep.We're grinding when you sleep, you sleep",
+  "type_info": "[Musicality-very-high], male, adult, pressed, vibrato-none, general american, highly-varied, solo, rock, english, fully sung, plate, present, chest, mixed, belt, twang, bright, gritty, powerful, angry, tense.",
+  "type_info_own_for_reference": "[Musicality-very-high], male, adult, modal, light, african american vernacular (aave), highly-varied, solo, r&b, english, fully sung, plate, delay-none, chest, mixed, falsetto, riffs-runs, vibrato, warm, husky, full, nostalgic, energetic.",
+  "prompts_flat_other_raw": "[Pure-Vocal], male, adult, pressed, vibrato-none, general american, highly-varied, solo, rock, english, fully sung, plate, present, chest, mixed, belt, twang, bright, gritty, powerful, angry, tense",
+  "prompts_flat_own_raw": "[Pure-Vocal], male, adult, modal, light, african american vernacular (aave), highly-varied, solo, r&b, english, fully sung, plate, delay-none, chest, mixed, falsetto, riffs-runs, vibrato, warm, husky, full, nostalgic, energetic",
+  "leadsheet_header": "[Q:1/4=103][M:4/4][K:Db]",
+  "n_leadsheet_tokens": 328,
+  "n_bars": 10,
+  "leadsheet_decoded": "<bos>  <sec_bos>  [chorus]  <tempo_100_110>  <meter_4/4>  <key_Db> \n| ·z7/2 ·E,/ ae ·E * ·> ·D n ao ·(3:2:2 ·E2 * ·D l w\n| ·F3/2 iy d uw ih ·D2 * ·- ·D/ * ·F2 z w iy p w iy ·D2 * ·-\n| ·D2 * ·z3/2 ·G,/ p w iy ·(3:2:2 ·E2 r g r ay ·D n ·E * ·D *\n| ·F2 d ih ·D ng ·> ·D w eh n y uw s ·F3/2 l iy ·D2 p y uw s ·- ·D/ * ·-\n| ·D2 * ·z3/2 ·F,/ l iy p ae ·E n ao ·> ·D l w iy d ·(3:2:2 ·E2 uw ·D ih z\n| ·F w iy p w iy p w iy ·F * ·D2 r ·F2 g r ay n d ih ·D2 ng ·-\n| ·D2 * ·z3/2 ·A,/ w eh ·(3:2:4 ·E2 * ·D * ·E2 * ·D n y uw s\n| ·F l iy ·> ·D * ·- ·(3 ·D * ·E p ·D y uw s l ·F iy ·F/ * ·D2 * ·- ·D/ *\n| ·E2 p ·z6 <eos>",
+  "gt_duration_sec": 21.18,
+  "gt_frames": 530,
+  "gen_duration_budget_sec": 47.36,
+  "lyric_raw": "And all we do is weep, weep. We're grinding when you sleep, you sleep. And all we do is weep, weep. We're grinding when you sleep, you sleep."
+}
