@@ -187,7 +187,9 @@
       <h2 class="h2"><span class="num">03</span><span class="lang lang-zh">对照组介绍</span><span class="lang lang-en">Control Group</span></h2>
       <div class="prose">
         <p class="lang lang-zh">对照组使用完全一致的输入歌词与提示词条件，对照组内所有模型均配置严格匹配的参数量与超参数。</p>
+        <p class="lang lang-zh">所有测试数据均来自测试集。训练集和测试集按音乐整曲分割，保证没有片段泄漏。</p>
         <p class="lang lang-en">The control group shared identical input lyrics and prompt conditions, where all models were assigned strictly the same parameter sizes and hyperparameters.</p>
+        <p class="lang lang-en">All evaluation data are drawn from the test set. The training and test sets are partitioned at the full-song level to ensure that no segments leak between them.</p>
       </div>
     </section>
 
@@ -275,7 +277,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/demos.js?v=20260823-prompts"></script>
+<script src="assets/js/demos.js?v=20260823-prompts-r2"></script>
 <script src="assets/js/app.js?v=20260823-prompts"></script>
 </body>
 </html>

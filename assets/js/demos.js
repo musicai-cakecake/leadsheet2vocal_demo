@@ -490,12 +490,6 @@ window.DEMO_DATA = {
       prompts2Duration: 20.4
     },
     {
-      sampleId: '82_499b072a4486_verse_9',
-      prompts2: '[Musicality-very-high], female, adult, breathy, light, general american, highly-varied, solo, pop, english, fully sung, hall, delay-none, chest, head, vibrato, breath-adlib, airy, delicate, clear, dreamy, nostalgic.',
-      prompts1Duration: 10.6,
-      prompts2Duration: 11.4
-    },
-    {
       sampleId: '82_52a558a32aaa_verse_2',
       prompts2: '[Musicality-very-high], male, adult, modal, light, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, falsetto, melisma, glissando-scoop, vibrato, smooth, warm, clear, tender, romantic.',
       prompts1Duration: 15.7,
