@@ -56,6 +56,12 @@
       .slice(0, 60) || 'audio';
   }
 
+  function audioExtension(src) {
+    var clean = String(src || '').split(/[?#]/)[0];
+    var match = clean.match(/\.([a-zA-Z0-9]+)$/);
+    return match ? match[1].toLowerCase() : 'audio';
+  }
+
   var toastTimer;
   function toast(msg) {
     var box = document.getElementById('toast');
@@ -118,7 +124,7 @@
   }
 
   /**
-   * Builds one inline player. `track` = { src, duration }.
+   * Builds one inline audio player. `track` = { src, duration }.
    */
   function createPlayer(track, downloadName) {
     var src = encodeURI(track.src);
@@ -306,6 +312,7 @@
   function renderGroup(group, columns) {
     var section = el('section', 'demo-group');
     section.id = group.id;
+    var groupFiles = [];
 
     /* --- head --- */
     var head = el('div', 'group-head');
@@ -366,8 +373,6 @@
     columns.forEach(function (c) { thead.appendChild(bilingual(el('div'), c.label)); });
     tracks.appendChild(thead);
 
-    var groupFiles = [];
-
     group.systems.forEach(function (sys) {
       var row = el('div', 'track-row');
       row.setAttribute('data-variant', sys.variant || 'gt');
@@ -393,7 +398,7 @@
             group.sampleId || group.id,
             slugify(sys.model || '') + (sys.note && sys.note.en ? '-' + slugify(sys.note.en) : ''),
             col.key
-          ].join('__') + '.mp3';
+          ].join('__') + '.' + audioExtension(track.src);
           var p = createPlayer(track, fileName);
           cell.appendChild(p.node);
           groupFiles.push(p);
@@ -411,6 +416,30 @@
     });
 
     section.appendChild(tracks);
+
+    if (group.melodyGroundTruth && group.melodyGroundTruth.src) {
+      var melodyRow = el('div', 'melody-ground-truth');
+      var melodyInfo = el('div', 'melody-info');
+      bilingual(melodyInfo, {
+        zh: 'Lead Sheet 真实旋律 Ground Truth',
+        en: 'Lead Sheet Melody Ground Truth'
+      }, 'strong');
+      bilingual(melodyInfo, {
+        zh: '领谱渲染音频',
+        en: 'rendered lead-sheet melody'
+      }, 'span');
+
+      var melodyName = [
+        group.sampleId || group.id,
+        'lead-sheet-melody-ground-truth'
+      ].join('__') + '.' + audioExtension(group.melodyGroundTruth.src);
+      var melodyPlayer = createPlayer(group.melodyGroundTruth, melodyName);
+
+      melodyRow.appendChild(melodyInfo);
+      melodyRow.appendChild(melodyPlayer.node);
+      section.appendChild(melodyRow);
+      groupFiles.push(melodyPlayer);
+    }
 
     dlAll.addEventListener('click', function () {
       if (!groupFiles.length) return;

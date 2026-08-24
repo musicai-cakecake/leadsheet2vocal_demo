@@ -1,0 +1,98 @@
+{
+  "chorus_4": {
+    "header": "[Q:1/4=120][M:4/4][K:C]",
+    "abc_lines": [
+      "z3G,G,A,CD-| b.ah t.ay w * aa",
+      "D2zCDDzD-| * n.t.y.ao * r.b.aa.d.iy.aa.n.m.ay b.aa",
+      "DCzE4-E-| * d.iy.eh.v.er.iy w.ey.g.ow *",
+      "EED3A,C>B,-| * d.aw.n.t.aw.n.y uw.k uh.d f *",
+      "B,3A,3B,2-|",
+      "B,2CA,A,4| * ih * k.s",
+      "z2^D,F,3/2G,7/2| y.ao r hh.eh",
+      "C,C,E,2z4| r * *"
+    ],
+    "lyrics": "But I want your body on my body every way. Go downtown, you could fix your hair.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_4_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_4_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_4_audio.mp3",
+    "start_time": 72.1,
+    "end_time": 88.08
+  },
+  "chorus_5": {
+    "header": "[Q:1/4=120][M:4/4][K:C]",
+    "abc_lines": [
+      "[K:Dmin]z7/2F,/G,>A,CD-| * ae * * *",
+      "D2zCDDzD-| * n.ay.w * aa.n.t y.ao.r.b.aa.d.iy.aa",
+      "D2zE4-E-| * n.m.ay.b.aa.d.iy.eh.v *",
+      "EED7/2A,/(3=B,CB,-| * er iy.w.ey.ay.w.aa.n t.y.ao.r.b aa.d.iy * *",
+      "=B,2CA,A,2B,D-| * * * aa * *",
+      "D2zCDDzD-| * n.m * ay b.aa",
+      "DC2E4-E-| * d.iy hh.eh.v *",
+      "EDD6-| * ah.n.b ey.b.iy",
+      "D4zCCF| * ih.t s.ah.s uw"
+    ],
+    "lyrics": "And I want your body on my body every way. I want your body on my body, heaven, baby.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_5_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_5_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_5_audio.mp3",
+    "start_time": 114.08,
+    "end_time": 132.08
+  },
+  "chorus_7": {
+    "header": "[Q:1/4=120][M:4/4][K:C]",
+    "abc_lines": [
+      "z4(3:2:2F,2A,CD-| b.ah.t.ay w.aa.n.t.y.ao r.b.aa.d iy.aa",
+      "D2zD2DzD-| * n.m.ay * b.aa",
+      "DCzDE4-| * d.iy eh v",
+      "EG/ED2A,3/2C=B,-| * er iy w.ey * ay.w.aa.n.t.y ao",
+      "B,3A,z2C>=B,-| * r b *",
+      "=B,2CA,3(3:2:2C2B,-| * * aa.d.iy aa.n.m.ay b.aa",
+      "=B,2C2DE2E-| * d.iy.eh * * *",
+      "E6DC-|",
+      "C4z2E>D-|",
+      "DC/A,/A,6-|",
+      "A,6zE-|",
+      "E8-|",
+      "E2z=B,/C/C>A,zD-| * * * * v *",
+      "D2zDE7/2_G/| * er iy *",
+      "G3_GCA,=B,C/D/-| w * ey.ay * w.aa.n.t.y.ao.r b aa",
+      "DDzD2DzD-| * d.iy.ow m.ay * g.aa",
+      "DCzE4-E-| * d ih.t *",
+      "EGED4-D-| * s * * *",
+      "D=B,/A,2-A,/G,A,CD-| * * * * hh * * eh",
+      "D2zE2C2G,-| * v.ah.n.b * *",
+      "G,2zE4-E-| * ey.b.ih *",
+      "E2GD4-D-|",
+      "DC3z=B,A,E| * * t s.ah.s uw",
+      "G6A2| * p.er",
+      "G2D2C2DE| n.ae ch.er.ah l.th.ih.ng.t.uw ih k.s",
+      "CD/=B,/A,2z4| p.l.ey * * n"
+    ],
+    "lyrics": "But I want your body on my body every way. I want your body on my body every way. I want your body, oh my God, it's heaven, babe. It's a supernatural thing to explain.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_7_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_7_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/chorus_7_audio.mp3",
+    "start_time": 138.08,
+    "end_time": 190.06
+  },
+  "outro_1": {
+    "header": "[Q:1/4=120][M:4/4][K:C]",
+    "abc_lines": [
+      "z7/2F,/(3:2:2G,2A,CD-| b.ah.t.ay * w.aa n.t.y.ao.r b.aa.d.iy.aa.n",
+      "D2zDECzC-| * m.ay * * b.aa",
+      "CB,z3/2E4-E/-| * d iy *",
+      "EDE/D3A,3/2C|",
+      "=B,2CA,3z/CB,/-| * * * eh *",
+      "=B,3A,z2C>B,-|",
+      "B,2-B,/C/A,z2z/=B,3/2-| * * v.er iy w.ey",
+      "=B,2-(3B,CA,z2C>B,-|",
+      "=B,3A,z4|"
+    ],
+    "lyrics": "But I want your body on my body every way.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/outro_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/outro_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_30/43d1560b10268e70d6e291711feb5ebe/leadsheet_data/outro_1_audio.mp3",
+    "start_time": 190.06,
+    "end_time": 208.06
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "verse_5": {
+    "header": "[Q:1/4=143][M:3/4][K:D]",
+    "abc_lines": [
+      "z6|",
+      "z2D,,2E,,2| d.ah.z.dh.ah m.ah.sh.iy.n.er",
+      "D,,2_D,,4-| * iy.ih.t.s",
+      "_D,,2z4|",
+      "A,,4_A,,2-| eh.l.f.f.ao l.ah.s.l.iy.p.k.aa.t.b.ih",
+      "_A,,3/2E,,3/2_D,,_E,,2| * t.w.iy.n.dh.ah eh.m.p t.iy",
+      "D,,7/2_D,,2=D,,/-| * * f",
+      "D,,3/2_D,,2-D,,/A,,2-| * iy.l * d.z"
+    ],
+    "lyrics": "Does the machinery itself fall asleep? Caught between the empty.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_36/42a9fb26fd10558dd0702862ff2b7379/leadsheet_data/verse_5_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_36/42a9fb26fd10558dd0702862ff2b7379/leadsheet_data/verse_5_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_36/42a9fb26fd10558dd0702862ff2b7379/leadsheet_data/verse_5_audio.mp3",
+    "start_time": 155.18,
+    "end_time": 163.31
+  },
+  "verse_6": {
+    "header": "[Q:1/4=143][M:3/4][K:D]",
+    "abc_lines": [
+      "D,,7/2_D,,2=D,,/-| * * f",
+      "D,,3/2_D,,2-D,,/A,,2-| * iy.l * d.z",
+      "A,,6-|",
+      "A,,4_A,,2-| * ah.v.t.ay",
+      "_A,,=A,,/_A,,/(3:2:2_D,,2C,,-C,,<=D,,| * * m.ae.n d.ih m.eh.n.sh * ah.n.z",
+      "_D,,2-D,,/C,,7/2| aa.r * l.ao.s",
+      "G,,G,,G,,2z_A,,| t.w ih.dh.dh.ah.w er.l d.w.iy.n",
+      "G,,2zG,,_A,,<A,,-| ow ae z.r iy.l",
+      "[K:B]G,,2z4|"
+    ],
+    "lyrics": "Fields of time and dimensions are lost with the world we know as real.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_36/42a9fb26fd10558dd0702862ff2b7379/leadsheet_data/verse_6_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_36/42a9fb26fd10558dd0702862ff2b7379/leadsheet_data/verse_6_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_36/42a9fb26fd10558dd0702862ff2b7379/leadsheet_data/verse_6_audio.mp3",
+    "start_time": 161.36,
+    "end_time": 173.02
+  }
+}

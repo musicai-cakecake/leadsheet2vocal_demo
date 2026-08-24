@@ -1,0 +1,136 @@
+{
+  "verse_1": {
+    "header": "[Q:1/4=115][M:3/4][K:Fmin]",
+    "abc_lines": [
+      "z7/2G3/2A-| ae n.m.ey",
+      "A2BA(3:2:2A2G-| * * * b.iy.m.ay g.aa",
+      "G2F=EEF-| * d.hh.ae * z.ah.tr aa",
+      "F2GFEE-| * t.ih n.hh * er.w.ao",
+      "E<CCB,B,A,| * k ih n hh.er.k ow.ch",
+      "z2B,2CE-| b.ae g.z.aa.r n.aa",
+      "EF3z3/2A,/| * k.ao.f hh",
+      "A,3B,/D/FE-| er.hh.eh r.ih.z.ao l dr eh.s",
+      "E<Cz4| * t.ah.p"
+    ],
+    "lyrics": "And maybe my God has a trot in her walk, in her coach bags are knockoff, her hair is all dressed up.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_1_audio.mp3",
+    "start_time": 18.1,
+    "end_time": 33.06
+  },
+  "chorus_1": {
+    "header": "[Q:1/4=115][M:3/4][K:Fmin]",
+    "abc_lines": [
+      "z7/2A3/2A/A/-| sh.iy.s p ih",
+      "A2BA2G-| * n.z.m.iy * er.aw",
+      "G2F2=EF-| * n.d.l.ay k.ah.ow.m ay.w.eh",
+      "F2(3:2:2A2F-FE-|",
+      "EDCB,B,A,-| * * b * * *",
+      "A,2B,3/2C2E/-| * ih.z s.t.ih.l.s p.ih",
+      "E2F/E/EzA,| * n.ih ng * m.ay",
+      "A,2B,DFE| w.eh b.ih.z s.t.ih l.s p.ih",
+      "DCB,B,A,A,-| * n.ih ng.m ay w eh",
+      "A,/A,/B,B,3/2C2E/-| * b.ih * z.s t.ih.l.s p.ih",
+      "E2FE2A,| * n.ih ng y.uw.k.ae.n.t",
+      "z2B,DB,A,| s.iy * * ih",
+      "B,2z4| t"
+    ],
+    "lyrics": "She spins me around like a marionette. Oh, my web is still spinning, my web is still spinning, my web is still spinning. You can't see it.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/chorus_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/chorus_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/chorus_1_audio.mp3",
+    "start_time": 33.06,
+    "end_time": 54.14
+  },
+  "verse_2": {
+    "header": "[Q:1/4=115][M:3/4][K:Fmin]",
+    "abc_lines": [
+      "z3A2A-| ao.r m.ey",
+      "A2BAAG-| * b.iy m ay g.aa.d.hh.ae",
+      "G2F2E2| * * z.th.ih.k",
+      "F2EFEC-| hh.ih.p.s ae.n b.ih * g.l.ih",
+      "C2B,A,A,A,| * p.s.ow * dh ah.b.ah",
+      "B,2B,2CE-| dx.ah.n * z.sh.iy.z p.r.eh",
+      "E2F<=Ez2| * s.ih ng",
+      "A,2A,DF/ED/-| sh.iy.s.p.iy.k s.eh v.er.iy l ae ng",
+      "D<Cz4| * g.w.ah.jh"
+    ],
+    "lyrics": "Or maybe my God has thick hips and big lips. Oh, the buttons she's pressing, she speaks every language.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_2_audio.mp3",
+    "start_time": 57.22,
+    "end_time": 71.4
+  },
+  "verse_3": {
+    "header": "[Q:1/4=115][M:3/4][K:Fmin]",
+    "abc_lines": [
+      "z3AzA-| sh.ih *",
+      "A2BA2G-| * f.t.ah.dh.eh n.r.ay t.b.iy.n.ih",
+      "G2FF2F-| * n.t eh n.d.ow",
+      "F2A2F<E|",
+      "ED/CB,B,3/2A,-| * * ay m hh er.v.ih",
+      "A,2B,C2E-| * d.iy ow b.ey",
+      "E2(3:2:2FE2z2| * b.iy *",
+      "A,2A,AA2-| dh.ah g.ey.m.sh.iy.z b ih.n",
+      "A2z3E| * ch"
+    ],
+    "lyrics": "Shift A then right B Nintendo 63 I'm her video baby the game she's been.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_3_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_3_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_3_audio.mp3",
+    "start_time": 71.4,
+    "end_time": 85.38
+  },
+  "verse_5": {
+    "header": "[Q:1/4=115][M:3/4][K:Fmin]",
+    "abc_lines": [
+      "z3CGA-| w.eh.n y.uh.r.dr ah.ng.k.n",
+      "A2AA2G-| * ih * r.ah.s.ah",
+      "GF(3:2:2F2Fz3/2F/-| * n.s.eh * t.l.uh.k.s tr.ey",
+      "F2F=E2=B,| * t.ih n.hh.er.ay *",
+      "CB,B,A,(3:2:2A,2A,| * z.sh iy z dh.ah.k w.ih.k",
+      "z2B,2CE-| g.l.ih m.p.s.ah v.hh.eh",
+      "E2(3:2:2FF2z3/2A,/| * * v.ah.n f.er.g",
+      "A,2=B,EGD| eh.dx.ih ng hh.er.hh.eh * *",
+      "CCC3/2A3/2A-| d.l.ay t.s aa.n.w eh *",
+      "A2BAA>G-| * n.y.uw.m.ih s.r.iy d.y ao",
+      "GFz3/2F2F/-| * r.f.ao.r.ch.ah.n d.ow n.t.m.ih",
+      "F2AFFE| * s.r.iy * d.dh.ah jh.ow",
+      "C2CB,B,A,-| k sh.iy z dh.ah.n ow.t",
+      "A,2B,2CE-| * aa n.y ao.r",
+      "EFF2z2|",
+      "A,3/2A,3/2A3-| hh.ah n.iy k.ah.m.hh.ow",
+      "A4-AE|",
+      "(3DDDCCz2| * l * d.ih.ng.m iy",
+      "z6|"
+    ],
+    "lyrics": "When you're drunk near a sunset, look straight in her eyes. She's the quick glimpse of heaven. Forgetting her headlights on. When you misread your fortune, don't misread the joke. She's the note on your lampshade. Honey, come holding me.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_5_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_5_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_5_audio.mp3",
+    "start_time": 102.36,
+    "end_time": 132.78
+  },
+  "verse_6": {
+    "header": "[Q:1/4=115][M:3/4][K:Fmin]",
+    "abc_lines": [
+      "z3A2A-| ae n.m.ey",
+      "A2BAAG-| * * * b.iy.m.ay g.aa.d.hh.ae",
+      "G2F2(3:2:2F2F-| * * z.ah.tr aa",
+      "F2AF2E| * t.ih.n.hh.er w *",
+      "D2CB,B,A,| * ao.k ae n.hh.er.k ow.ch",
+      "z2B,2(3:2:2C2E-| b.ae g.z.aa.r n.aa",
+      "E3/2F2-F/zA,| * k.ao.f.hh.er * hh",
+      "A,2A,>B,C<_G| eh r.ih z.ao.l.dr * *",
+      "E2D2z2| eh.s t.ah.p"
+    ],
+    "lyrics": "And maybe my God has a trot in her walk, and her coach bags are knockoff, her hair is all dressed up.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_6_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_6_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_22/9ccf0f5965c76a7e7e490122293c57b5/leadsheet_data/verse_6_audio.mp3",
+    "start_time": 191.64,
+    "end_time": 206.28
+  }
+}

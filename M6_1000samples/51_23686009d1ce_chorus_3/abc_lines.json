@@ -1,0 +1,42 @@
+{
+  "chorus_2": {
+    "header": "[Q:1/4=86][M:4/4][K:Cmin]",
+    "abc_lines": [
+      "B,,/C,7/2zC,F,2| * d * ih",
+      "G,2G,<E,(3:2:2F,2E,z2| t.s.b.ih * n * ah.t.uw",
+      "F,2F,E,/E,/C,2z/F,3/2| l ao.ng.t.ay.m.w.ih dh.n.ow.p.iy.s.ah.v m.ay * n.d.ae",
+      "E,3/2F,2-F,/E,2E,>E,-| n.ay.m.r.eh d.iy.f.ao * r.dh.ah.t.ay m.z.t.uw g",
+      "E,E,/C,/G,3G,,F,2| * eh.t.b.eh dx.er * * ih",
+      "G,2F,<E,(3:2:2F,2E,E,2| t.s.b.ih n.ah t.uw.l ao.ng.t.ay * m",
+      "F,2F,E,<C,B,,zF,-| w.ih.dh.n.ow p.iy s.ah.v m.ay n.d ae.n.ay",
+      "F,/E,G,/F,F,E,2F,/E,/E,| * m.r.eh.d.iy f.ao * r.dh.ah t.ay.m z.t.uw * g.eh",
+      "zE,/C,/C,6-| t.b.eh * dx.er"
+    ],
+    "lyrics": "It's been a too long time with no peace of mind, and I'm ready for the times to get better. It's been a too long time with no peace of mind, and I'm ready for the times to get better.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_17/23686009d1ce45755b5e89cef9ccab03/leadsheet_data/chorus_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_17/23686009d1ce45755b5e89cef9ccab03/leadsheet_data/chorus_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_17/23686009d1ce45755b5e89cef9ccab03/leadsheet_data/chorus_2_audio.mp3",
+    "start_time": 71.24,
+    "end_time": 96.38
+  },
+  "chorus_3": {
+    "header": "[Q:1/4=86][M:4/4][K:Cmin]",
+    "abc_lines": [
+      "B,,6F,2| * ih",
+      "G,2F,<E,F,2z2| * t.s * *",
+      "F,2F,E,<C,B,,zF,-| b.ih.n.ah.t.uw.l ao.ng.t.ay.m.w.ih dh.n.ow.p.iy.s.ah.v m.ay n.d ae.n.ay.m.r",
+      "F,/E,F,/G,/F,/F,E,3/2E,3/2E,| * eh.d iy.f.ao * * r.dh.ah.t ay.m z.t.uw.g *",
+      "zE,/G,7/2B,,F,2| eh * t b.eh",
+      "G,2F,<E,(3:2:2F,2E,z2| dx.er.ih t.s * * *",
+      "F,2F,E,/E,/C,B,,zF,-| b.ih.n.ah.t.uw.l ao.ng.t.ay.m.w.ih dh * * n.ow.p.iy.s.ah.v.m.ay.n.d ae.n.ay",
+      "F,/E,F,/G,<F,E,2E,E,| * m.r.eh.d.iy f.ao * * r.dh.ah.t.ay m.z.t.uw g.eh",
+      "D,E,/C,C,4-C,3/2-| t.b eh * dx.er *"
+    ],
+    "lyrics": "It's been a too long time with no peace of mind, and I'm ready for the times to get better. It's been a too long time with no peace of mind, and I'm ready for the times to get better.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_17/23686009d1ce45755b5e89cef9ccab03/leadsheet_data/chorus_3_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_17/23686009d1ce45755b5e89cef9ccab03/leadsheet_data/chorus_3_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_17/23686009d1ce45755b5e89cef9ccab03/leadsheet_data/chorus_3_audio.mp3",
+    "start_time": 118.7,
+    "end_time": 143.8
+  }
+}

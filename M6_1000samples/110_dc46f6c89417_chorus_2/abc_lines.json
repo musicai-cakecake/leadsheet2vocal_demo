@@ -1,0 +1,177 @@
+{
+  "verse_1": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z8|",
+      "^D,3/2G,2-G,/(3:2:2G,2=D,-D,>F,-| y.uw.g.aa.dx.ah.l ah.n.ch.w.ih.dh.y.ao * r s.ih * s",
+      "F,2G,3F,2-F,/F,/-| * * t.er * t.ah.m.aa",
+      "F,E,3z2E,G,-| * * r.ow.s.ow.w iy.k",
+      "G,G,3F,E,F,2-| * ae n.t.b.iy ah p.l",
+      "F,4zE,E,E,-| * ey.t.y.uw.d.ow.n * t.m.ay",
+      "E,F,2E,2G,2E,-| * n.d ih.f.ay.s l iy.p.ih.n.b.ah.t",
+      "E,4z2B,,A,-| * dh.eh.n.ay.g.aa.dx.ah p.ae",
+      "A,2-A,/G,3/2E,3/2E,3/2E,-| * * k * m.ay.th ih.ng",
+      "E,2F,<G,F,2(3:2:2E,2F,-| * z.s * ow.ay s t.aa.r.t",
+      "F,3/2G,4-G,/F,F,-| * t.uw.p.uh.t.k.ae * s.k.iy.n aa",
+      "F,E,3zE,3/2A,3/2-| * v.ah.l aa.n ah.b.l.ae",
+      "A,G,3F,E,2F,-| * k.l.ih.s t.ih.d.eh l p.iy",
+      "F,4z3F,-| * ae.n.dh.ih",
+      "F,3/2E,7/2=C,/F,F,3/2-| * s.t.ay m.w.ah t.ih t.l",
+      "F,/G,7/2z3/2E,3/2G,-| * uh.k.t.l.ay.k w.aa.z.jh.ah.s *",
+      "G,G,2G,F,3/2E,3/2E,-| * t.w ah.t.ih.t.p.r * uw.v.d.t.uw.b iy",
+      "E,E,F,<G,G,E,<E,F,-| * y.uw.s eh.d.y uw.n iy.dx.ah d.ah s t.ih",
+      "F,E,3z4| * f.dr.ih.ng.k"
+    ],
+    "lyrics": "You gotta lunch with your sister tomorrow, so we can't be up late. You don't mind if I sleep in, but then I gotta pack my things, so I start to put Caskey novel on a blacklisted LP. And this time, what it looked like was just what it proved to be. You said you needed a stiff drink.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/verse_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/verse_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/verse_1_audio.mp3",
+    "start_time": 10.1,
+    "end_time": 36.94
+  },
+  "chorus_2": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z4G,3F,-| hh.ey.jh eh.s",
+      "F,8-|",
+      "F,<A,G,/F,F,3/2^D,3/2E,3/2-| * ay.w.aa.ch y uw.w ey.k ah p.ae",
+      "E,/G,3F,2-F,/z2| * n.g.eh t.dr.eh.s *",
+      "A,2F,4zE,| t.y.uw.l.eh * f.t.dh.ah.r.uw.m.r.ih.s",
+      "(3:2:2A,2G,-G,/E,2-E,/E,2F,-| iy.dx.ih * * ng.l.ay * k.m.ay hh.eh",
+      "F,3/2E,3C3/2z2| * r.l.ay n",
+      "z8|"
+    ],
+    "lyrics": "Hey Jess, I watch you wake up and get dressed. You left the room, receding like my hairline.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_2_audio.mp3",
+    "start_time": 58.12,
+    "end_time": 69.4
+  },
+  "verse_3": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z8|",
+      "z3/2=F,/^F,2F,2E,F,| ay.v.b ih.n ah.v.oy dx.ih.ng r.ih.dx.ah",
+      "G,3/2G,7/2E,C,>F,-| n.hh aw s.l.ay k.dh.ah.p l.ey.g",
+      "F,2z3C,<D,G,-| * k ah z",
+      "G,G,3E,3/2E,2G,/-| * ay.jh.ah.s.t.k.ae n.t.hh.ae n.d.ah.l s.iy.ih.ng.y.uw",
+      "G,2F,4G,E,-| * * t ah.d.ey",
+      "E,4z/E,3/2F,<E,| * y.uw.m ey.d.dh.ih s",
+      "E,3/2G,3/2F,E,2E,2-| hh.aw s.ih.n t.uw.ah.hh.ow * m",
+      "E,2z3F,3/2E,3/2| * n.aw.ay.m.ah.s.tr.ey.n.jh.er.aa n.m.ay.s",
+      "F,2G,F,/E,2-E,/E,2| tr.iy t.ae * n.ae.z * *",
+      "z8|",
+      "E,2G,2F,3/2E,3/2F,-| ay * t.er.n.t.uw.l * iy.v",
+      "F,2z4F,<E,| * ay.k.aa t.m.ay.s",
+      "G,3/2G,2F,2G,2E,/-| eh.l f.ih.n dh.ah.m.ih r.er.t.uw.s iy",
+      "E,E,3z4|"
+    ],
+    "lyrics": "I've been avoiding Rittenhouse like the plague, 'cause I just can't handle seeing you today. You made this house into a home, now I'm a stranger on my street. And as I turn to leave, I caught myself in the mirror to see.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/verse_3_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/verse_3_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/verse_3_audio.mp3",
+    "start_time": 69.4,
+    "end_time": 90.59
+  },
+  "chorus_4": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z4G,3F,-| hh ey.jh.eh.s.ay.w.aa.ch.t.y.uw",
+      "F,8|",
+      "G,2G,F,2E,zE,-| w * ey k.ah p.ae.n",
+      "E,/G,3F,3G,3/2-| * g.eh t.dr.eh s.t.y.uw.l.eh",
+      "G,2G,F,3z2| * f.t.dh.ah.r uw.m",
+      "(3:2:2A,2G,-G,/F,2E,2-E,/F,-| r.ah.s.iy dx.ah * d.l.ay k.m.ay * hh.eh",
+      "F,2E,6| * r.l.ay.n",
+      "z8|"
+    ],
+    "lyrics": "Hey Jess, I watched you wake up and get dressed. You left the room, receded like my hairline.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_4_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_4_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_4_audio.mp3",
+    "start_time": 117.4,
+    "end_time": 128.7
+  },
+  "bridge_1": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z4z3/2E,2-E,/| w.eh.n *",
+      "E,4G,2A,F,-| jh.aa n.ih.n.tr.ah.d.uw s *",
+      "F,2-F,/E,3/2E,G,3/2E,3/2-| * * t.w.ow k.ah.p.n.uw.aa g.ah s.t.iy.n",
+      "E,4z2(3:2:2G,2G,| * ay n.uw.ay.w.aa",
+      "G,2G,F,3G,2-| * z ah *",
+      "G,2E,4z2| * n.t",
+      "z2z/E,E,3/2E,B,,B,,/C,/-| ah * l * ow *",
+      "C,2B,,4z2| * n"
+    ],
+    "lyrics": "When John introduced, woke up new. St. Augustine, I knew I wasn't alone.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/bridge_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/bridge_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/bridge_1_audio.mp3",
+    "start_time": 138.6,
+    "end_time": 149.88
+  },
+  "bridge_2": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z4z3/2E,/E,2| w eh",
+      "E,3G,2G,3| n.ay w.ow.k ah",
+      "(3:2:2F,2F,-F,/F,2-F,/F,G,2-| p.hh.iy r * w.ih * th.aw *",
+      "G,3/2E,4-E,/z2| * t.y.uw.dh.eh.r *",
+      "z3/2G,2-G,/G,G,<D,E,| w.aa.z.n.ah.th.ih.ng.t.uw.d.uw.b.ah.t.p.ae * k.ah.p.ae.n.g * ow *",
+      "C,4z3C,| * hh",
+      "G,3/2G,2F,3/2E,3-| * * ow *",
+      "E,2E,4z2| * m",
+      "z8|"
+    ],
+    "lyrics": "When I woke up here without you, there was nothing to do but pack up and go home.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/bridge_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/bridge_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/bridge_2_audio.mp3",
+    "start_time": 149.88,
+    "end_time": 162.6
+  },
+  "chorus_6": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z8|",
+      "z2G,3F,3-| hh ey.jh.eh.f.ay",
+      "F,4zC,/E,/G,G,-| * w * ow k.ah.p",
+      "G,F,2E,2-E,/E,2-E,/| * ow.l d.er * k.ae *",
+      "F,4z2G,2-| r.iy.ih.ng t.uw.y.ih",
+      "G,F,4G,3| * r.z.ih n.dh.ah.b.ae",
+      "G,F,3/2E,3/2E,4-| g.z.ah.n.d.er m.ay * ay.z",
+      "E,2z6|"
+    ],
+    "lyrics": "Hey Jeff, I woke up older, carrying two years in the bags under my eyes.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_6_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_6_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_6_audio.mp3",
+    "start_time": 186.93,
+    "end_time": 198.2
+  },
+  "chorus_7": {
+    "header": "[Q:1/4=171][M:4/4][K:A]",
+    "abc_lines": [
+      "z8|",
+      "z2G,3F,3| hh.ey.jh.eh s.ay",
+      "z4z3/2A,2A,/-| w.aa ch.t.y.uw.w",
+      "A,F,3/2E,2E,2G,3/2-| * * ey.k.ah p.ae.n g.eh",
+      "G,3/2F,2-F,/E,3/2G,2F,/-| * t.dr.eh * s.t.y.uw.l * eh",
+      "F,4z/^D,3/2A,G,-| * f.t.dh.ah.r.uw.m.r.ah.s iy dx.ah",
+      "G,/F,2E,7/2C,2| * d.l ay k.m.ay",
+      "(3A,E,F,-F,2z/F,3/2(3:2:2A,2A,-| l.eh * f.t.dh.ah.r.uw.m * r.ah.s iy dx.ah",
+      "A,F,2G,2-G,/A,2F,/-| * d.l.ay k.m.ay * l eh",
+      "F,3/2F,2-F,/zE,A,>G,-| * f.t.dh.ah.r.uw * m.r.ah.s iy dx",
+      "G,E,2E,2F,3| * ah.d.l.ay k.m.ay hh.eh",
+      "E,6z2|] r.l.ay.n"
+    ],
+    "lyrics": "Hey Jess, I watched you wake up and get dressed. You left the room, receded like my left the room, receded like my left the room, receded like my hairline.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_7_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_7_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_8/dc46f6c894179908ad9d7cef7c729b8f/leadsheet_data/chorus_7_audio.mp3",
+    "start_time": 198.2,
+    "end_time": 215.154
+  }
+}

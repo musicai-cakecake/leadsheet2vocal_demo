@@ -35,11 +35,12 @@ M6: The self-developed LeadSheet2Song model, where M6 is the internal model code
 歌词：  [verse] And maybe my God has a trot in her walk, and her coach bags are knockoff, her hair is all dressed up  
 提示词:  [Musicality-very-high], female, adult, breathy, vibrato-none, general american, soft, solo, folk, english, fully sung, reverb-none, delay-none, chest, mixed, glissando-scoop, vocal-fry, airy, delicate, sweet, calm, melancholic.  
 Lead sheet:  <bos>  <sec_bos>  [verse]  <tempo_110_120>  <meter_3/4>  <key_Fmin> \n| ·z3 ·A2 ae ·A n m ey ·-\n| ·A2 * ·B * ·A * ·A b iy m ay ·G g aa d hh ae ·-\n| ·G2 * ·F2 * ·(3:2:2 ·F2 z ah tr ·F aa ·-\n| ·F2 * ·A t ih n hh er ·F2 w ·E *\n| ·D2 * ·C ao k ·B, ae ·B, n hh er k ·A, ow ch\n| ·z2 ·B,2 b ae ·(3:2:2 ·C2 g z aa r ·E n aa ·-\n| ·E3/2 * ·F2 k ao f hh er ·- ·F/ * ·z ·A, hh\n| ·A,2 eh ·A, r ih ·> ·B, z ao l dr ·C * ·< ·_G *\n| ·E2 eh s ·D2 t ah p ·z2 <eos>  
+参考音色音频：M6_1000samples/10_9ccf0f5965c7_verse_6/prompt_vocal.mp3
 
-M6模型，有lead‑sheet条件，只输出vocal：  
+M6模型，有lead‑sheet条件和参考音色，只输出vocal：  
 Vocal: M6_1000samples/10_9ccf0f5965c7_verse_6/gen_vocal.mp3   
 
-M6模型，有lead‑sheet条件，输出vocal和带伴奏的Song：  
+M6模型，有lead‑sheet条件和参考音色，输出vocal和带伴奏的Song：  
 Vocal: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gen_vocal.mp3  
 Song: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gen_mixed.mp3
 
@@ -47,26 +48,5 @@ LeVo2模型，无lead‑sheet条件：
 Vocal: LeVo2_1000samples/10_9ccf0f5965c7_verse_6/gen_vocal.mp3
 Song: LeVo2_1000samples/10_9ccf0f5965c7_verse_6/gen_song.mp3
 
-GT 真实样本：
-Vocal: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gt_vocal.mp3
-Song: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gt_mixed.mp3
-
-#### Group 2  
-歌词：  [verse] And maybe my God has a trot in her walk, and her coach bags are knockoff, her hair is all dressed up  
-提示词:  [Musicality-very-high], female, adult, breathy, vibrato-none, general american, soft, solo, folk, english, fully sung, reverb-none, delay-none, chest, mixed, glissando-scoop, vocal-fry, airy, delicate, sweet, calm, melancholic.  
-Lead sheet:  <bos>  <sec_bos>  [verse]  <tempo_110_120>  <meter_3/4>  <key_Fmin> \n| ·z3 ·A2 ae ·A n m ey ·-\n| ·A2 * ·B * ·A * ·A b iy m ay ·G g aa d hh ae ·-\n| ·G2 * ·F2 * ·(3:2:2 ·F2 z ah tr ·F aa ·-\n| ·F2 * ·A t ih n hh er ·F2 w ·E *\n| ·D2 * ·C ao k ·B, ae ·B, n hh er k ·A, ow ch\n| ·z2 ·B,2 b ae ·(3:2:2 ·C2 g z aa r ·E n aa ·-\n| ·E3/2 * ·F2 k ao f hh er ·- ·F/ * ·z ·A, hh\n| ·A,2 eh ·A, r ih ·> ·B, z ao l dr ·C * ·< ·_G *\n| ·E2 eh s ·D2 t ah p ·z2 <eos>  
-
-M6模型，有lead‑sheet条件，只输出vocal：  
-Vocal: M6_1000samples/10_9ccf0f5965c7_verse_6/gen_vocal.mp3   
-
-M6模型，有lead‑sheet条件，输出vocal和带伴奏的Song：  
-Vocal: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gen_vocal.mp3  
-Song: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gen_mixed.mp3
-
-LeVo2模型，无lead‑sheet条件：  
-Vocal: LeVo2_1000samples/10_9ccf0f5965c7_verse_6/gen_vocal.mp3
-Song: LeVo2_1000samples/10_9ccf0f5965c7_verse_6/gen_song.mp3
-
-GT 真实样本：
-Vocal: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gt_vocal.mp3
-Song: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gt_mixed.mp3
+GT 乐谱：
+Melody: M6_1000samples/10_9ccf0f5965c7_verse_6/gt_melody_cut.wav

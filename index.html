@@ -9,7 +9,7 @@
 <meta property="og:description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127925;</text></svg>">
-<link rel="stylesheet" href="assets/css/style.css?v=20260823-prompts">
+<link rel="stylesheet" href="assets/css/style.css?v=20260824-melody-only">
 <script>
   // Applied before first paint so the saved theme never flashes.
   (function () {
@@ -226,8 +226,8 @@
           <span class="lang lang-en">Control Group: With and without lead-sheet conditioning</span>
         </h3>
         <p class="muted">
-          <span class="lang lang-zh">同一时间只会播放一条音频。点击每条音轨右侧的 <strong>下载</strong> 图标可将 MP3 保存到本地。</span>
-          <span class="lang lang-en">Only one track plays at a time. Use the <strong>download</strong> icon on the right of each track to save the MP3 locally.</span>
+          <span class="lang lang-zh">每个样例在模型结果下方展示领谱渲染的真实旋律。同一时间只会播放一条音频；点击音轨右侧的 <strong>下载</strong> 图标可保存到本地。</span>
+          <span class="lang lang-en">Each sample shows its rendered ground-truth melody below the model outputs. Only one track plays at a time; use the <strong>download</strong> icon to save it locally.</span>
         </p>
       </div>
 
@@ -277,7 +277,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/demos.js?v=20260823-prompts-r2"></script>
-<script src="assets/js/app.js?v=20260823-prompts"></script>
+<script src="assets/js/demos.js?v=20260824-melody-only-r2"></script>
+<script src="assets/js/app.js?v=20260824-melody-only"></script>
 </body>
 </html>

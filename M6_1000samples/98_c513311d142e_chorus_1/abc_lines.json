@@ -1,0 +1,86 @@
+{
+  "pre-chorus_1": {
+    "header": "[Q:1/4=103][M:4/4][K:Db]",
+    "abc_lines": [
+      "D,2z4z3/2A,,/| l.ah.v w.ih",
+      "(3:2:2F,2E,G,>F,E,D,/D,/B,,>B,,-| dh.eh v.er iy.p.r.ih dx.iy.w uh.m.ah.n * * * *",
+      "B,,/A,,B,,/A,,4z3/2A,,/| * * ay m.iy.t b.ah.t.eh",
+      "B,2A,2B,A,2B,| * v.r.iy.th.ih.ng.ih z * s.ow",
+      "D2CA,F,3/2F,3/2E,| t.eh m.p.er eh.r.iy.dh.ey * l ah",
+      "F,2A,F,F,E,2F,| * v.y.uw * n.aw ae.n dh.ey",
+      "F,2(3F,E,E,D,3/2D,2-D,/| jh.ah jh.y.uw l ey dx er *",
+      "B,2A,2(3:2:4B,2A,A,2B,-| eh v.r.iy.th.ih ng.ih * * z.s.ow.ao",
+      "B,D(3:2:2C2A,-A,/F,F,/E,>E,| * r d.ah.n * * * * eh.r.iy.w iy.r",
+      "F,>F,F,A,F,E,E,F,| p.r.ih.dx.iy aw * t.s ay * d.b *",
+      "A,2F,E,(3:2:2D,2D,-D,>E,-| ah t.w.iy.r.ah.g.l.iy ih n.s ay * d",
+      "E,4z4|"
+    ],
+    "lyrics": "With every pretty woman I meet, but everything is so temporary. They love you now and they judge you later. Everything is so ordinary. We're pretty outside, but we're ugly inside.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/pre-chorus_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/pre-chorus_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/pre-chorus_1_audio.mp3",
+    "start_time": 30.96,
+    "end_time": 59.16
+  },
+  "chorus_1": {
+    "header": "[Q:1/4=103][M:4/4][K:Db]",
+    "abc_lines": [
+      "z7/2E,/E>D(3:2:2E2D| ae * n.ao * l.w",
+      "F3/2D2-D/F2D2-| iy.d.uw.ih * * z.w.iy.p.w.iy *",
+      "D2z3/2G,/(3:2:2E2DED| * p.w.iy r.g.r.ay n * *",
+      "F2D>DF3/2D2-D/-| d.ih ng w.eh.n.y.uw.s l.iy p.y.uw.s *",
+      "D2z3/2F,/E>D(3:2:2E2D| * l.iy.p.ae n.ao l.w.iy.d uw ih.z",
+      "FFD2F2D2-| w.iy.p.w.iy.p.w.iy * r g.r.ay.n.d.ih ng",
+      "D2z3/2A,/(3:2:4E2DE2D| * w.eh * * * n.y.uw.s",
+      "F>D-(3DEDFF/D2-D/| l.iy * * p y.uw.s.l iy * * *",
+      "E2z6| p"
+    ],
+    "lyrics": "And all we do is weep, weep. We're grinding when you sleep, you sleep. And all we do is weep, weep. We're grinding when you sleep, you sleep.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/chorus_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/chorus_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/chorus_1_audio.mp3",
+    "start_time": 70.94,
+    "end_time": 92.12
+  },
+  "pre-chorus_4": {
+    "header": "[Q:1/4=103][M:4/4][K:Db]",
+    "abc_lines": [
+      "A,,>B,,A,,2z7/2A,,/| * * n.ay.n.iy.d b.ah.t.eh",
+      "C,/A,/B,A,<A,B,A,2B,| * * * v.r.iy.th.ih ng.ih.z * * s.ow.t.eh",
+      "D2C>A,F,>F,E,>E,| * m.p.er eh * r.iy.y.uw.l * ah",
+      "F,2(3:2:2A,2F,F,3/2E,2F,/| * v.m.iy n aw ae.n y.uw.jh",
+      "F,2(3F,E,E,D,D,3| ah jh.m.iy.l * * * ey",
+      "B,2A,2B,A,(3:2:2A,2B,-| dx.er.eh * v.r.iy.th.ih ng.ih * z.s.ow.ao",
+      "B,DCA,F,>F,E,E,| * r d.ah n eh r.iy.ay * *",
+      "(3:2:2F,2F,F,A,F,E,E,F,| m.p.r.ih.dx.iy aw * t s.ay * d.b.ah t.ay.m",
+      "F,2F,>E,D,3/2D,2D,/| r.aa dx.ih * ng.ih.n s.ay d.aa",
+      "E,4z4|"
+    ],
+    "lyrics": "But everything is so temporary. You love me now and you judge me later. Everything is so ordinary. I'm pretty outside, but I'm rotting inside. Ah.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/pre-chorus_4_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/pre-chorus_4_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/pre-chorus_4_audio.mp3",
+    "start_time": 118.02,
+    "end_time": 141.52
+  },
+  "chorus_2": {
+    "header": "[Q:1/4=103][M:4/4][K:Db]",
+    "abc_lines": [
+      "z7/2E2D/E>D| ae n.ao.l.w.iy.d uw ih",
+      "F3/2D2-D/F2D2-| * * * z.w.iy *",
+      "D2z3/2G,/(3:2:2E2DED| * p.w.iy.p w * iy.r.g.r.ay n.d.ih",
+      "F3/2D2D/F3/2D2-D/-| * ng w.eh.n.y.uw.s l.iy p.y.uw *",
+      "D2z3/2F,/E>D(3:2:2E2D| * s.l.iy.p.ae.n ao l.w.iy.d uw ih",
+      "F2D2F2D2-| z.w.iy.p.w.iy.p.w.iy r g.r.ay.n.d.ih ng",
+      "D2z3/2A,/E>DED| * w * * eh n.y.uw",
+      "F>DD/ED/FF/D2-D/-| s.l.iy * p.y.uw * s.l iy * p *",
+      "D2z6|"
+    ],
+    "lyrics": "And all we do is weep, weep. We're grinding when you sleep, you sleep. And all we do is weep, weep. We're grinding when you sleep, you sleep.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/chorus_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/chorus_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_12/c513311d142e3ee4c17351770c61e6d8/leadsheet_data/chorus_2_audio.mp3",
+    "start_time": 153.3,
+    "end_time": 174.48
+  }
+}
