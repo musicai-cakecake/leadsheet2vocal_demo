@@ -186,10 +186,12 @@
     <section id="control" class="section">
       <h2 class="h2"><span class="num">03</span><span class="lang lang-zh">对照组介绍</span><span class="lang lang-en">Control Group</span></h2>
       <div class="prose">
-        <p class="lang lang-zh">对照组使用完全一致的输入歌词与提示词条件，对照组内所有模型均配置严格匹配的参数量与超参数。</p>
-        <p class="lang lang-zh">所有测试数据均来自测试集。训练集和测试集按音乐整曲分割，保证没有片段泄漏。</p>
-        <p class="lang lang-en">The control group shared identical input lyrics and prompt conditions, where all models were assigned strictly the same parameter sizes and hyperparameters.</p>
-        <p class="lang lang-en">All evaluation data are drawn from the test set. The training and test sets are partitioned at the full-song level to ensure that no segments leak between them.</p>
+        <p class="lang lang-zh">对照组复用完全一致的歌词输入与提示词，组内各模型参数量、超参数配置严格匹配。</p>
+        <p class="lang lang-zh">测试样本全部来源于测试集，训练‑测试集以完整乐曲划分，杜绝片段数据泄露问题。</p>
+        <p class="lang lang-zh">实验样例均为随机选取，没有刻意挑选高质量样本，客观体现模型平均表现。</p>
+        <p class="lang lang-en">The control groups reuse exactly the same lyric inputs and prompts, with strictly matched parameter counts and hyperparameter configurations across all models within each group.</p>
+        <p class="lang lang-en">All evaluation samples are drawn from the test set. The training and test sets are partitioned at the full-song level to prevent segment-level data leakage.</p>
+        <p class="lang lang-en">All experimental examples are selected at random, without deliberately choosing high-quality samples, to objectively reflect average model performance.</p>
       </div>
     </section>
 
@@ -202,8 +204,8 @@
             <span class="model-name">M6</span>
             <span class="tag tag-ours">Ours</span>
           </div>
-          <p class="lang lang-zh">自研的 LeadSheet2Song 模型，M6 为内部模型代号。训练集是小数据，音频总时长只有 1364h，仅用于技术验证。</p>
-          <p class="lang lang-en">Our self-developed LeadSheet2Song model, with M6 as its internal code name. It is trained on a small-scale dataset containing only 1,364 hours of audio and is intended solely for technical validation.</p>
+          <p class="lang lang-zh">自研的 LeadSheet2Song 模型，M6 为内部模型代号。本实验采用小规模训练数据集，音频总时长仅为 1364 小时；M6 模型仅完成 3 轮后训练epoch，仅作早期技术验证使用。</p>
+          <p class="lang lang-en">Our self-developed LeadSheet2Song model, with M6 as its internal code name. This experiment uses a small-scale training dataset containing only 1,364 hours of audio; M6 underwent only three post-training epochs and is intended solely for early-stage technical validation.</p>
         </article>
         <article class="card model-card">
           <div class="model-head">
@@ -245,8 +247,8 @@
           <span class="lang lang-en">Control Group: Same lead sheet, different prompts</span>
         </h3>
         <p class="muted">
-          <span class="lang lang-zh">保持歌词与领谱一致，对比两组不同 Prompts 的生成结果。Prompts 1 使用原始提示词与参考音频；Prompts 2 来自其他歌曲，且不使用参考音频。</span>
-          <span class="lang lang-en">The lyrics and lead sheet remain fixed while comparing outputs from two different prompts. Prompts 1 uses the original prompts and reference audio; Prompts 2 comes from another song and uses no reference audio.</span>
+          <span class="lang lang-zh">保持歌词与领谱一致，对比两组不同 Prompts 的生成结果。Prompts 1 使用原始提示词与参考音频；Prompts 2 来自其他歌曲，且不使用参考音频。每个样例末尾同时展示真实 Vocal 与真实 Song。</span>
+          <span class="lang lang-en">The lyrics and lead sheet remain fixed while comparing outputs from two different prompts. Prompts 1 uses the original prompts and reference audio; Prompts 2 comes from another song and uses no reference audio. Ground-truth Vocal and Song are also shown at the end of each sample.</span>
         </p>
       </div>
 
@@ -277,7 +279,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/demos.js?v=20260825-recording-gt"></script>
+<script src="assets/js/demos.js?v=20260825-all-gt"></script>
 <script src="assets/js/app.js?v=20260825-recording-gt"></script>
 </body>
 </html>
