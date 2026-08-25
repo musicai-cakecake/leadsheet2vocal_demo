@@ -1,0 +1,77 @@
+{
+  "sample_id": "29_378274983647_chorus_2",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/LeVo2_1000samples/29_378274983647_chorus_2/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/LeVo2_1000samples/29_378274983647_chorus_2/gt_vocal.mp3"
+  },
+  "metadata": {},
+  "audio": {
+    "gen_original_duration_sec": 28.24,
+    "gt_original_duration_sec": 19.318625,
+    "gen_active_duration_sec": 28.22,
+    "gt_active_duration_sec": 16.74,
+    "gen_trim_start_sec": 0.02,
+    "gt_trim_start_sec": 1.47,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.7667948221184187,
+    "content_dtw_cumulative_cost": 2228.9961414172426,
+    "path_frames": 2831,
+    "constraint_fallback": false,
+    "gen_content_frames": 2823,
+    "gt_content_frames": 1675
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 272.0446934418624,
+    "content_pitch_cent_mean": 313.0585057459267,
+    "content_pitch_cent_median": 215.0566189358394,
+    "content_pitch_cent_rmse": 424.0071061562141,
+    "content_pitch_cent_p90": 757.7445428200034,
+    "content_macro_pitch_cent_distance": 264.94141655713105,
+    "matched_voiced_path_ratio": 0.5701165665842458,
+    "voicing_jaccard_distance": 0.19138276553106212,
+    "matched_voiced_frames": 1614,
+    "path_frames": 2831,
+    "direct_f0_dtw_cost": 0.7398448028415647,
+    "direct_f0_pitch_cent_distance": 68.26007970293072,
+    "direct_f0_matched_voiced_ratio": 0.6888714733542319,
+    "direct_f0_path_frames": 3828,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.012643845108508177,
+    "path_deviation_ms": 284.23363803926384,
+    "path_diagonal_rmse": 0.036962393417841716,
+    "tempo_ratio": 1.6857825567502984,
+    "tempo_log_distance": 0.5222298813633385,
+    "affine_intercept_sec": 0.09129771017902186,
+    "affine_slope_gt_per_gen": 0.6219593521287006
+  },
+  "events": {
+    "gen_note_events": 69,
+    "gt_note_events": 38,
+    "note_edit_distance": 0.5857080429023693,
+    "note_gap_ratio": 0.2897196261682243,
+    "note_pitch_semitone_distance": 1.8262549063978337,
+    "event_duration_log_distance": 0.8084071188894578,
+    "event_ioi_normalized_distance": 0.027916522178198865,
+    "event_onset_normalized_distance": 0.056155300207008894,
+    "matched_note_events": 38,
+    "global_rhythm_distance": 0.2849822985033055,
+    "global_rhythm_onset_component": 0.04565176381814753,
+    "global_rhythm_duration_component": 0.23933053468515794,
+    "global_rhythm_event_duration_component": 0.05097591967342779,
+    "global_rhythm_phrase_duration_component": 0.18835461501173015,
+    "global_rhythm_onset_mae": 0.09130352763629505,
+    "global_rhythm_duration_relative_mae": 0.20390367869371115,
+    "global_rhythm_phrase_duration_log_normalized": 0.7534184600469206,
+    "global_rhythm_alignment_gap_ratio": 0.2897196261682243,
+    "global_rhythm_matched_events": 38,
+    "global_rhythm_insertions": 0,
+    "global_rhythm_deletions": 31
+  },
+  "runtime_sec": 0.28594600000360515
+}

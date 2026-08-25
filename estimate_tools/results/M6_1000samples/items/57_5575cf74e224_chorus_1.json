@@ -1,0 +1,84 @@
+{
+  "sample_id": "57_5575cf74e224_chorus_1",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/57_5575cf74e224_chorus_1/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/57_5575cf74e224_chorus_1/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "5575cf74e224f6df1d31dbe4b0eb8ecc/chorus_1",
+    "sample_id": "5575cf74e224f6df1d31dbe4b0eb8ecc",
+    "section_key": "chorus_1",
+    "struct_tag": "[chorus]",
+    "gt_duration_sec": 21.66,
+    "description": "[chorus] You know I'm good for waiting, but waiting's wasted time.Oh, and I I don't take it lightly the trouble that I've gone through to get you to know who I am"
+  },
+  "audio": {
+    "gen_original_duration_sec": 22.44,
+    "gt_original_duration_sec": 21.6696875,
+    "gen_active_duration_sec": 22.42,
+    "gt_active_duration_sec": 21.6196875,
+    "gen_trim_start_sec": 0.02,
+    "gt_trim_start_sec": 0.05,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.622523455587615,
+    "content_dtw_cumulative_cost": 1539.8171378114296,
+    "path_frames": 2436,
+    "constraint_fallback": false,
+    "gen_content_frames": 2243,
+    "gt_content_frames": 2162
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 333.1872397259635,
+    "content_pitch_cent_mean": 389.4547485124194,
+    "content_pitch_cent_median": 234.18318296458153,
+    "content_pitch_cent_rmse": 567.9672086047295,
+    "content_pitch_cent_p90": 1158.9332695543862,
+    "content_macro_pitch_cent_distance": 326.671484927738,
+    "matched_voiced_path_ratio": 0.6625615763546798,
+    "voicing_jaccard_distance": 0.13319011815252416,
+    "matched_voiced_frames": 1614,
+    "path_frames": 2436,
+    "direct_f0_dtw_cost": 0.9615961127780076,
+    "direct_f0_pitch_cent_distance": 58.988871750209675,
+    "direct_f0_matched_voiced_ratio": 0.7103064066852368,
+    "direct_f0_path_frames": 3231,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.013032438444134183,
+    "path_deviation_ms": 286.90913234761405,
+    "path_diagonal_rmse": 0.0170829975200551,
+    "tempo_ratio": 1.037482646922721,
+    "tempo_log_distance": 0.03679724712521925,
+    "affine_intercept_sec": 0.11606563478061818,
+    "affine_slope_gt_per_gen": 0.9735371953834222
+  },
+  "events": {
+    "gen_note_events": 49,
+    "gt_note_events": 54,
+    "note_edit_distance": 0.38729166885312444,
+    "note_gap_ratio": 0.04854368932038835,
+    "note_pitch_semitone_distance": 3.122194696641059,
+    "event_duration_log_distance": 0.6302484923230082,
+    "event_ioi_normalized_distance": 0.01723354190009767,
+    "event_onset_normalized_distance": 0.03627582869586282,
+    "matched_note_events": 49,
+    "global_rhythm_distance": 0.08489325586662753,
+    "global_rhythm_onset_component": 0.011233147697307972,
+    "global_rhythm_duration_component": 0.07366010816931956,
+    "global_rhythm_event_duration_component": 0.060549956110013604,
+    "global_rhythm_phrase_duration_component": 0.01311015205930596,
+    "global_rhythm_onset_mae": 0.022466295394615945,
+    "global_rhythm_duration_relative_mae": 0.24219982444005442,
+    "global_rhythm_phrase_duration_log_normalized": 0.05244060823722384,
+    "global_rhythm_alignment_gap_ratio": 0.04854368932038835,
+    "global_rhythm_matched_events": 49,
+    "global_rhythm_insertions": 5,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.2625221250054892
+}

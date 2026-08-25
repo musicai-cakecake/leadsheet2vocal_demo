@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760" role="img" aria-labelledby="chart-title chart-desc" xml:lang="zh-CN">
+  <title id="chart-title">音高分布：平均音高距离（cent）× 平均伪音符编辑距离</title>
+  <desc id="chart-desc">M6 与 LeVo2 在 21 个相同样例上的配对散点图。蓝色圆点表示 M6，红色方点表示 LeVo2，细线连接相同样例。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; }
+    .title { fill: #0F172A; font-size: 25px; font-weight: 700; }
+    .subtitle { fill: #475569; font-size: 14px; }
+    .axis-label { fill: #0F172A; font-size: 16px; font-weight: 600; }
+    .tick { fill: #475569; font-size: 13px; }
+    .grid { stroke: #E2E8F0; stroke-width: 1; }
+    .axis { stroke: #475569; stroke-width: 1.5; }
+    .pair { stroke: #94A3B8; stroke-width: 1.3; opacity: 0.65; }
+    .sample-label { fill: #0F172A; font-size: 12px; font-weight: 650; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+    .legend { fill: #475569; font-size: 14px; }
+    .mean-label { fill: #0F172A; font-size: 12px; font-weight: 700; }
+    .caption { fill: #475569; font-size: 12px; }
+  </style>
+  <rect width="1000" height="760" fill="#FFFFFF"/>
+  <defs><clipPath id="plot-clip"><rect x="120" y="130" width="825" height="505"/></clipPath></defs>
+  <text class="title" x="500.0" y="38" text-anchor="middle">音高分布：平均音高距离（cent）× 平均伪音符编辑距离</text>
+  <text class="subtitle" x="500.0" y="66" text-anchor="middle">21 个严格匹配样例 · 所有距离越低越好 · 左下角更优</text>
+  <circle cx="332" cy="96" r="6" fill="#2563EB"/>
+  <text class="legend" x="346" y="101">M6 · 圆点</text>
+  <rect x="462" y="90" width="12" height="12" rx="1" fill="#DC2626"/>
+  <text class="legend" x="482" y="101">LeVo2 · 方点</text>
+  <line x1="630" y1="96" x2="660" y2="96" stroke="#94A3B8" stroke-width="1.5"/>
+  <text class="legend" x="670" y="101">相同样例配对线</text>
+  <line class="grid" x1="120.00" y1="130" x2="120.00" y2="635"/>
+  <text class="tick" x="120.00" y="663" text-anchor="middle">0</text>
+  <line class="grid" x1="314.12" y1="130" x2="314.12" y2="635"/>
+  <text class="tick" x="314.12" y="663" text-anchor="middle">200</text>
+  <line class="grid" x1="508.24" y1="130" x2="508.24" y2="635"/>
+  <text class="tick" x="508.24" y="663" text-anchor="middle">400</text>
+  <line class="grid" x1="702.35" y1="130" x2="702.35" y2="635"/>
+  <text class="tick" x="702.35" y="663" text-anchor="middle">600</text>
+  <line class="grid" x1="896.47" y1="130" x2="896.47" y2="635"/>
+  <text class="tick" x="896.47" y="663" text-anchor="middle">800</text>
+  <line class="grid" x1="120" y1="635.00" x2="945" y2="635.00"/>
+  <text class="tick" x="106" y="639.00" text-anchor="end">0.200</text>
+  <line class="grid" x1="120" y1="550.83" x2="945" y2="550.83"/>
+  <text class="tick" x="106" y="554.83" text-anchor="end">0.300</text>
+  <line class="grid" x1="120" y1="466.67" x2="945" y2="466.67"/>
+  <text class="tick" x="106" y="470.67" text-anchor="end">0.400</text>
+  <line class="grid" x1="120" y1="382.50" x2="945" y2="382.50"/>
+  <text class="tick" x="106" y="386.50" text-anchor="end">0.500</text>
+  <line class="grid" x1="120" y1="298.33" x2="945" y2="298.33"/>
+  <text class="tick" x="106" y="302.33" text-anchor="end">0.600</text>
+  <line class="grid" x1="120" y1="214.17" x2="945" y2="214.17"/>
+  <text class="tick" x="106" y="218.17" text-anchor="end">0.700</text>
+  <line class="grid" x1="120" y1="130.00" x2="945" y2="130.00"/>
+  <text class="tick" x="106" y="134.00" text-anchor="end">0.800</text>
+  <line class="axis" x1="120" y1="635" x2="945" y2="635"/>
+  <line class="axis" x1="120" y1="130" x2="120" y2="635"/>
+  <text class="axis-label" x="532.5" y="705" text-anchor="middle">平均音高距离（cent）</text>
+  <text class="axis-label" x="30" y="382.5" text-anchor="middle" transform="rotate(-90 30 382.5)">平均伪音符编辑距离</text>
+  <g clip-path="url(#plot-clip)">
+    <line class="pair" x1="857.55" y1="379.47" x2="719.39" y2="386.80"/>
+    <circle cx="857.55" cy="379.47" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>05_996b8a9e3232_verse_3 · M6 · 平均音高距离（cent）: 760 · 平均伪音符编辑距离: 0.504</title></circle>
+    <rect x="713.89" y="381.30" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>05_996b8a9e3232_verse_3 · LeVo2 · 平均音高距离（cent）: 618 · 平均伪音符编辑距离: 0.495</title></rect>
+    <line class="pair" x1="232.05" y1="374.04" x2="499.15" y2="263.61"/>
+    <circle cx="232.05" cy="374.04" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>06_dc8f4c4095e4_chorus_1 · M6 · 平均音高距离（cent）: 115 · 平均伪音符编辑距离: 0.510</title></circle>
+    <rect x="493.65" y="258.11" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>06_dc8f4c4095e4_chorus_1 · LeVo2 · 平均音高距离（cent）: 391 · 平均伪音符编辑距离: 0.641</title></rect>
+    <line class="pair" x1="352.43" y1="524.18" x2="572.07" y2="451.59"/>
+    <circle cx="352.43" cy="524.18" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>09_2011788cb650_chorus_4 · M6 · 平均音高距离（cent）: 239 · 平均伪音符编辑距离: 0.332</title></circle>
+    <rect x="566.57" y="446.09" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>09_2011788cb650_chorus_4 · LeVo2 · 平均音高距离（cent）: 466 · 平均伪音符编辑距离: 0.418</title></rect>
+    <line class="pair" x1="484.33" y1="461.13" x2="530.08" y2="476.80"/>
+    <circle cx="484.33" cy="461.13" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>11_b51fba878c91_verse_1 · M6 · 平均音高距离（cent）: 375 · 平均伪音符编辑距离: 0.407</title></circle>
+    <rect x="524.58" y="471.30" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>11_b51fba878c91_verse_1 · LeVo2 · 平均音高距离（cent）: 423 · 平均伪音符编辑距离: 0.388</title></rect>
+    <line class="pair" x1="332.84" y1="469.44" x2="365.70" y2="430.22"/>
+    <circle cx="332.84" cy="469.44" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>25_9450b6fde3cb_verse_6 · M6 · 平均音高距离（cent）: 219 · 平均伪音符编辑距离: 0.397</title></circle>
+    <rect x="360.20" y="424.72" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>25_9450b6fde3cb_verse_6 · LeVo2 · 平均音高距离（cent）: 253 · 平均伪音符编辑距离: 0.443</title></rect>
+    <line class="pair" x1="169.82" y1="624.83" x2="384.04" y2="310.36"/>
+    <circle cx="169.82" cy="624.83" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>29_378274983647_chorus_2 · M6 · 平均音高距离（cent）: 51 · 平均伪音符编辑距离: 0.212</title></circle>
+    <rect x="378.54" y="304.86" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>29_378274983647_chorus_2 · LeVo2 · 平均音高距离（cent）: 272 · 平均伪音符编辑距离: 0.586</title></rect>
+    <line class="pair" x1="361.04" y1="515.32" x2="422.74" y2="340.89"/>
+    <circle cx="361.04" cy="515.32" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>40_0f06d5001bff_verse_1 · M6 · 平均音高距离（cent）: 248 · 平均伪音符编辑距离: 0.342</title></circle>
+    <rect x="417.24" y="335.39" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>40_0f06d5001bff_verse_1 · LeVo2 · 平均音高距离（cent）: 312 · 平均伪音符编辑距离: 0.549</title></rect>
+    <line class="pair" x1="506.72" y1="419.58" x2="507.32" y2="429.30"/>
+    <circle cx="506.72" cy="419.58" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>41_614b6524d9c1_chorus_2 · M6 · 平均音高距离（cent）: 398 · 平均伪音符编辑距离: 0.456</title></circle>
+    <rect x="501.82" y="423.80" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>41_614b6524d9c1_chorus_2 · LeVo2 · 平均音高距离（cent）: 399 · 平均伪音符编辑距离: 0.444</title></rect>
+    <line class="pair" x1="338.92" y1="430.99" x2="606.64" y2="357.97"/>
+    <circle cx="338.92" cy="430.99" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>53_9b09daed5c20_chorus_2 · M6 · 平均音高距离（cent）: 226 · 平均伪音符编辑距离: 0.442</title></circle>
+    <rect x="601.14" y="352.47" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>53_9b09daed5c20_chorus_2 · LeVo2 · 平均音高距离（cent）: 501 · 平均伪音符编辑距离: 0.529</title></rect>
+    <line class="pair" x1="381.49" y1="529.24" x2="500.54" y2="451.43"/>
+    <circle cx="381.49" cy="529.24" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>54_896d60c13cae_chorus_1 · M6 · 平均音高距离（cent）: 269 · 平均伪音符编辑距离: 0.326</title></circle>
+    <rect x="495.04" y="445.93" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>54_896d60c13cae_chorus_1 · LeVo2 · 平均音高距离（cent）: 392 · 平均伪音符编辑距离: 0.418</title></rect>
+    <line class="pair" x1="200.79" y1="576.85" x2="487.47" y2="419.60"/>
+    <circle cx="200.79" cy="576.85" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>56_631a55cf8bd7_verse_1 · M6 · 平均音高距离（cent）: 83 · 平均伪音符编辑距离: 0.269</title></circle>
+    <rect x="481.97" y="414.10" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>56_631a55cf8bd7_verse_1 · LeVo2 · 平均音高距离（cent）: 379 · 平均伪音符编辑距离: 0.456</title></rect>
+    <line class="pair" x1="443.39" y1="477.36" x2="649.13" y2="419.00"/>
+    <circle cx="443.39" cy="477.36" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>57_5575cf74e224_chorus_1 · M6 · 平均音高距离（cent）: 333 · 平均伪音符编辑距离: 0.387</title></circle>
+    <rect x="643.63" y="413.50" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>57_5575cf74e224_chorus_1 · LeVo2 · 平均音高距离（cent）: 545 · 平均伪音符编辑距离: 0.457</title></rect>
+    <line class="pair" x1="290.72" y1="478.95" x2="881.09" y2="348.30"/>
+    <circle cx="290.72" cy="478.95" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>60_1f3cb0da46e2_chorus_1 · M6 · 平均音高距离（cent）: 176 · 平均伪音符编辑距离: 0.385</title></circle>
+    <rect x="875.59" y="342.80" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>60_1f3cb0da46e2_chorus_1 · LeVo2 · 平均音高距离（cent）: 784 · 平均伪音符编辑距离: 0.541</title></rect>
+    <line class="pair" x1="432.27" y1="528.61" x2="779.14" y2="311.43"/>
+    <circle cx="432.27" cy="528.61" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>80_b5192639b9d5_verse_5 · M6 · 平均音高距离（cent）: 322 · 平均伪音符编辑距离: 0.326</title></circle>
+    <rect x="773.64" y="305.93" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>80_b5192639b9d5_verse_5 · LeVo2 · 平均音高距离（cent）: 679 · 平均伪音符编辑距离: 0.584</title></rect>
+    <line class="pair" x1="374.83" y1="512.94" x2="494.21" y2="156.07"/>
+    <circle cx="374.83" cy="512.94" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>82_9fc7f7c45b11_chorus_5 · M6 · 平均音高距离（cent）: 263 · 平均伪音符编辑距离: 0.345</title></circle>
+    <rect x="488.71" y="150.57" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>82_9fc7f7c45b11_chorus_5 · LeVo2 · 平均音高距离（cent）: 386 · 平均伪音符编辑距离: 0.769</title></rect>
+    <line class="pair" x1="218.89" y1="602.66" x2="857.58" y2="194.42"/>
+    <circle cx="218.89" cy="602.66" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>90_0fb9afd8227c_verse_5 · M6 · 平均音高距离（cent）: 102 · 平均伪音符编辑距离: 0.238</title></circle>
+    <rect x="852.08" y="188.92" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>90_0fb9afd8227c_verse_5 · LeVo2 · 平均音高距离（cent）: 760 · 平均伪音符编辑距离: 0.723</title></rect>
+    <line class="pair" x1="310.59" y1="551.58" x2="585.04" y2="296.42"/>
+    <circle cx="310.59" cy="551.58" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>96_6f3a48e796cc_chorus_2 · M6 · 平均音高距离（cent）: 196 · 平均伪音符编辑距离: 0.299</title></circle>
+    <rect x="579.54" y="290.92" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>96_6f3a48e796cc_chorus_2 · LeVo2 · 平均音高距离（cent）: 479 · 平均伪音符编辑距离: 0.602</title></rect>
+    <line class="pair" x1="322.21" y1="427.51" x2="756.33" y2="422.67"/>
+    <circle cx="322.21" cy="427.51" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>96_c36c0b6d0172_chorus_3 · M6 · 平均音高距离（cent）: 208 · 平均伪音符编辑距离: 0.447</title></circle>
+    <rect x="750.83" y="417.17" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>96_c36c0b6d0172_chorus_3 · LeVo2 · 平均音高距离（cent）: 656 · 平均伪音符编辑距离: 0.452</title></rect>
+    <line class="pair" x1="408.10" y1="486.02" x2="611.25" y2="355.58"/>
+    <circle cx="408.10" cy="486.02" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>100_3b8c3834c86b_chorus_2 · M6 · 平均音高距离（cent）: 297 · 平均伪音符编辑距离: 0.377</title></circle>
+    <rect x="605.75" y="350.08" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>100_3b8c3834c86b_chorus_2 · LeVo2 · 平均音高距离（cent）: 506 · 平均伪音符编辑距离: 0.532</title></rect>
+    <line class="pair" x1="489.86" y1="491.51" x2="701.49" y2="410.62"/>
+    <circle cx="489.86" cy="491.51" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>105_15361b90cec5_bridge_1 · M6 · 平均音高距离（cent）: 381 · 平均伪音符编辑距离: 0.370</title></circle>
+    <rect x="695.99" y="405.12" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>105_15361b90cec5_bridge_1 · LeVo2 · 平均音高距离（cent）: 599 · 平均伪音符编辑距离: 0.467</title></rect>
+    <line class="pair" x1="488.49" y1="473.21" x2="429.07" y2="302.47"/>
+    <circle cx="488.49" cy="473.21" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>123_b7d086c26a54_verse_4 · M6 · 平均音高距离（cent）: 380 · 平均伪音符编辑距离: 0.392</title></circle>
+    <rect x="423.57" y="296.97" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>123_b7d086c26a54_verse_4 · LeVo2 · 平均音高距离（cent）: 318 · 平均伪音符编辑距离: 0.595</title></rect>
+  </g>
+  <text class="sample-label" x="795.47" y="376.13" text-anchor="start">05</text>
+  <text class="sample-label" x="269.93" y="460.60" text-anchor="end">29</text>
+  <text class="sample-label" x="351.13" y="491.22" text-anchor="start">56</text>
+  <text class="sample-label" x="592.91" y="406.62" text-anchor="start">60</text>
+  <text class="sample-label" x="441.52" y="327.51" text-anchor="start">82</text>
+  <text class="sample-label" x="531.23" y="391.54" text-anchor="end">90</text>
+  <text class="sample-label" x="465.78" y="380.84" text-anchor="start">123</text>
+  <circle cx="380.82" cy="492.16" r="10" fill="#2563EB" stroke="#0F172A" stroke-width="2.5"><title>M6 组均值 · 平均音高距离（cent）: 269 · 平均伪音符编辑距离: 0.370</title></circle>
+  <text class="mean-label" x="394.82" y="480.16">M6 均值</text>
+  <rect x="578.59" y="349.84" width="18" height="18" rx="1" fill="#DC2626" stroke="#0F172A" stroke-width="2.5"><title>LeVo2 组均值 · 平均音高距离（cent）: 482 · 平均伪音符编辑距离: 0.528</title></rect>
+  <text class="mean-label" x="601.59" y="346.84">LeVo2 均值</text>
+  <text class="caption" x="120" y="740">细线连接同一样例，数字为样例编号；大描边标记为模型组均值。</text>
+</svg>

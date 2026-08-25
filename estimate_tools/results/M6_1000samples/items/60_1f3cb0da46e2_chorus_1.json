@@ -1,0 +1,84 @@
+{
+  "sample_id": "60_1f3cb0da46e2_chorus_1",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/60_1f3cb0da46e2_chorus_1/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/60_1f3cb0da46e2_chorus_1/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "1f3cb0da46e2493d909b28fdb14939b7/chorus_1",
+    "sample_id": "1f3cb0da46e2493d909b28fdb14939b7",
+    "section_key": "chorus_1",
+    "struct_tag": "[chorus]",
+    "gt_duration_sec": 27.42,
+    "description": "[chorus] Look into darkness.Where he leads, wait and bleed.Hear his voice.You are close to die, eye to eye.He lives.The embodiment of death"
+  },
+  "audio": {
+    "gen_original_duration_sec": 26.24,
+    "gt_original_duration_sec": 27.44275,
+    "gen_active_duration_sec": 24.84,
+    "gt_active_duration_sec": 26.94,
+    "gen_trim_start_sec": 1.4,
+    "gt_trim_start_sec": 0.02,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.7071883991770249,
+    "content_dtw_cumulative_cost": 1972.8759237244772,
+    "path_frames": 2765,
+    "constraint_fallback": false,
+    "gen_content_frames": 2485,
+    "gt_content_frames": 2695
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 175.89565773809986,
+    "content_pitch_cent_mean": 259.9483648018008,
+    "content_pitch_cent_median": 67.23121001259332,
+    "content_pitch_cent_rmse": 467.04542610647377,
+    "content_pitch_cent_p90": 695.5603006831582,
+    "content_macro_pitch_cent_distance": 172.16732985502355,
+    "matched_voiced_path_ratio": 0.810126582278481,
+    "voicing_jaccard_distance": 0.15599095704596835,
+    "matched_voiced_frames": 2240,
+    "path_frames": 2765,
+    "direct_f0_dtw_cost": 1.024185590774314,
+    "direct_f0_pitch_cent_distance": 44.488279421978696,
+    "direct_f0_matched_voiced_ratio": 0.8658734451054624,
+    "direct_f0_path_frames": 3698,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.006340277056399366,
+    "path_deviation_ms": 164.1497729901796,
+    "path_diagonal_rmse": 0.018410771754826763,
+    "tempo_ratio": 0.9220489977728284,
+    "tempo_log_distance": 0.08115691391693998,
+    "affine_intercept_sec": 0.7490874930797964,
+    "affine_slope_gt_per_gen": 1.0575145457087254
+  },
+  "events": {
+    "gen_note_events": 45,
+    "gt_note_events": 54,
+    "note_edit_distance": 0.38541102852503456,
+    "note_gap_ratio": 0.09090909090909091,
+    "note_pitch_semitone_distance": 2.0297262997734657,
+    "event_duration_log_distance": 0.5892807001111499,
+    "event_ioi_normalized_distance": 0.009859456056318659,
+    "event_onset_normalized_distance": 0.029370291070472898,
+    "matched_note_events": 45,
+    "global_rhythm_distance": 0.11339397288421305,
+    "global_rhythm_onset_component": 0.028829497649096758,
+    "global_rhythm_duration_component": 0.08456447523511629,
+    "global_rhythm_event_duration_component": 0.055293305924660835,
+    "global_rhythm_phrase_duration_component": 0.029271169310455453,
+    "global_rhythm_onset_mae": 0.057658995298193516,
+    "global_rhythm_duration_relative_mae": 0.22117322369864334,
+    "global_rhythm_phrase_duration_log_normalized": 0.11708467724182181,
+    "global_rhythm_alignment_gap_ratio": 0.09090909090909091,
+    "global_rhythm_matched_events": 45,
+    "global_rhythm_insertions": 9,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.35206470800039824
+}

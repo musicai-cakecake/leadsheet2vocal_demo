@@ -1,0 +1,84 @@
+{
+  "sample_id": "09_2011788cb650_chorus_4",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/09_2011788cb650_chorus_4/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/09_2011788cb650_chorus_4/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "2011788cb65009960569c9ffcd45beec/chorus_4",
+    "sample_id": "2011788cb65009960569c9ffcd45beec",
+    "section_key": "chorus_4",
+    "struct_tag": "[chorus]",
+    "gt_duration_sec": 37.16,
+    "description": "[chorus] I still got a lot of miles to go.It's a winding uphill road, but I'll get there the only way I know.I use what I got, take what I get, give till I ain't got nothing left, then I give it some more.Keep on climbing up that mountain, keep truckin' along, work up a sweat, past every no after no after no till I get a yes.I don't worry about what I'm not"
+  },
+  "audio": {
+    "gen_original_duration_sec": 34.32,
+    "gt_original_duration_sec": 37.186375,
+    "gen_active_duration_sec": 33.24,
+    "gt_active_duration_sec": 37.166375,
+    "gen_trim_start_sec": 0.0,
+    "gt_trim_start_sec": 0.02,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.6971221691270928,
+    "content_dtw_cumulative_cost": 2777.401635992972,
+    "path_frames": 3926,
+    "constraint_fallback": false,
+    "gen_content_frames": 3325,
+    "gt_content_frames": 3717
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 239.46853578832255,
+    "content_pitch_cent_mean": 306.18873018564227,
+    "content_pitch_cent_median": 196.28988337929917,
+    "content_pitch_cent_rmse": 464.6034055304982,
+    "content_pitch_cent_p90": 705.6654291013316,
+    "content_macro_pitch_cent_distance": 240.07204130162359,
+    "matched_voiced_path_ratio": 0.7738155883851248,
+    "voicing_jaccard_distance": 0.1388888888888889,
+    "matched_voiced_frames": 3038,
+    "path_frames": 3926,
+    "direct_f0_dtw_cost": 0.8836893624449682,
+    "direct_f0_pitch_cent_distance": 50.054455274582715,
+    "direct_f0_matched_voiced_ratio": 0.811873840445269,
+    "direct_f0_path_frames": 5390,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.01073638845934191,
+    "path_deviation_ms": 377.92087376883524,
+    "path_diagonal_rmse": 0.018966258783553784,
+    "tempo_ratio": 0.8945102260495156,
+    "tempo_log_distance": 0.11147894395839036,
+    "affine_intercept_sec": -0.4484824721265764,
+    "affine_slope_gt_per_gen": 1.1096086545549908
+  },
+  "events": {
+    "gen_note_events": 88,
+    "gt_note_events": 101,
+    "note_edit_distance": 0.33167093417221727,
+    "note_gap_ratio": 0.06878306878306878,
+    "note_pitch_semitone_distance": 1.7661682307607178,
+    "event_duration_log_distance": 0.6071153538667214,
+    "event_ioi_normalized_distance": 0.009810782240386976,
+    "event_onset_normalized_distance": 0.05729971151301392,
+    "matched_note_events": 88,
+    "global_rhythm_distance": 0.12966690044283372,
+    "global_rhythm_onset_component": 0.028856728696301428,
+    "global_rhythm_duration_component": 0.10081017174653228,
+    "global_rhythm_event_duration_component": 0.06054077160621962,
+    "global_rhythm_phrase_duration_component": 0.04026940014031266,
+    "global_rhythm_onset_mae": 0.057713457392602856,
+    "global_rhythm_duration_relative_mae": 0.2421630864248785,
+    "global_rhythm_phrase_duration_log_normalized": 0.16107760056125064,
+    "global_rhythm_alignment_gap_ratio": 0.06878306878306878,
+    "global_rhythm_matched_events": 88,
+    "global_rhythm_insertions": 13,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.6543403749965364
+}

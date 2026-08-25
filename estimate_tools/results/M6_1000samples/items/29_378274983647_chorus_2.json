@@ -1,0 +1,84 @@
+{
+  "sample_id": "29_378274983647_chorus_2",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/29_378274983647_chorus_2/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/29_378274983647_chorus_2/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "37827498364707438b54ee1c3fb1309f/chorus_2",
+    "sample_id": "37827498364707438b54ee1c3fb1309f",
+    "section_key": "chorus_2",
+    "struct_tag": "[chorus]",
+    "gt_duration_sec": 19.28,
+    "description": "[chorus] The letters on the bus are all lined up, all lined up, all lined up.The letters on the bus are all lined up from A to Z"
+  },
+  "audio": {
+    "gen_original_duration_sec": 19.28,
+    "gt_original_duration_sec": 19.318625,
+    "gen_active_duration_sec": 18.12,
+    "gt_active_duration_sec": 16.74,
+    "gen_trim_start_sec": 1.16,
+    "gt_trim_start_sec": 1.47,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.5638962899475191,
+    "content_dtw_cumulative_cost": 1096.297498959551,
+    "path_frames": 1914,
+    "constraint_fallback": false,
+    "gen_content_frames": 1813,
+    "gt_content_frames": 1675
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 51.328598482246576,
+    "content_pitch_cent_mean": 80.74659219656809,
+    "content_pitch_cent_median": 39.40019729440964,
+    "content_pitch_cent_rmse": 148.29754695033347,
+    "content_pitch_cent_p90": 191.96529654461128,
+    "content_macro_pitch_cent_distance": 45.9833680515335,
+    "matched_voiced_path_ratio": 0.6833855799373041,
+    "voicing_jaccard_distance": 0.152300712896954,
+    "matched_voiced_frames": 1308,
+    "path_frames": 1914,
+    "direct_f0_dtw_cost": 0.4982808038527,
+    "direct_f0_pitch_cent_distance": 20.293902979862562,
+    "direct_f0_matched_voiced_ratio": 0.720620842572062,
+    "direct_f0_path_frames": 2255,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.009933242591162801,
+    "path_deviation_ms": 173.1364183639676,
+    "path_diagonal_rmse": 0.027644920627212955,
+    "tempo_ratio": 1.082437275985663,
+    "tempo_log_distance": 0.07921523555350402,
+    "affine_intercept_sec": -0.14494931687075224,
+    "affine_slope_gt_per_gen": 0.976565849087282
+  },
+  "events": {
+    "gen_note_events": 38,
+    "gt_note_events": 38,
+    "note_edit_distance": 0.21207828583993557,
+    "note_gap_ratio": 0.02631578947368421,
+    "note_pitch_semitone_distance": 1.0078548722603937,
+    "event_duration_log_distance": 0.5134504737255902,
+    "event_ioi_normalized_distance": 0.01478395721078907,
+    "event_onset_normalized_distance": 0.02814639035532012,
+    "matched_note_events": 37,
+    "global_rhythm_distance": 0.11223599834142983,
+    "global_rhythm_onset_component": 0.009392881846192547,
+    "global_rhythm_duration_component": 0.10284311649523728,
+    "global_rhythm_event_duration_component": 0.07427225962126437,
+    "global_rhythm_phrase_duration_component": 0.028570856873972907,
+    "global_rhythm_onset_mae": 0.018785763692385094,
+    "global_rhythm_duration_relative_mae": 0.29708903848505747,
+    "global_rhythm_phrase_duration_log_normalized": 0.11428342749589163,
+    "global_rhythm_alignment_gap_ratio": 0.0,
+    "global_rhythm_matched_events": 38,
+    "global_rhythm_insertions": 0,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.17080508300568908
+}

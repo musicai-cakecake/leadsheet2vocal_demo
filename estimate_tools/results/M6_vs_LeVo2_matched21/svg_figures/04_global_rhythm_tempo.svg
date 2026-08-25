@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760" role="img" aria-labelledby="chart-title chart-desc" xml:lang="zh-CN">
+  <title id="chart-title">节奏分布：平均全局节奏距离 × 平均速度 log 距离</title>
+  <desc id="chart-desc">M6 与 LeVo2 在 21 个相同样例上的配对散点图。蓝色圆点表示 M6，红色方点表示 LeVo2，细线连接相同样例。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; }
+    .title { fill: #0F172A; font-size: 25px; font-weight: 700; }
+    .subtitle { fill: #475569; font-size: 14px; }
+    .axis-label { fill: #0F172A; font-size: 16px; font-weight: 600; }
+    .tick { fill: #475569; font-size: 13px; }
+    .grid { stroke: #E2E8F0; stroke-width: 1; }
+    .axis { stroke: #475569; stroke-width: 1.5; }
+    .pair { stroke: #94A3B8; stroke-width: 1.3; opacity: 0.65; }
+    .sample-label { fill: #0F172A; font-size: 12px; font-weight: 650; paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; stroke-linejoin: round; }
+    .legend { fill: #475569; font-size: 14px; }
+    .mean-label { fill: #0F172A; font-size: 12px; font-weight: 700; }
+    .caption { fill: #475569; font-size: 12px; }
+  </style>
+  <rect width="1000" height="760" fill="#FFFFFF"/>
+  <defs><clipPath id="plot-clip"><rect x="120" y="130" width="825" height="505"/></clipPath></defs>
+  <text class="title" x="500.0" y="38" text-anchor="middle">节奏分布：平均全局节奏距离 × 平均速度 log 距离</text>
+  <text class="subtitle" x="500.0" y="66" text-anchor="middle">21 个严格匹配样例 · 所有距离越低越好 · 左下角更优</text>
+  <circle cx="332" cy="96" r="6" fill="#2563EB"/>
+  <text class="legend" x="346" y="101">M6 · 圆点</text>
+  <rect x="462" y="90" width="12" height="12" rx="1" fill="#DC2626"/>
+  <text class="legend" x="482" y="101">LeVo2 · 方点</text>
+  <line x1="630" y1="96" x2="660" y2="96" stroke="#94A3B8" stroke-width="1.5"/>
+  <text class="legend" x="670" y="101">相同样例配对线</text>
+  <line class="grid" x1="120.00" y1="130" x2="120.00" y2="635"/>
+  <text class="tick" x="120.00" y="663" text-anchor="middle">0.000</text>
+  <line class="grid" x1="303.33" y1="130" x2="303.33" y2="635"/>
+  <text class="tick" x="303.33" y="663" text-anchor="middle">0.100</text>
+  <line class="grid" x1="486.67" y1="130" x2="486.67" y2="635"/>
+  <text class="tick" x="486.67" y="663" text-anchor="middle">0.200</text>
+  <line class="grid" x1="670.00" y1="130" x2="670.00" y2="635"/>
+  <text class="tick" x="670.00" y="663" text-anchor="middle">0.300</text>
+  <line class="grid" x1="853.33" y1="130" x2="853.33" y2="635"/>
+  <text class="tick" x="853.33" y="663" text-anchor="middle">0.400</text>
+  <line class="grid" x1="120" y1="635.00" x2="945" y2="635.00"/>
+  <text class="tick" x="106" y="639.00" text-anchor="end">0.000</text>
+  <line class="grid" x1="120" y1="508.75" x2="945" y2="508.75"/>
+  <text class="tick" x="106" y="512.75" text-anchor="end">0.200</text>
+  <line class="grid" x1="120" y1="382.50" x2="945" y2="382.50"/>
+  <text class="tick" x="106" y="386.50" text-anchor="end">0.400</text>
+  <line class="grid" x1="120" y1="256.25" x2="945" y2="256.25"/>
+  <text class="tick" x="106" y="260.25" text-anchor="end">0.600</text>
+  <line class="grid" x1="120" y1="130.00" x2="945" y2="130.00"/>
+  <text class="tick" x="106" y="134.00" text-anchor="end">0.800</text>
+  <line class="axis" x1="120" y1="635" x2="945" y2="635"/>
+  <line class="axis" x1="120" y1="130" x2="120" y2="635"/>
+  <text class="axis-label" x="532.5" y="705" text-anchor="middle">平均全局节奏距离</text>
+  <text class="axis-label" x="30" y="382.5" text-anchor="middle" transform="rotate(-90 30 382.5)">平均速度 log 距离</text>
+  <g clip-path="url(#plot-clip)">
+    <line class="pair" x1="248.96" y1="634.17" x2="616.84" y2="416.08"/>
+    <circle cx="248.96" cy="634.17" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>05_996b8a9e3232_verse_3 · M6 · 平均全局节奏距离: 0.070 · 平均速度 log 距离: 0.001</title></circle>
+    <rect x="611.34" y="410.58" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>05_996b8a9e3232_verse_3 · LeVo2 · 平均全局节奏距离: 0.271 · 平均速度 log 距离: 0.347</title></rect>
+    <line class="pair" x1="316.52" y1="547.65" x2="534.49" y2="374.96"/>
+    <circle cx="316.52" cy="547.65" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>06_dc8f4c4095e4_chorus_1 · M6 · 平均全局节奏距离: 0.107 · 平均速度 log 距离: 0.138</title></circle>
+    <rect x="528.99" y="369.46" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>06_dc8f4c4095e4_chorus_1 · LeVo2 · 平均全局节奏距离: 0.226 · 平均速度 log 距离: 0.412</title></rect>
+    <line class="pair" x1="357.72" y1="564.63" x2="466.63" y2="524.65"/>
+    <circle cx="357.72" cy="564.63" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>09_2011788cb650_chorus_4 · M6 · 平均全局节奏距离: 0.130 · 平均速度 log 距离: 0.111</title></circle>
+    <rect x="461.13" y="519.15" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>09_2011788cb650_chorus_4 · LeVo2 · 平均全局节奏距离: 0.189 · 平均速度 log 距离: 0.175</title></rect>
+    <line class="pair" x1="433.31" y1="526.48" x2="280.95" y2="622.87"/>
+    <circle cx="433.31" cy="526.48" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>11_b51fba878c91_verse_1 · M6 · 平均全局节奏距离: 0.171 · 平均速度 log 距离: 0.172</title></circle>
+    <rect x="275.45" y="617.37" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>11_b51fba878c91_verse_1 · LeVo2 · 平均全局节奏距离: 0.088 · 平均速度 log 距离: 0.019</title></rect>
+    <line class="pair" x1="341.55" y1="557.61" x2="882.15" y2="276.34"/>
+    <circle cx="341.55" cy="557.61" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>25_9450b6fde3cb_verse_6 · M6 · 平均全局节奏距离: 0.121 · 平均速度 log 距离: 0.123</title></circle>
+    <rect x="876.65" y="270.84" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>25_9450b6fde3cb_verse_6 · LeVo2 · 平均全局节奏距离: 0.416 · 平均速度 log 距离: 0.568</title></rect>
+    <line class="pair" x1="325.77" y1="585.00" x2="642.47" y2="305.34"/>
+    <circle cx="325.77" cy="585.00" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>29_378274983647_chorus_2 · M6 · 平均全局节奏距离: 0.112 · 平均速度 log 距离: 0.079</title></circle>
+    <rect x="636.97" y="299.84" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>29_378274983647_chorus_2 · LeVo2 · 平均全局节奏距离: 0.285 · 平均速度 log 距离: 0.522</title></rect>
+    <line class="pair" x1="285.40" y1="609.96" x2="824.66" y2="201.72"/>
+    <circle cx="285.40" cy="609.96" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>40_0f06d5001bff_verse_1 · M6 · 平均全局节奏距离: 0.090 · 平均速度 log 距离: 0.040</title></circle>
+    <rect x="819.16" y="196.22" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>40_0f06d5001bff_verse_1 · LeVo2 · 平均全局节奏距离: 0.384 · 平均速度 log 距离: 0.686</title></rect>
+    <line class="pair" x1="272.30" y1="624.93" x2="498.33" y2="445.19"/>
+    <circle cx="272.30" cy="624.93" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>41_614b6524d9c1_chorus_2 · M6 · 平均全局节奏距离: 0.083 · 平均速度 log 距离: 0.016</title></circle>
+    <rect x="492.83" y="439.69" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>41_614b6524d9c1_chorus_2 · LeVo2 · 平均全局节奏距离: 0.206 · 平均速度 log 距离: 0.301</title></rect>
+    <line class="pair" x1="344.86" y1="571.62" x2="605.56" y2="356.52"/>
+    <circle cx="344.86" cy="571.62" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>53_9b09daed5c20_chorus_2 · M6 · 平均全局节奏距离: 0.123 · 平均速度 log 距离: 0.100</title></circle>
+    <rect x="600.06" y="351.02" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>53_9b09daed5c20_chorus_2 · LeVo2 · 平均全局节奏距离: 0.265 · 平均速度 log 距离: 0.441</title></rect>
+    <line class="pair" x1="254.44" y1="615.15" x2="312.00" y2="566.32"/>
+    <circle cx="254.44" cy="615.15" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>54_896d60c13cae_chorus_1 · M6 · 平均全局节奏距离: 0.073 · 平均速度 log 距离: 0.031</title></circle>
+    <rect x="306.50" y="560.82" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>54_896d60c13cae_chorus_1 · LeVo2 · 平均全局节奏距离: 0.105 · 平均速度 log 距离: 0.109</title></rect>
+    <line class="pair" x1="264.60" y1="622.70" x2="499.72" y2="478.06"/>
+    <circle cx="264.60" cy="622.70" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>56_631a55cf8bd7_verse_1 · M6 · 平均全局节奏距离: 0.079 · 平均速度 log 距离: 0.019</title></circle>
+    <rect x="494.22" y="472.56" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>56_631a55cf8bd7_verse_1 · LeVo2 · 平均全局节奏距离: 0.207 · 平均速度 log 距离: 0.249</title></rect>
+    <line class="pair" x1="275.64" y1="611.77" x2="459.49" y2="534.86"/>
+    <circle cx="275.64" cy="611.77" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>57_5575cf74e224_chorus_1 · M6 · 平均全局节奏距离: 0.085 · 平均速度 log 距离: 0.037</title></circle>
+    <rect x="453.99" y="529.36" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>57_5575cf74e224_chorus_1 · LeVo2 · 平均全局节奏距离: 0.185 · 平均速度 log 距离: 0.159</title></rect>
+    <line class="pair" x1="327.89" y1="583.77" x2="494.47" y2="485.53"/>
+    <circle cx="327.89" cy="583.77" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>60_1f3cb0da46e2_chorus_1 · M6 · 平均全局节奏距离: 0.113 · 平均速度 log 距离: 0.081</title></circle>
+    <rect x="488.97" y="480.03" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>60_1f3cb0da46e2_chorus_1 · LeVo2 · 平均全局节奏距离: 0.204 · 平均速度 log 距离: 0.237</title></rect>
+    <line class="pair" x1="396.66" y1="489.63" x2="246.16" y2="599.37"/>
+    <circle cx="396.66" cy="489.63" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>80_b5192639b9d5_verse_5 · M6 · 平均全局节奏距离: 0.151 · 平均速度 log 距离: 0.230</title></circle>
+    <rect x="240.66" y="593.87" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>80_b5192639b9d5_verse_5 · LeVo2 · 平均全局节奏距离: 0.069 · 平均速度 log 距离: 0.056</title></rect>
+    <line class="pair" x1="451.96" y1="502.79" x2="719.38" y2="153.72"/>
+    <circle cx="451.96" cy="502.79" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>82_9fc7f7c45b11_chorus_5 · M6 · 平均全局节奏距离: 0.181 · 平均速度 log 距离: 0.209</title></circle>
+    <rect x="713.88" y="148.22" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>82_9fc7f7c45b11_chorus_5 · LeVo2 · 平均全局节奏距离: 0.327 · 平均速度 log 距离: 0.762</title></rect>
+    <line class="pair" x1="324.29" y1="598.94" x2="741.30" y2="254.61"/>
+    <circle cx="324.29" cy="598.94" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>90_0fb9afd8227c_verse_5 · M6 · 平均全局节奏距离: 0.111 · 平均速度 log 距离: 0.057</title></circle>
+    <rect x="735.80" y="249.11" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>90_0fb9afd8227c_verse_5 · LeVo2 · 平均全局节奏距离: 0.339 · 平均速度 log 距离: 0.603</title></rect>
+    <line class="pair" x1="303.15" y1="602.44" x2="623.54" y2="292.73"/>
+    <circle cx="303.15" cy="602.44" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>96_6f3a48e796cc_chorus_2 · M6 · 平均全局节奏距离: 0.100 · 平均速度 log 距离: 0.052</title></circle>
+    <rect x="618.04" y="287.23" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>96_6f3a48e796cc_chorus_2 · LeVo2 · 平均全局节奏距离: 0.275 · 平均速度 log 距离: 0.542</title></rect>
+    <line class="pair" x1="371.85" y1="527.49" x2="631.51" y2="421.96"/>
+    <circle cx="371.85" cy="527.49" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>96_c36c0b6d0172_chorus_3 · M6 · 平均全局节奏距离: 0.137 · 平均速度 log 距离: 0.170</title></circle>
+    <rect x="626.01" y="416.46" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>96_c36c0b6d0172_chorus_3 · LeVo2 · 平均全局节奏距离: 0.279 · 平均速度 log 距离: 0.337</title></rect>
+    <line class="pair" x1="248.88" y1="627.69" x2="502.57" y2="403.10"/>
+    <circle cx="248.88" cy="627.69" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>100_3b8c3834c86b_chorus_2 · M6 · 平均全局节奏距离: 0.070 · 平均速度 log 距离: 0.012</title></circle>
+    <rect x="497.07" y="397.60" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>100_3b8c3834c86b_chorus_2 · LeVo2 · 平均全局节奏距离: 0.209 · 平均速度 log 距离: 0.367</title></rect>
+    <line class="pair" x1="355.87" y1="557.78" x2="332.33" y2="553.48"/>
+    <circle cx="355.87" cy="557.78" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>105_15361b90cec5_bridge_1 · M6 · 平均全局节奏距离: 0.129 · 平均速度 log 距离: 0.122</title></circle>
+    <rect x="326.83" y="547.98" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>105_15361b90cec5_bridge_1 · LeVo2 · 平均全局节奏距离: 0.116 · 平均速度 log 距离: 0.129</title></rect>
+    <line class="pair" x1="444.17" y1="510.10" x2="441.53" y2="438.00"/>
+    <circle cx="444.17" cy="510.10" r="6" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"><title>123_b7d086c26a54_verse_4 · M6 · 平均全局节奏距离: 0.177 · 平均速度 log 距离: 0.198</title></circle>
+    <rect x="436.03" y="432.50" width="11" height="11" rx="1" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"><title>123_b7d086c26a54_verse_4 · LeVo2 · 平均全局节奏距离: 0.175 · 平均速度 log 距离: 0.312</title></rect>
+  </g>
+  <text class="sample-label" x="439.90" y="518.13" text-anchor="start">05</text>
+  <text class="sample-label" x="618.85" y="409.97" text-anchor="start">25</text>
+  <text class="sample-label" x="562.03" y="398.84" text-anchor="start">40</text>
+  <text class="sample-label" x="314.41" y="537.50" text-anchor="end">80</text>
+  <text class="sample-label" x="592.67" y="321.26" text-anchor="start">82</text>
+  <text class="sample-label" x="525.79" y="419.77" text-anchor="end">90</text>
+  <text class="sample-label" x="382.72" y="508.39" text-anchor="start">100</text>
+  <circle cx="330.75" cy="574.87" r="10" fill="#2563EB" stroke="#0F172A" stroke-width="2.5"><title>M6 组均值 · 平均全局节奏距离: 0.115 · 平均速度 log 距离: 0.095</title></circle>
+  <text class="mean-label" x="344.75" y="562.87">M6 均值</text>
+  <rect x="531.77" y="405.54" width="18" height="18" rx="1" fill="#DC2626" stroke="#0F172A" stroke-width="2.5"><title>LeVo2 组均值 · 平均全局节奏距离: 0.230 · 平均速度 log 距离: 0.349</title></rect>
+  <text class="mean-label" x="554.77" y="402.54">LeVo2 均值</text>
+  <text class="caption" x="120" y="740">细线连接同一样例，数字为样例编号；大描边标记为模型组均值。</text>
+</svg>

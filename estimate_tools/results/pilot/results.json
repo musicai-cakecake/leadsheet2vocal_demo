@@ -1,0 +1,304 @@
+{
+  "created_at": "2026-08-25T19:48:51.146666+08:00",
+  "cohort_root": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples",
+  "output_dir": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/estimate_tools/results/pilot",
+  "config": {
+    "sample_rate": 16000,
+    "hop_length": 160,
+    "trim_top_db": 45.0,
+    "f0_backend": "rmvpe",
+    "rmvpe_threshold": 0.03,
+    "pyin_fmin_hz": 50.0,
+    "pyin_fmax_hz": 1600.0,
+    "n_fft": 512,
+    "win_length": 400,
+    "n_mels": 40,
+    "n_mfcc": 20,
+    "delta_width": 9,
+    "dtw_band_radius": 0.35,
+    "pitch_trim_fraction": 0.1,
+    "macro_pitch_window_frames": 21,
+    "event_smooth_frames": 21,
+    "event_max_gap_frames": 5,
+    "event_min_note_frames": 8,
+    "event_gap_cost": 1.0,
+    "event_pitch_weight": 0.75,
+    "event_duration_weight": 0.25
+  },
+  "metric_definitions": {
+    "alignment.content_dtw_cost": "MFCC-content DTW mean cosine cost",
+    "pitch.content_pitch_cent_distance": "Primary pitch distance: 10%-trimmed absolute cent error on the content alignment path",
+    "pitch.content_macro_pitch_cent_distance": "Macro-pitch distance after voiced-run median smoothing, in cents",
+    "pitch.voicing_jaccard_distance": "Voicing mismatch divided by the voiced union on the alignment path",
+    "pitch.direct_f0_dtw_cost": "Pitch-driven DTW baseline cost in semitone-equivalent units",
+    "rhythm.path_deviation_normalized": "Primary local-rhythm distance: affine path residual RMSE divided by mean active duration",
+    "rhythm.path_deviation_ms": "Affine path residual RMSE in milliseconds",
+    "rhythm.tempo_log_distance": "Absolute log active-duration ratio",
+    "events.note_edit_distance": "Normalized weighted edit distance between pseudo-note sequences",
+    "events.note_gap_ratio": "Inserted/deleted pseudo-note ratio",
+    "events.event_duration_log_distance": "Mean absolute log distance between matched normalized note durations",
+    "events.event_ioi_normalized_distance": "Mean absolute distance between matched normalized inter-onset intervals"
+  },
+  "summary": {
+    "total_pairs": 1,
+    "successful_pairs": 1,
+    "failed_pairs": 0,
+    "failed_sample_ids": [],
+    "metrics": {
+      "alignment.content_dtw_cost": {
+        "description": "MFCC-content DTW mean cosine cost",
+        "count": 1,
+        "mean": 0.6820163947974559,
+        "std": 0.0,
+        "median": 0.6820163947974559,
+        "q25": 0.6820163947974559,
+        "q75": 0.6820163947974559,
+        "min": 0.6820163947974559,
+        "max": 0.6820163947974559,
+        "bootstrap_mean_ci95": [
+          0.6820163947974559,
+          0.6820163947974559
+        ]
+      },
+      "pitch.content_pitch_cent_distance": {
+        "description": "Primary pitch distance: 10%-trimmed absolute cent error on the content alignment path",
+        "count": 1,
+        "mean": 759.8977118235497,
+        "std": 0.0,
+        "median": 759.8977118235497,
+        "q25": 759.8977118235497,
+        "q75": 759.8977118235497,
+        "min": 759.8977118235497,
+        "max": 759.8977118235497,
+        "bootstrap_mean_ci95": [
+          759.8977118235497,
+          759.8977118235497
+        ]
+      },
+      "pitch.content_macro_pitch_cent_distance": {
+        "description": "Macro-pitch distance after voiced-run median smoothing, in cents",
+        "count": 1,
+        "mean": 708.5944041263637,
+        "std": 0.0,
+        "median": 708.5944041263637,
+        "q25": 708.5944041263637,
+        "q75": 708.5944041263637,
+        "min": 708.5944041263637,
+        "max": 708.5944041263637,
+        "bootstrap_mean_ci95": [
+          708.5944041263637,
+          708.5944041263637
+        ]
+      },
+      "pitch.voicing_jaccard_distance": {
+        "description": "Voicing mismatch divided by the voiced union on the alignment path",
+        "count": 1,
+        "mean": 0.33568627450980393,
+        "std": 0.0,
+        "median": 0.33568627450980393,
+        "q25": 0.33568627450980393,
+        "q75": 0.33568627450980393,
+        "min": 0.33568627450980393,
+        "max": 0.33568627450980393,
+        "bootstrap_mean_ci95": [
+          0.33568627450980393,
+          0.33568627450980393
+        ]
+      },
+      "pitch.direct_f0_dtw_cost": {
+        "description": "Pitch-driven DTW baseline cost in semitone-equivalent units",
+        "count": 1,
+        "mean": 2.2235843131457864,
+        "std": 0.0,
+        "median": 2.2235843131457864,
+        "q25": 2.2235843131457864,
+        "q75": 2.2235843131457864,
+        "min": 2.2235843131457864,
+        "max": 2.2235843131457864,
+        "bootstrap_mean_ci95": [
+          2.2235843131457864,
+          2.2235843131457864
+        ]
+      },
+      "rhythm.path_deviation_normalized": {
+        "description": "Primary local-rhythm distance: affine path residual RMSE divided by mean active duration",
+        "count": 1,
+        "mean": 0.023716043687237183,
+        "std": 0.0,
+        "median": 0.023716043687237183,
+        "q25": 0.023716043687237183,
+        "q75": 0.023716043687237183,
+        "min": 0.023716043687237183,
+        "max": 0.023716043687237183,
+        "bootstrap_mean_ci95": [
+          0.023716043687237183,
+          0.023716043687237183
+        ]
+      },
+      "rhythm.path_deviation_ms": {
+        "description": "Affine path residual RMSE in milliseconds",
+        "count": 1,
+        "mean": 361.9068266672394,
+        "std": 0.0,
+        "median": 361.9068266672394,
+        "q25": 361.9068266672394,
+        "q75": 361.9068266672394,
+        "min": 361.9068266672394,
+        "max": 361.9068266672394,
+        "bootstrap_mean_ci95": [
+          361.9068266672394,
+          361.9068266672394
+        ]
+      },
+      "rhythm.tempo_log_distance": {
+        "description": "Absolute log active-duration ratio",
+        "count": 1,
+        "mean": 0.0013106161771204202,
+        "std": 0.0,
+        "median": 0.0013106161771204202,
+        "q25": 0.0013106161771204202,
+        "q75": 0.0013106161771204202,
+        "min": 0.0013106161771204202,
+        "max": 0.0013106161771204202,
+        "bootstrap_mean_ci95": [
+          0.0013106161771204202,
+          0.0013106161771204202
+        ]
+      },
+      "events.note_edit_distance": {
+        "description": "Normalized weighted edit distance between pseudo-note sequences",
+        "count": 1,
+        "mean": 0.5036026621682917,
+        "std": 0.0,
+        "median": 0.5036026621682917,
+        "q25": 0.5036026621682917,
+        "q75": 0.5036026621682917,
+        "min": 0.5036026621682917,
+        "max": 0.5036026621682917,
+        "bootstrap_mean_ci95": [
+          0.5036026621682917,
+          0.5036026621682917
+        ]
+      },
+      "events.note_gap_ratio": {
+        "description": "Inserted/deleted pseudo-note ratio",
+        "count": 1,
+        "mean": 0.07368421052631578,
+        "std": 0.0,
+        "median": 0.07368421052631578,
+        "q25": 0.07368421052631578,
+        "q75": 0.07368421052631578,
+        "min": 0.07368421052631578,
+        "max": 0.07368421052631578,
+        "bootstrap_mean_ci95": [
+          0.07368421052631578,
+          0.07368421052631578
+        ]
+      },
+      "events.event_duration_log_distance": {
+        "description": "Mean absolute log distance between matched normalized note durations",
+        "count": 1,
+        "mean": 0.30599282435873615,
+        "std": 0.0,
+        "median": 0.30599282435873615,
+        "q25": 0.30599282435873615,
+        "q75": 0.30599282435873615,
+        "min": 0.30599282435873615,
+        "max": 0.30599282435873615,
+        "bootstrap_mean_ci95": [
+          0.30599282435873615,
+          0.30599282435873615
+        ]
+      },
+      "events.event_ioi_normalized_distance": {
+        "description": "Mean absolute distance between matched normalized inter-onset intervals",
+        "count": 1,
+        "mean": 0.02046754305085659,
+        "std": 0.0,
+        "median": 0.02046754305085659,
+        "q25": 0.02046754305085659,
+        "q75": 0.02046754305085659,
+        "min": 0.02046754305085659,
+        "max": 0.02046754305085659,
+        "bootstrap_mean_ci95": [
+          0.02046754305085659,
+          0.02046754305085659
+        ]
+      }
+    }
+  },
+  "items": [
+    {
+      "sample_id": "05_996b8a9e3232_verse_3",
+      "status": "ok",
+      "paths": {
+        "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/05_996b8a9e3232_verse_3/gen_vocal.mp3",
+        "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/05_996b8a9e3232_verse_3/gt_vocal.mp3"
+      },
+      "metadata": {
+        "uid": "996b8a9e3232fd5ca8f63887ef8c5739/verse_3",
+        "sample_id": "996b8a9e3232fd5ca8f63887ef8c5739",
+        "section_key": "verse_3",
+        "struct_tag": "[verse]",
+        "gt_duration_sec": 16.06,
+        "description": "[verse] There's no heaven that wants me, no other good ever holds me in.No matter how far I run, I can never escape.I still bear all of my sins"
+      },
+      "audio": {
+        "gen_original_duration_sec": 16.04,
+        "gt_original_duration_sec": 16.0794375,
+        "gen_active_duration_sec": 15.25,
+        "gt_active_duration_sec": 15.27,
+        "gen_trim_start_sec": 0.0,
+        "gt_trim_start_sec": 0.02,
+        "gen_f0_backend": "rmvpe",
+        "gt_f0_backend": "rmvpe"
+      },
+      "alignment": {
+        "content_dtw_cost": 0.6820163947974559,
+        "content_dtw_cumulative_cost": 1199.4063466047983,
+        "path_frames": 1729,
+        "constraint_fallback": false,
+        "gen_content_frames": 1526,
+        "gt_content_frames": 1528
+      },
+      "pitch": {
+        "content_pitch_cent_distance": 759.8977118235497,
+        "content_pitch_cent_mean": 791.089194103408,
+        "content_pitch_cent_median": 867.25787988314,
+        "content_pitch_cent_rmse": 978.6575068370715,
+        "content_pitch_cent_p90": 1313.0467446349335,
+        "content_macro_pitch_cent_distance": 708.5944041263637,
+        "matched_voiced_path_ratio": 0.4898785425101215,
+        "voicing_jaccard_distance": 0.33568627450980393,
+        "matched_voiced_frames": 847,
+        "path_frames": 1729,
+        "direct_f0_dtw_cost": 2.2235843131457864,
+        "direct_f0_pitch_cent_distance": 190.1972476636481,
+        "direct_f0_matched_voiced_ratio": 0.5020224719101124,
+        "direct_f0_path_frames": 2225,
+        "direct_f0_constraint_fallback": false
+      },
+      "rhythm": {
+        "path_deviation_normalized": 0.023716043687237183,
+        "path_deviation_ms": 361.9068266672394,
+        "path_diagonal_rmse": 0.02795826487935554,
+        "tempo_ratio": 0.9986902423051736,
+        "tempo_log_distance": 0.0013106161771204202,
+        "affine_intercept_sec": 0.35656568854127607,
+        "affine_slope_gt_per_gen": 0.9513261076120143
+      },
+      "events": {
+        "gen_note_events": 51,
+        "gt_note_events": 44,
+        "note_edit_distance": 0.5036026621682917,
+        "note_gap_ratio": 0.07368421052631578,
+        "note_pitch_semitone_distance": 5.8591236862585125,
+        "event_duration_log_distance": 0.30599282435873615,
+        "event_ioi_normalized_distance": 0.02046754305085659,
+        "event_onset_normalized_distance": 0.11442722500212277,
+        "matched_note_events": 44
+      },
+      "runtime_sec": 0.5116345419955906
+    }
+  ]
+}

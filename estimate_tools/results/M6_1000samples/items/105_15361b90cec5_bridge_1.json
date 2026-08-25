@@ -1,0 +1,84 @@
+{
+  "sample_id": "105_15361b90cec5_bridge_1",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/105_15361b90cec5_bridge_1/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/105_15361b90cec5_bridge_1/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "15361b90cec5d1a2831e47eea3cf052d/bridge_1",
+    "sample_id": "15361b90cec5d1a2831e47eea3cf052d",
+    "section_key": "bridge_1",
+    "struct_tag": "[bridge]",
+    "gt_duration_sec": 37.04,
+    "description": "[bridge] I'm not okay, so go ahead and tell me another lie.Goes around, comes around, just to fuck me over one more time.So what? Impressive, I left it be a meaningless step.Pulling carbon, holding my head, and shit is real as it gets.Hallucinating, so sedated, all for the time to fight.I really do not give up, ready for hell.Call for the ring, but tell them all of my meetings be with my demons after Alpha Omega.I'm on the front line.A couple pills in my system now, I'm behind.Jumping back to love, baby, you know I'm not fine.Alpha Omega, baby, we don't die.Alpha Omega, baby, we don't die"
+  },
+  "audio": {
+    "gen_original_duration_sec": 34.64,
+    "gt_original_duration_sec": 37.0558125,
+    "gen_active_duration_sec": 30.97,
+    "gt_active_duration_sec": 35.0,
+    "gen_trim_start_sec": 2.29,
+    "gt_trim_start_sec": 0.03,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.7790510512560299,
+    "content_dtw_cumulative_cost": 2882.1025412895265,
+    "path_frames": 3654,
+    "constraint_fallback": false,
+    "gen_content_frames": 3098,
+    "gt_content_frames": 3501
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 381.0643382107365,
+    "content_pitch_cent_mean": 439.85162808769707,
+    "content_pitch_cent_median": 320.72981885155696,
+    "content_pitch_cent_rmse": 603.4626636968579,
+    "content_pitch_cent_p90": 1043.9128779753962,
+    "content_macro_pitch_cent_distance": 354.16722405079497,
+    "matched_voiced_path_ratio": 0.7411056376573618,
+    "voicing_jaccard_distance": 0.18751875187518752,
+    "matched_voiced_frames": 2708,
+    "path_frames": 3654,
+    "direct_f0_dtw_cost": 1.3102030391599293,
+    "direct_f0_pitch_cent_distance": 84.45765179682743,
+    "direct_f0_matched_voiced_ratio": 0.8286516853932584,
+    "direct_f0_path_frames": 5340,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.016460161899211363,
+    "path_deviation_ms": 542.9384402454867,
+    "path_diagonal_rmse": 0.040041359947870614,
+    "tempo_ratio": 0.8848571428571429,
+    "tempo_log_distance": 0.12232906750430221,
+    "affine_intercept_sec": 1.3776242502324307,
+    "affine_slope_gt_per_gen": 1.1241707624111876
+  },
+  "events": {
+    "gen_note_events": 106,
+    "gt_note_events": 108,
+    "note_edit_distance": 0.3704861710630314,
+    "note_gap_ratio": 0.028037383177570093,
+    "note_pitch_semitone_distance": 3.535079033926555,
+    "event_duration_log_distance": 0.481031453720428,
+    "event_ioi_normalized_distance": 0.006318088687679048,
+    "event_onset_normalized_distance": 0.015065069173641973,
+    "matched_note_events": 104,
+    "global_rhythm_distance": 0.1286541458548204,
+    "global_rhythm_onset_component": 0.020712938005390834,
+    "global_rhythm_duration_component": 0.10794120784942958,
+    "global_rhythm_event_duration_component": 0.06382032308817252,
+    "global_rhythm_phrase_duration_component": 0.044120884761257056,
+    "global_rhythm_onset_mae": 0.04142587601078167,
+    "global_rhythm_duration_relative_mae": 0.2552812923526901,
+    "global_rhythm_phrase_duration_log_normalized": 0.17648353904502823,
+    "global_rhythm_alignment_gap_ratio": 0.009345794392523364,
+    "global_rhythm_matched_events": 106,
+    "global_rhythm_insertions": 2,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.6139939159911592
+}

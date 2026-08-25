@@ -1,0 +1,84 @@
+{
+  "sample_id": "123_b7d086c26a54_verse_4",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/123_b7d086c26a54_verse_4/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/123_b7d086c26a54_verse_4/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "b7d086c26a5486b58a15e86368d907a8/verse_4",
+    "sample_id": "b7d086c26a5486b58a15e86368d907a8",
+    "section_key": "verse_4",
+    "struct_tag": "[verse]",
+    "gt_duration_sec": 16.62,
+    "description": "[verse] Trusting in the Lord has turned my life around.When you call on Him"
+  },
+  "audio": {
+    "gen_original_duration_sec": 14.76,
+    "gt_original_duration_sec": 16.6280625,
+    "gen_active_duration_sec": 13.62,
+    "gt_active_duration_sec": 16.6080625,
+    "gen_trim_start_sec": 0.02,
+    "gt_trim_start_sec": 0.02,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.7095720216334862,
+    "content_dtw_cumulative_cost": 1272.0276140316698,
+    "path_frames": 1758,
+    "constraint_fallback": false,
+    "gen_content_frames": 1363,
+    "gt_content_frames": 1661
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 379.65152259781456,
+    "content_pitch_cent_mean": 397.5305577121806,
+    "content_pitch_cent_median": 366.9798484372983,
+    "content_pitch_cent_rmse": 483.56732293983254,
+    "content_pitch_cent_p90": 793.882988655391,
+    "content_macro_pitch_cent_distance": 388.1610092392745,
+    "matched_voiced_path_ratio": 0.6530147895335608,
+    "voicing_jaccard_distance": 0.11145510835913312,
+    "matched_voiced_frames": 1148,
+    "path_frames": 1758,
+    "direct_f0_dtw_cost": 1.3531241629111646,
+    "direct_f0_pitch_cent_distance": 103.86102165562474,
+    "direct_f0_matched_voiced_ratio": 0.7084070796460177,
+    "direct_f0_path_frames": 2260,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.034495589145311145,
+    "path_deviation_ms": 521.2283519856514,
+    "path_diagonal_rmse": 0.08237066615709714,
+    "tempo_ratio": 0.8204819277108434,
+    "tempo_log_distance": 0.19786339464113123,
+    "affine_intercept_sec": -0.028305864800578676,
+    "affine_slope_gt_per_gen": 1.0774760043968326
+  },
+  "events": {
+    "gen_note_events": 27,
+    "gt_note_events": 28,
+    "note_edit_distance": 0.3922218626448629,
+    "note_gap_ratio": 0.01818181818181818,
+    "note_pitch_semitone_distance": 3.843042168475642,
+    "event_duration_log_distance": 0.7669875225993922,
+    "event_ioi_normalized_distance": 0.03167767485276764,
+    "event_onset_normalized_distance": 0.06680625037640128,
+    "matched_note_events": 27,
+    "global_rhythm_distance": 0.17681819701237586,
+    "global_rhythm_onset_component": 0.02288045339424752,
+    "global_rhythm_duration_component": 0.15393774361812834,
+    "global_rhythm_event_duration_component": 0.08239847495175845,
+    "global_rhythm_phrase_duration_component": 0.0715392686663699,
+    "global_rhythm_onset_mae": 0.04576090678849504,
+    "global_rhythm_duration_relative_mae": 0.3295938998070338,
+    "global_rhythm_phrase_duration_log_normalized": 0.2861570746654796,
+    "global_rhythm_alignment_gap_ratio": 0.01818181818181818,
+    "global_rhythm_matched_events": 27,
+    "global_rhythm_insertions": 1,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.12014920799992979
+}

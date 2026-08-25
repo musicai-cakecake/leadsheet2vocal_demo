@@ -1,0 +1,84 @@
+{
+  "sample_id": "90_0fb9afd8227c_verse_5",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/90_0fb9afd8227c_verse_5/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/90_0fb9afd8227c_verse_5/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "0fb9afd8227ce4b4748bd49f0fb88683/verse_5",
+    "sample_id": "0fb9afd8227ce4b4748bd49f0fb88683",
+    "section_key": "verse_5",
+    "struct_tag": "[verse]",
+    "gt_duration_sec": 18.18,
+    "description": "[verse] Dead president's corpse in the driver's car.The engine runs on glue and tar.Come on along, not going very far.To the east to meet the Tsar"
+  },
+  "audio": {
+    "gen_original_duration_sec": 18.36,
+    "gt_original_duration_sec": 18.195375,
+    "gen_active_duration_sec": 15.82,
+    "gt_active_duration_sec": 16.75,
+    "gen_trim_start_sec": 1.81,
+    "gt_trim_start_sec": 1.44,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.7510813471977223,
+    "content_dtw_cumulative_cost": 1344.3150658871698,
+    "path_frames": 1771,
+    "constraint_fallback": false,
+    "gen_content_frames": 1583,
+    "gt_content_frames": 1676
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 101.88378873902421,
+    "content_pitch_cent_mean": 138.97585194111508,
+    "content_pitch_cent_median": 71.64888273334604,
+    "content_pitch_cent_rmse": 239.52021103159126,
+    "content_pitch_cent_p90": 307.37260932532575,
+    "content_macro_pitch_cent_distance": 98.78929063861804,
+    "matched_voiced_path_ratio": 0.6346696781479391,
+    "voicing_jaccard_distance": 0.1536144578313253,
+    "matched_voiced_frames": 1124,
+    "path_frames": 1771,
+    "direct_f0_dtw_cost": 0.5477303935856196,
+    "direct_f0_pitch_cent_distance": 34.79682115366584,
+    "direct_f0_matched_voiced_ratio": 0.7128845296477931,
+    "direct_f0_path_frames": 2243,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.010165416889432472,
+    "path_deviation_ms": 165.5438140444078,
+    "path_diagonal_rmse": 0.012583587494130124,
+    "tempo_ratio": 0.9444776119402986,
+    "tempo_log_distance": 0.05712329593156758,
+    "affine_intercept_sec": 0.044228552552401296,
+    "affine_slope_gt_per_gen": 1.0406480360378159
+  },
+  "events": {
+    "gen_note_events": 32,
+    "gt_note_events": 34,
+    "note_edit_distance": 0.23842367973327155,
+    "note_gap_ratio": 0.030303030303030304,
+    "note_pitch_semitone_distance": 1.1838733299524664,
+    "event_duration_log_distance": 0.5874983141539432,
+    "event_ioi_normalized_distance": 0.02677234925653127,
+    "event_onset_normalized_distance": 0.05320031086665282,
+    "matched_note_events": 32,
+    "global_rhythm_distance": 0.11142987575783128,
+    "global_rhythm_onset_component": 0.021539179104477606,
+    "global_rhythm_duration_component": 0.08989069665335368,
+    "global_rhythm_event_duration_component": 0.06928782271342737,
+    "global_rhythm_phrase_duration_component": 0.02060287393992631,
+    "global_rhythm_onset_mae": 0.04307835820895521,
+    "global_rhythm_duration_relative_mae": 0.2771512908537095,
+    "global_rhythm_phrase_duration_log_normalized": 0.08241149575970524,
+    "global_rhythm_alignment_gap_ratio": 0.030303030303030304,
+    "global_rhythm_matched_events": 32,
+    "global_rhythm_insertions": 2,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.14967891600099392
+}

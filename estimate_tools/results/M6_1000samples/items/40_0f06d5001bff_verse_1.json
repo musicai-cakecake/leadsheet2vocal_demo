@@ -1,0 +1,84 @@
+{
+  "sample_id": "40_0f06d5001bff_verse_1",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/40_0f06d5001bff_verse_1/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/40_0f06d5001bff_verse_1/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "0f06d5001bff297ced7d96e9b8c49647/verse_1",
+    "sample_id": "0f06d5001bff297ced7d96e9b8c49647",
+    "section_key": "verse_1",
+    "struct_tag": "[verse]",
+    "gt_duration_sec": 13.78,
+    "description": "[verse] On the night I first met you, you made all my dreams come true, and I said to myself that I would never stop dancing"
+  },
+  "audio": {
+    "gen_original_duration_sec": 13.92,
+    "gt_original_duration_sec": 13.8068125,
+    "gen_active_duration_sec": 12.34,
+    "gt_active_duration_sec": 11.86,
+    "gen_trim_start_sec": 0.89,
+    "gt_trim_start_sec": 0.93,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.725804596825384,
+    "content_dtw_cumulative_cost": 960.7040218412532,
+    "path_frames": 1310,
+    "constraint_fallback": false,
+    "gen_content_frames": 1235,
+    "gt_content_frames": 1187
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 248.3453323918823,
+    "content_pitch_cent_mean": 291.58668151266073,
+    "content_pitch_cent_median": 184.06129193009352,
+    "content_pitch_cent_rmse": 409.2446072670786,
+    "content_pitch_cent_p90": 783.8132510649846,
+    "content_macro_pitch_cent_distance": 238.27323572071577,
+    "matched_voiced_path_ratio": 0.7473282442748092,
+    "voicing_jaccard_distance": 0.1091901728844404,
+    "matched_voiced_frames": 979,
+    "path_frames": 1310,
+    "direct_f0_dtw_cost": 0.9308612750864778,
+    "direct_f0_pitch_cent_distance": 66.62771678307305,
+    "direct_f0_matched_voiced_ratio": 0.8056614044637996,
+    "direct_f0_path_frames": 1837,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.006466354455032379,
+    "path_deviation_ms": 78.24288890589177,
+    "path_diagonal_rmse": 0.012016960938458202,
+    "tempo_ratio": 1.0404721753794266,
+    "tempo_log_distance": 0.03967462490766232,
+    "affine_intercept_sec": 0.02687088223639542,
+    "affine_slope_gt_per_gen": 0.9745263979815356
+  },
+  "events": {
+    "gen_note_events": 34,
+    "gt_note_events": 36,
+    "note_edit_distance": 0.342194882707787,
+    "note_gap_ratio": 0.02857142857142857,
+    "note_pitch_semitone_distance": 2.751169754447006,
+    "event_duration_log_distance": 0.6181659351865951,
+    "event_ioi_normalized_distance": 0.016723354248396546,
+    "event_onset_normalized_distance": 0.039905493219669484,
+    "matched_note_events": 34,
+    "global_rhythm_distance": 0.09021569797859855,
+    "global_rhythm_onset_component": 0.013614720761829187,
+    "global_rhythm_duration_component": 0.07660097721676937,
+    "global_rhythm_event_duration_component": 0.06229138106591582,
+    "global_rhythm_phrase_duration_component": 0.014309596150853544,
+    "global_rhythm_onset_mae": 0.027229441523658374,
+    "global_rhythm_duration_relative_mae": 0.24916552426366328,
+    "global_rhythm_phrase_duration_log_normalized": 0.057238384603414176,
+    "global_rhythm_alignment_gap_ratio": 0.02857142857142857,
+    "global_rhythm_matched_events": 34,
+    "global_rhythm_insertions": 2,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.08721100000548176
+}

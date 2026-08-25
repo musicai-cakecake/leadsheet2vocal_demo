@@ -9,7 +9,7 @@
 <meta property="og:description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127925;</text></svg>">
-<link rel="stylesheet" href="assets/css/style.css?v=20260825-recording-gt">
+<link rel="stylesheet" href="assets/css/style.css?v=20260825-evaluation">
 <script>
   // Applied before first paint so the saved theme never flashes.
   (function () {
@@ -215,6 +215,170 @@
           <p class="lang lang-zh">开源 SongGeneration2 模型。</p>
           <p class="lang lang-en">The open-source SongGeneration2 model.</p>
         </article>
+      </div>
+
+      <div id="evaluation" class="evaluation-block">
+        <div class="evaluation-head">
+          <p class="eyebrow">Paired Objective Evaluation</p>
+          <h3 class="evaluation-title">
+            <span class="lang lang-zh">M6 vs LeVo2：纯人声音高与节奏配对实验</span>
+            <span class="lang lang-en">M6 vs LeVo2: Paired Vocal Pitch and Rhythm Evaluation</span>
+          </h3>
+          <p class="evaluation-lead">
+            <span class="lang lang-zh">严格使用相同的 21 个测试样例，对每个模型生成的 <strong>gen_vocal.mp3</strong> 与同一 <strong>gt_vocal.mp3</strong> 进行比较；两组 GT 文件已逐一通过 SHA-256 一致性检查。</span>
+            <span class="lang lang-en">The evaluation uses the same 21 test samples for both models, comparing each generated <strong>gen_vocal.mp3</strong> against the identical <strong>gt_vocal.mp3</strong>. All paired GT files were verified by SHA-256.</span>
+          </p>
+          <div class="evaluation-badges" aria-label="Evaluation setup">
+            <span class="tag tag-ours">M6 · Ours</span>
+            <span class="tag tag-baseline">LeVo2 · Baseline</span>
+            <span class="chip"><span class="lang lang-zh">21 对相同样例</span><span class="lang lang-en">21 matched samples</span></span>
+            <span class="chip"><span class="lang lang-zh">21 / 21 运行成功</span><span class="lang lang-en">21 / 21 completed</span></span>
+          </div>
+        </div>
+
+        <div class="evaluation-note">
+          <strong>Δ = LeVo2 − M6</strong>
+          <span class="lang lang-zh">。所有指标均越低越好，因此正差值表示 M6 的距离更低。</span>
+          <span class="lang lang-en">. All metrics are lower-is-better, so a positive delta means that M6 has the lower distance.</span>
+        </div>
+
+        <div class="evaluation-stats">
+          <article class="card evaluation-stat">
+            <span class="evaluation-stat-label"><span class="lang lang-zh">平均音高距离</span><span class="lang lang-en">Mean pitch distance</span></span>
+            <strong><span class="value-ours">268.7</span><span class="value-vs">vs</span><span class="value-baseline">481.8</span></strong>
+            <small>cent · M6 / LeVo2</small>
+          </article>
+          <article class="card evaluation-stat">
+            <span class="evaluation-stat-label"><span class="lang lang-zh">平均全局节奏距离</span><span class="lang lang-en">Mean global rhythm distance</span></span>
+            <strong><span class="value-ours">0.115</span><span class="value-vs">vs</span><span class="value-baseline">0.230</span></strong>
+            <small>M6 / LeVo2</small>
+          </article>
+          <article class="card evaluation-stat">
+            <span class="evaluation-stat-label"><span class="lang lang-zh">平均速度 log 距离</span><span class="lang lang-en">Mean tempo log distance</span></span>
+            <strong><span class="value-ours">0.095</span><span class="value-vs">vs</span><span class="value-baseline">0.349</span></strong>
+            <small>M6 / LeVo2</small>
+          </article>
+          <article class="card evaluation-stat">
+            <span class="evaluation-stat-label"><span class="lang lang-zh">平均伪音符编辑距离</span><span class="lang lang-en">Mean pseudo-note edit distance</span></span>
+            <strong><span class="value-ours">0.370</span><span class="value-vs">vs</span><span class="value-baseline">0.528</span></strong>
+            <small>M6 / LeVo2</small>
+          </article>
+        </div>
+
+        <div class="evaluation-panel">
+          <h4 class="evaluation-subtitle">
+            <span class="lang lang-zh">组级配对结果</span>
+            <span class="lang lang-en">Group-level paired results</span>
+          </h4>
+          <div class="evaluation-table-wrap" role="region" tabindex="0" aria-label="M6 and LeVo2 group-level paired results">
+            <table class="evaluation-table">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="lang lang-zh">指标</span><span class="lang lang-en">Metric</span></th>
+                  <th scope="col">M6</th>
+                  <th scope="col">LeVo2</th>
+                  <th scope="col"><span class="lang lang-zh">平均 Δ</span><span class="lang lang-en">Mean Δ</span></th>
+                  <th scope="col">95% bootstrap CI</th>
+                  <th scope="col"><span class="lang lang-zh">较低样例数</span><span class="lang lang-en">Lower count</span><br><small>M6 / LeVo2</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="lang lang-zh">音高距离（cent）</span><span class="lang lang-en">Pitch distance (cent)</span></th>
+                  <td>268.73</td><td>481.76</td><td class="delta-positive">+213.04</td><td>[+133.33, +299.62]</td><td>19 / 2</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="lang lang-zh">全局 onset-duration 节奏</span><span class="lang lang-en">Global onset-duration rhythm</span></th>
+                  <td>0.1150</td><td>0.2295</td><td class="delta-positive">+0.1146</td><td>[+0.0712, +0.1559]</td><td>17 / 4</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="lang lang-zh">速度 log 距离</span><span class="lang lang-en">Tempo log distance</span></th>
+                  <td>0.0953</td><td>0.3492</td><td class="delta-positive">+0.2540</td><td>[+0.1583, +0.3442]</td><td>19 / 2</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="lang lang-zh">伪音符编辑距离</span><span class="lang lang-en">Pseudo-note edit distance</span></th>
+                  <td>0.3697</td><td>0.5281</td><td class="delta-positive">+0.1584</td><td>[+0.1015, +0.2209]</td><td>18 / 3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="evaluation-panel">
+          <h4 class="evaluation-subtitle">
+            <span class="lang lang-zh">全局节奏分量</span>
+            <span class="lang lang-en">Global rhythm components</span>
+          </h4>
+          <div class="evaluation-table-wrap" role="region" tabindex="0" aria-label="Global rhythm component comparison">
+            <table class="evaluation-table">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="lang lang-zh">分量</span><span class="lang lang-en">Component</span></th>
+                  <th scope="col">M6</th>
+                  <th scope="col">LeVo2</th>
+                  <th scope="col"><span class="lang lang-zh">平均 Δ</span><span class="lang lang-en">Mean Δ</span></th>
+                  <th scope="col">95% CI</th>
+                  <th scope="col"><span class="lang lang-zh">解释</span><span class="lang lang-en">Interpretation</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Onset (50%)</th>
+                  <td>0.0218</td><td>0.0486</td><td class="delta-positive">+0.0269</td><td>[+0.0142, +0.0404]</td>
+                  <td><span class="lang lang-zh">M6 更低</span><span class="lang lang-en">M6 lower</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Duration <span class="lang lang-zh">合计</span><span class="lang lang-en">total</span> (50%)</th>
+                  <td>0.0932</td><td>0.1809</td><td class="delta-positive">+0.0877</td><td>[+0.0527, +0.1207]</td>
+                  <td><span class="lang lang-zh">M6 更低</span><span class="lang lang-en">M6 lower</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="lang lang-zh">全句时长比</span><span class="lang lang-en">Whole-phrase duration</span> (25%)</th>
+                  <td>0.0344</td><td>0.1248</td><td class="delta-positive">+0.0904</td><td>[+0.0565, +0.1221]</td>
+                  <td><span class="lang lang-zh">M6 更低</span><span class="lang lang-en">M6 lower</span></td>
+                </tr>
+                <tr class="row-diagnostic">
+                  <th scope="row"><span class="lang lang-zh">对齐 gap（诊断）</span><span class="lang lang-en">Alignment gap (diagnostic)</span></th>
+                  <td>6.648%</td><td>16.476%</td><td class="delta-positive">+9.827 pp</td><td>[+3.737, +16.443]</td>
+                  <td><span class="lang lang-zh">不计入总分</span><span class="lang lang-en">Excluded from score</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="evaluation-figures">
+          <figure class="card evaluation-figure">
+            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/01_pitch_global_rhythm.svg" target="_blank" rel="noopener">
+              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/01_pitch_global_rhythm.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 mean pitch distance versus mean global rhythm distance scatter plot">
+            </a>
+            <figcaption><span class="lang lang-zh">平均音高距离 × 平均全局节奏距离</span><span class="lang lang-en">Mean pitch distance × mean global rhythm distance</span></figcaption>
+          </figure>
+          <figure class="card evaluation-figure">
+            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/02_note_edit_tempo.svg" target="_blank" rel="noopener">
+              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/02_note_edit_tempo.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 pseudo-note edit distance versus tempo log distance scatter plot">
+            </a>
+            <figcaption><span class="lang lang-zh">平均伪音符编辑距离 × 平均速度 log 距离</span><span class="lang lang-en">Mean pseudo-note edit distance × mean tempo log distance</span></figcaption>
+          </figure>
+          <figure class="card evaluation-figure">
+            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/03_pitch_note_edit.svg" target="_blank" rel="noopener">
+              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/03_pitch_note_edit.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 mean pitch distance versus pseudo-note edit distance scatter plot">
+            </a>
+            <figcaption><span class="lang lang-zh">音高分布：平均音高距离 × 平均伪音符编辑距离</span><span class="lang lang-en">Pitch distribution: mean pitch distance × pseudo-note edit distance</span></figcaption>
+          </figure>
+          <figure class="card evaluation-figure">
+            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/04_global_rhythm_tempo.svg" target="_blank" rel="noopener">
+              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/04_global_rhythm_tempo.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 global rhythm distance versus tempo log distance scatter plot">
+            </a>
+            <figcaption><span class="lang lang-zh">节奏分布：平均全局节奏距离 × 平均速度 log 距离</span><span class="lang lang-en">Rhythm distribution: mean global rhythm distance × mean tempo log distance</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="card evaluation-conclusion">
+          <h4><span class="lang lang-zh">结论范围</span><span class="lang lang-en">Scope of conclusion</span></h4>
+          <p class="lang lang-zh">在这 21 个严格匹配样例上，音高距离、全局节奏距离、速度距离与伪音符编辑距离均支持 M6 整体优于 LeVo2。全局节奏的 onset 与 duration 合计均支持 M6，duration 优势主要来自更接近的全句时长比。</p>
+          <p class="lang lang-en">Across these 21 strictly matched samples, pitch, global rhythm, tempo, and pseudo-note edit distances all support an overall M6 advantage over LeVo2. Both onset and aggregate duration components favor M6; the duration advantage is driven primarily by a closer whole-phrase duration ratio.</p>
+        </div>
       </div>
     </section>
 

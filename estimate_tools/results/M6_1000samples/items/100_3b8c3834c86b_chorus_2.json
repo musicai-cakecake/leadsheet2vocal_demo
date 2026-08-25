@@ -1,0 +1,84 @@
+{
+  "sample_id": "100_3b8c3834c86b_chorus_2",
+  "status": "ok",
+  "paths": {
+    "gen_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/100_3b8c3834c86b_chorus_2/gen_vocal.mp3",
+    "gt_vocal": "/Users/yeezou/Documents/Research/乐谱生成歌声项目/VeLo/推理和实验结果/demo_webpage/M6_1000samples/100_3b8c3834c86b_chorus_2/gt_vocal.mp3"
+  },
+  "metadata": {
+    "uid": "3b8c3834c86b4dbf763d932d68ca3f13/chorus_2",
+    "sample_id": "3b8c3834c86b4dbf763d932d68ca3f13",
+    "section_key": "chorus_2",
+    "struct_tag": "[chorus]",
+    "gt_duration_sec": 14.06,
+    "description": "[chorus] I'll be drinking crooked whiskey and sometimes lemon drops.I'll be wearing diamond grills and Louis Vuittons a lot.Sometimes I can be extreme, I'm never gonna stop.Keep this party going, we'll be dancing till we drop"
+  },
+  "audio": {
+    "gen_original_duration_sec": 14.08,
+    "gt_original_duration_sec": 14.0680625,
+    "gen_active_duration_sec": 12.87,
+    "gt_active_duration_sec": 13.02,
+    "gen_trim_start_sec": 0.77,
+    "gt_trim_start_sec": 0.75,
+    "gen_f0_backend": "rmvpe",
+    "gt_f0_backend": "rmvpe"
+  },
+  "alignment": {
+    "content_dtw_cost": 0.6961921186623987,
+    "content_dtw_cumulative_cost": 983.5265818900339,
+    "path_frames": 1398,
+    "constraint_fallback": false,
+    "gen_content_frames": 1288,
+    "gt_content_frames": 1303
+  },
+  "pitch": {
+    "content_pitch_cent_distance": 296.82721594862494,
+    "content_pitch_cent_mean": 364.257337934274,
+    "content_pitch_cent_median": 184.1757939993931,
+    "content_pitch_cent_rmse": 571.452966235108,
+    "content_pitch_cent_p90": 1185.6377844625888,
+    "content_macro_pitch_cent_distance": 234.69210777333373,
+    "matched_voiced_path_ratio": 0.6809728183118741,
+    "voicing_jaccard_distance": 0.14311431143114312,
+    "matched_voiced_frames": 952,
+    "path_frames": 1398,
+    "direct_f0_dtw_cost": 1.2128382556877,
+    "direct_f0_pitch_cent_distance": 34.342390156530236,
+    "direct_f0_matched_voiced_ratio": 0.6768603465851172,
+    "direct_f0_path_frames": 1962,
+    "direct_f0_constraint_fallback": false
+  },
+  "rhythm": {
+    "path_deviation_normalized": 0.0042803516923941645,
+    "path_deviation_ms": 55.40915265804246,
+    "path_diagonal_rmse": 0.007015713981195078,
+    "tempo_ratio": 0.9884792626728112,
+    "tempo_log_distance": 0.011587615172387782,
+    "affine_intercept_sec": -0.014405322146142164,
+    "affine_slope_gt_per_gen": 1.003737973619323
+  },
+  "events": {
+    "gen_note_events": 32,
+    "gt_note_events": 40,
+    "note_edit_distance": 0.3770014701194947,
+    "note_gap_ratio": 0.1111111111111111,
+    "note_pitch_semitone_distance": 1.2911716898658718,
+    "event_duration_log_distance": 0.5870308818487645,
+    "event_ioi_normalized_distance": 0.020473052210825377,
+    "event_onset_normalized_distance": 0.03320878270475046,
+    "matched_note_events": 32,
+    "global_rhythm_distance": 0.07030035542620985,
+    "global_rhythm_onset_component": 0.011568740399385564,
+    "global_rhythm_duration_component": 0.058731615026824294,
+    "global_rhythm_event_duration_component": 0.05455226629059086,
+    "global_rhythm_phrase_duration_component": 0.004179348736233432,
+    "global_rhythm_onset_mae": 0.023137480798771128,
+    "global_rhythm_duration_relative_mae": 0.21820906516236344,
+    "global_rhythm_phrase_duration_log_normalized": 0.01671739494493373,
+    "global_rhythm_alignment_gap_ratio": 0.1111111111111111,
+    "global_rhythm_matched_events": 32,
+    "global_rhythm_insertions": 8,
+    "global_rhythm_deletions": 0
+  },
+  "runtime_sec": 0.09616112500953022
+}
