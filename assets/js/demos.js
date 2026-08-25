@@ -1873,3 +1873,21 @@ window.PROMPT_DEMO_DATA = {
     }
   ]
 };
+
+(function () {
+  var durations = {
+    '27_970e62901597_verse_3': 13.3,
+    '64_eefb7a15ea1c_verse_2': 16.4,
+    '82_52a558a32aaa_verse_2': 15.0,
+    '92_ea76abe2f1d5_chorus_3': 20.8,
+    '97_4b80f4b0bf1d_chorus_2': 7.5
+  };
+
+  window.PROMPT_DEMO_DATA.groups.forEach(function (group) {
+    var root = 'M6_1000samples_raw_prompts/' + group.sampleId + '/';
+    group.recordingGroundTruth = {
+      vocal: { src: root + 'gt_vocal.mp3', duration: durations[group.sampleId] },
+      song: { src: root + 'gt_mixed.mp3', duration: durations[group.sampleId] }
+    };
+  });
+})();
