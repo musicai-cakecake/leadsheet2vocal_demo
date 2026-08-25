@@ -1,0 +1,9 @@
+{
+  "idx": "05_996b8a9e3232_verse_3",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[verse] There's no heaven that wants me, no other good ever holds me in.No matter how far I run, I can never escape.I still bear all of my sins",
+  "descriptions": "male, adult, harsh, light, general american, highly-varied, solo, metal, english, fully sung, hall, present, chest, mixed, growl, distortion, belt, gritty, powerful, dark, angry, sad",
+  "m6_uid": "996b8a9e3232fd5ca8f63887ef8c5739/verse_3",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

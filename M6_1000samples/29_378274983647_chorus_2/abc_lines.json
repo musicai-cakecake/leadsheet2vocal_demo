@@ -1,0 +1,104 @@
+{
+  "chorus_1": {
+    "header": "[Q:1/4=111][M:4/4][K:Db]",
+    "abc_lines": [
+      "z6A,>A,| dh.ah l",
+      "(3:2:4D2DD2DD2F2| eh dx.er z.aa n.dh.ah b.ah.s aa",
+      "A2FFD2z2| r.ao l.l.ay n d",
+      "E2CCA,2z2| ah p.ao.l.l.ay n d",
+      "A2A/F/FD2A,2| ah p.ao.l.l.ay * n d.ah.p dh.ah",
+      "D3/2D2D/D>FF>F| l.eh dx.er.z.aa n.dh ah.b.ah.s * aa r",
+      "A2F2D2DD| ao l.l.ay.n d.ah.p f.r.ah m",
+      "E4A,4| ah t.uw",
+      "D4z4| z.iy"
+    ],
+    "lyrics": "The letters on the bus are all lined up, all lined up, all lined up. The letters on the bus are all lined up from A to Z.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_1_audio.mp3",
+    "start_time": 3.22,
+    "end_time": 22.5
+  },
+  "verse_1": {
+    "header": "[Q:1/4=111][M:4/4][K:Db]",
+    "abc_lines": [
+      "z6A,2| l.eh.t.s",
+      "D2D>DD2F2| s.t.aa.r t.w.ih.dh.dh ah.l eh dx.er",
+      "A2F2D2z2| z.ah.b iy s.iy.th.r.iy",
+      "E2C2A,2z2| d.iy iy eh.f",
+      "A>AF2D2A,2| ae n.dh eh.n jh.iy l.eh",
+      "D2D2D2F2| t.s.n.aa t.f er.g.eh t.aw",
+      "A>AF2C2z2| er.ey ch.ay * jh.ey.k.ey.eh.l",
+      "E2E2A,2A,2| eh m.th.r.iy.ae * *",
+      "D4z4| n.eh.n"
+    ],
+    "lyrics": "Let's start with the letters A, B, C, D, E, F, and then G. Let's not forget our H, I, J, K, L, M, and N.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/verse_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/verse_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/verse_1_audio.mp3",
+    "start_time": 24.64,
+    "end_time": 43.94
+  },
+  "chorus_2": {
+    "header": "[Q:1/4=111][M:4/4][K:Db]",
+    "abc_lines": [
+      "z6A,2| dh.ah",
+      "(3:2:2D2DD>DD>DF>F| l.eh dx.er z.aa n.dh.ah.b ah s aa *",
+      "A3/2FF3/2D2z2| * r.ao.l.l.ay.n * d",
+      "E2C/C/CA,2z2| ah p.ao.l.l.ay * n d.ah.p",
+      "A2F<FD2A,<A,| ao l.l.ay.n * d.ah.p dh.ah l",
+      "DDD>DD2F>F| eh dx.er z.aa n.dh.ah.b ah.s aa r.ao",
+      "A2F2D<DD2| * l.l.ay n.d.ah p f.r.ah.m",
+      "E4A,4| ah t.uw",
+      "D6z2| z.iy"
+    ],
+    "lyrics": "The letters on the bus are all lined up, all lined up, all lined up. The letters on the bus are all lined up from A to Z.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_2_audio.mp3",
+    "start_time": 46.08,
+    "end_time": 65.36
+  },
+  "verse_2": {
+    "header": "[Q:1/4=111][M:4/4][K:Db]",
+    "abc_lines": [
+      "z6A,>A,| aa.r y.uw.r",
+      "(3:2:4D2DD2DC2F2| eh * * d.iy.hh.iy.r.w.iy.g ow w.ih.dh",
+      "A2F2D2z2| ow p.iy k.y.uw",
+      "E2C2A,2z2| aa r.eh.s t.iy",
+      "A2F2D2A,A,| y.uw ae.n v.iy t.uw dh.ah.b",
+      "D2DDD2F2| ae.k ah v.dh.ah.b ah.s g.ow.d.ah",
+      "A2F2D2z2| b.ah l y.uw",
+      "E4A,2A,2| eh.k.s w.ay.ae *",
+      "D4z4| n.z.iy"
+    ],
+    "lyrics": "Are you ready? Here we go with O P Q R S T U and V to the back of the bus. Go W X Y and Z.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/verse_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/verse_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/verse_2_audio.mp3",
+    "start_time": 67.5,
+    "end_time": 86.8
+  },
+  "chorus_3": {
+    "header": "[Q:1/4=111][M:4/4][K:Db]",
+    "abc_lines": [
+      "z8|",
+      "E<AF<DF<AE<B,| * * ah.b.iy s iy th r.iy *",
+      "F<B=E<A(3:2:2FA,2z2| d.iy iy eh f.jh iy *",
+      "A2=E<B,=B2A<_B| ey.ch ay jh ey.k.ey.eh.l.eh.m th.r iy",
+      "cEB<BG/E/B,z2| eh n * ow p.iy * *",
+      "BcF<AA<Cz2| k.y.uw * aa r eh s",
+      "AD/AD/B,B<Cz2| t.iy y uw * v iy *",
+      "=AB/B/B<dD2zE/E/| d ah.b.ah.l.y * uw * eh.k.s * w",
+      "B,GB,/E/Ad/e/E/B,2-B,/| ay * ae * n z.iy * * * *",
+      "ABfF/=G/_G3/2c2e/| * ow.k ey b.ah.s * dr.ay v.er w.iy.r",
+      "CE/A/B/eG/z4| * r.eh.d.iy.t uw g.ow * *"
+    ],
+    "lyrics": "A B C D E F G H I J K L M N O P Q R S T U V W X Y and Z. Okay, bus driver, we're ready to go.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_3_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_3_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_25/37827498364707438b54ee1c3fb1309f/leadsheet_data/chorus_3_audio.mp3",
+    "start_time": 97.5,
+    "end_time": 121.08
+  }
+}

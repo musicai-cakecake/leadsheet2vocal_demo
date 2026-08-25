@@ -1,0 +1,9 @@
+{
+  "idx": "100_3b8c3834c86b_chorus_2",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] I'll be drinking crooked whiskey and sometimes lemon drops.I'll be wearing diamond grills and Louis Vuittons a lot.Sometimes I can be extreme, I'm never gonna stop.Keep this party going, we'll be dancing till we drop",
+  "descriptions": "female, adult, modal, light, general american, dynamics-moderate, solo, pop, english, fully sung, plate, present, chest, mixed, head, melisma, vibrato, bright, thin, clear, playful, energetic",
+  "m6_uid": "3b8c3834c86b4dbf763d932d68ca3f13/chorus_2",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

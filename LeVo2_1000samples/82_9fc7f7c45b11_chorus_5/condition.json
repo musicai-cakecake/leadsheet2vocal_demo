@@ -1,0 +1,9 @@
+{
+  "idx": "82_9fc7f7c45b11_chorus_5",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] Well, if it's all spinning round a ball, and if your world's feeling crowded and small, maybe you can be the big star in tonight's show",
+  "descriptions": "female, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, hall, present, mixed, technique-none, bright, thin, clear, dreamy, energetic",
+  "m6_uid": "9fc7f7c45b11197da620f40bcb6e5a8a/chorus_5",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

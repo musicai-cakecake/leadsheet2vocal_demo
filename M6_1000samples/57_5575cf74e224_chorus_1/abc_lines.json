@@ -1,0 +1,44 @@
+{
+  "chorus_1": {
+    "header": "[Q:1/4=79][M:4/4][K:C]",
+    "abc_lines": [
+      "E,2z4zG,,| * y.uw.n",
+      "E,G,G,3G,/G,/A,2| ow ay m.g.uh.d f.ao.r.w * ey.dx.ih",
+      "E,E,<D,D,C,D,2D,-| * * ng b.ah t.w ey *",
+      "D,<D,C,7/2C,2-C,/-| * * s.t.ah d.t.ay.m *",
+      "C,2z3D2B,-| * ow *",
+      "B,C3z4| * ae.n.ay",
+      "E/E^D/=D/C/CD>B,A,2| ay d.ow n.t.t.ey * k ih t.l.ay t l.iy",
+      "z2EC2C2B,| dh.ah.tr.ah b.ah.l dh.ae t.ay",
+      "A,2A,2-A,/G,3/2A,2| v g.ao * n th.r.uw",
+      "zG,G,G,2C2-C/D/-| t.uw.g eh t.y.uw.t.uw.n ow * hh.uw.ay.ae.m",
+      "D6z2|",
+      "z4zC<DB,/B,/-| ow * * *"
+    ],
+    "lyrics": "You know I'm good for waiting, but waiting's wasted time. Oh, and I I don't take it lightly the trouble that I've gone through to get you to know who I am.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_37/5575cf74e224f6df1d31dbe4b0eb8ecc/leadsheet_data/chorus_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_37/5575cf74e224f6df1d31dbe4b0eb8ecc/leadsheet_data/chorus_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_37/5575cf74e224f6df1d31dbe4b0eb8ecc/leadsheet_data/chorus_1_audio.mp3",
+    "start_time": 28.3,
+    "end_time": 49.96
+  },
+  "chorus_2": {
+    "header": "[Q:1/4=79][M:4/4][K:C]",
+    "abc_lines": [
+      "D6z2|",
+      "z4zC<DB,/B,/-| ow * * *",
+      "B,C2-C/A,2-A,/z2| * d.aa.r.ay.k.ae * n.t *",
+      "z3/2FE3/2DCC>D-| f.ay * * * n.d.ah.r iy",
+      "D3/2A,2-A,/zG,/G,/E>B,-| * z.ah.n * t.uw b.iy hh ae.p.iy",
+      "B,C2B,A,>F,G,<A,-| * ih n.dh.ih * s.hh aa *",
+      "A,G,G,<A,z3/2F,/G,G,| * r t.ey k k.ah.z ay sh.uh",
+      "G,/CD2-D/(3:2:2DB,2z2| d.n.ow b.eh dx.er.dh.ae * n.dh.ae t"
+    ],
+    "lyrics": "Oh, dar, I can't find a reason to be happy in this heartache, 'cause I should know better than that.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_37/5575cf74e224f6df1d31dbe4b0eb8ecc/leadsheet_data/chorus_2_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_37/5575cf74e224f6df1d31dbe4b0eb8ecc/leadsheet_data/chorus_2_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_37/5575cf74e224f6df1d31dbe4b0eb8ecc/leadsheet_data/chorus_2_audio.mp3",
+    "start_time": 46.92,
+    "end_time": 60.96
+  }
+}

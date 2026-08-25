@@ -1,0 +1,50 @@
+{
+  "chorus_1": {
+    "header": "[Q:1/4=83][M:4/4][K:Eb]",
+    "abc_lines": [
+      "B,<B,B,/B,/F,/D,/z4| * n.t.er.n.r.ay t.b.ae k.er aw n.d",
+      "C,C/C/C/C/C/G,/C/CC3/2F,| * dh.ey.s.eh d.ay.d ih dx.ah.n.t hh.ae v.w * ah.t.ih t.t.ey k.s",
+      "D,D/D/D/D/D/B,/D/DD2-D/| ay n.iy dx.ah.d.m ah * n.iy.ae n.ah.p r.ih dx.iy.f.ey s *",
+      "z3/2B,,/C/_DD/C3/2A,A,/B,-| b.ah t.ay.jh * ah.s.t.l.uh k.ae t.dh.eh m.ae.n.s ey",
+      "B,2-B,/A,/F,zC,B,/_DE/-| * * * * ay y.uw s.w.ah.t.ay g.aa.t",
+      "E2B,/C/E/E2B,/B,<E-| * t.ey.k w.ah t.ay.g eh t.g.ih v t.ih.l.ay",
+      "E/DD3/2C/C/B,/B,B,/B,/C/E/E/| * ey.n.t.g.aa t.n.ah.th.ih.ng.l.eh * * * f.t.dh.eh n.ay g.ih v.ih.t s.ah.m m.ao",
+      "C2B,/EE3/2E/E/E/FF/-| * r.k.iy.p aa n.k.l.ay.m.ih.ng.ah * * p dh.ae *",
+      "FB,B,2z/B,B,/B,/CE/| * t.m.aw.n.t.ah.n * k.iy p.tr.ah k ih.ng.ah.l.ao *",
+      "(3:2:2CC2B,/C/D/E/E>B,B,/C/E/E/| * ng w.er k.ah.p ah.s w.eh t p.ae s t.eh v.er.iy.n ow",
+      "D/D/D<DD/D/E/EE/D/D/C/B,/| * ae f.t.er.n ow.ae.f t.er.n ow * t.ih * * * * *",
+      "A,2C,CC/B,/B,/A,/B,/B,G,/| l.ay.g.eh.t.ah.y.eh.s ay d.ow n.t.w er.iy.ah b.aw * t.w.ah t.ay m.n.aa",
+      "F,2z3C,/E/C>E-| t ay.y * uw.s.w.ah t.ay.g.aa.t"
+    ],
+    "lyrics": "They said I didn't have what it takes. I needed money and a pretty face. But I just look at them and say, I use what I got, take what I get, give till I ain't got nothing left, then I give it some more. Keep on climbing up that mountain, keep trucking along, work up a sweat, past every no after no after no till I get a yes. I don't worry about what I'm not.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_47/2011788cb65009960569c9ffcd45beec/leadsheet_data/chorus_1_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_47/2011788cb65009960569c9ffcd45beec/leadsheet_data/chorus_1_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_47/2011788cb65009960569c9ffcd45beec/leadsheet_data/chorus_1_audio.mp3",
+    "start_time": 31.88,
+    "end_time": 69.02
+  },
+  "chorus_4": {
+    "header": "[Q:1/4=83][M:4/4][K:Eb]",
+    "abc_lines": [
+      "B,/B,B,/B,>F,E,2z2| l p.t.m.iy g.eh t.dh.ih s.f.aa r",
+      "C,CC>A,CC/C2C/| ay s.t.ih l.g.aa t.ah.l aa t.ah * v",
+      "_D,C,<=DD/E/E3/2D3/2A,/=D,/| m.ay.l.z.t uw.g.ow.ih.t.s.ah.w ay n.d.ih.ng * ah.p.hh.ih l.r.ow.d.b.ah t *",
+      "C,_DD/DD/D/CA,B,B,/-| * ay.l.g.eh t dh.eh r.dh.ah ow n l.iy.w.ey ay n",
+      "B,2-B,/A,/F,z2B,/_DE/| * * * ow ay.y.uw.s.w ah.t.ay g.aa",
+      "B,2B,/C/E/E2B,/B,<E| t t.ey.k w.ah t.ay.g eh t.g.ih v.t ih.l.ay",
+      "E/DD3/2C/C/B,/B,B,/B,/C/E/E/| ey n.t.g.aa t.n.ah.th.ih.ng.l.eh f.t.dh.eh * * n.ay.g.ih.v.ih * * t s.ah.m m.ao",
+      "C2B,/E/E/E/EE/E/F>F-| * r.k.iy.p aa.n.k l.ay.m.ih.ng ah * * * p.dh.ae *",
+      "FB,3z/B,B,/B,/C/E/E/| * t.m.aw.n.t.ah.n k.iy p.ah l * * ao",
+      "C2B,/C/D/E/C>B,B,/_D/E/E/| ng w.er k.ah.p ah.s w.eh t p.ae s t.eh v.er.iy.n ow",
+      "D/D/D/D/DD/D/E/E/E/E/D/D/C/B,/| * ae f.t.er.n ow * ae.f.t.er.n ow * t.ih * * * * * *",
+      "A,2C,CC/B,/B,/A,/B,/B,G,/| l.ay.g.eh.t.ah.y.eh.s ay d.ow n.t.w er.iy.ah.b aw t.w ah t.ay m.n.aa",
+      "F,2z2G3/2GF/E/E/-| t ay y.uw s.w.ah n.ah.v g.aa.d.z"
+    ],
+    "lyrics": "I still got a lot of miles to go. It's a winding uphill road, but I'll get there the only way I know. I use what I got, take what I get, give till I ain't got nothing left, then I give it some more. Keep on climbing up that mountain, keep truckin' along, work up a sweat, past every no after no after no till I get a yes. I don't worry about what I'm not.",
+    "vocal_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_47/2011788cb65009960569c9ffcd45beec/leadsheet_data/chorus_4_vocal.mp3",
+    "inst_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_47/2011788cb65009960569c9ffcd45beec/leadsheet_data/chorus_4_inst.mp3",
+    "audio_mp3": "/apdcephfs_wza3/share_304210672/users/yeezou/LeVo/laion_disco_12m_en_102k_51batch_filtered/batch_47/2011788cb65009960569c9ffcd45beec/leadsheet_data/chorus_4_audio.mp3",
+    "start_time": 89.0,
+    "end_time": 126.16
+  }
+}

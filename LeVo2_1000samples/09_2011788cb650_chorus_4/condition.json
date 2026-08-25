@@ -1,0 +1,9 @@
+{
+  "idx": "09_2011788cb650_chorus_4",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] I still got a lot of miles to go.It's a winding uphill road, but I'll get there the only way I know.I use what I got, take what I get, give till I ain't got nothing left, then I give it some more.Keep on climbing up that mountain, keep truckin' along, work up a sweat, past every no after no after no till I get a yes.I don't worry about what I'm not",
+  "descriptions": "male, adult, raspy, vibrato-moderate, southern us, powerful, solo, country, english, fully sung, plate, delay-none, chest, mixed, belt, twang, vibrato, gritty, full, energetic, triumphant",
+  "m6_uid": "2011788cb65009960569c9ffcd45beec/chorus_4",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

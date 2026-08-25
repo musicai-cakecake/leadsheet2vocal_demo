@@ -333,7 +333,8 @@
 
     /* --- metadata --- */
     var hasMeta = group.lyrics || group.prompt ||
-      (group.prompts && group.prompts.length) || group.leadSheet;
+      (group.prompts && group.prompts.length) || group.leadSheet ||
+      (group.referenceAudio && group.referenceAudio.src);
     if (hasMeta) {
       var meta = el('div', 'meta');
       if (group.lyrics) {
@@ -358,6 +359,19 @@
       }
       if (group.leadSheet) {
         meta.appendChild(metaRow('领谱', 'Lead sheet', renderLeadSheet(group.leadSheet)));
+      }
+      if (group.referenceAudio && group.referenceAudio.src) {
+        var referenceName = [
+          group.sampleId || group.id,
+          'reference-timbre'
+        ].join('__') + '.' + audioExtension(group.referenceAudio.src);
+        var referencePlayer = createPlayer(group.referenceAudio, referenceName);
+        meta.appendChild(metaRow(
+          '参考音色音频',
+          'Reference timbre audio',
+          referencePlayer.node
+        ));
+        groupFiles.push(referencePlayer);
       }
       section.appendChild(meta);
     }
@@ -421,8 +435,8 @@
       var melodyRow = el('div', 'melody-ground-truth');
       var melodyInfo = el('div', 'melody-info');
       bilingual(melodyInfo, {
-        zh: 'Lead Sheet 真实旋律 Ground Truth',
-        en: 'Lead Sheet Melody Ground Truth'
+        zh: 'Lead Sheet 旋律乐谱',
+        en: 'Lead Sheet Melody'
       }, 'strong');
       bilingual(melodyInfo, {
         zh: '领谱渲染音频',
@@ -439,6 +453,49 @@
       melodyRow.appendChild(melodyPlayer.node);
       section.appendChild(melodyRow);
       groupFiles.push(melodyPlayer);
+    }
+
+    if (group.recordingGroundTruth) {
+      var recordingRow = el('div', 'track-row recording-ground-truth');
+      recordingRow.setAttribute('data-variant', 'gt');
+
+      var recordingInfo = el('div', 'sys');
+      recordingInfo.appendChild(el('span', 'sys-name', 'GT'));
+      var recordingNote = el('span', 'sys-note');
+      bilingual(recordingNote, {
+        zh: '真实录音',
+        en: 'ground-truth recording'
+      });
+      recordingInfo.appendChild(recordingNote);
+      recordingRow.appendChild(recordingInfo);
+
+      columns.forEach(function (col) {
+        var cell = el('div', 'track-cell');
+        var label = el('div', 'cell-label');
+        bilingual(label, col.key === 'vocal' ? {
+          zh: '真实 Vocal · 纯人声',
+          en: 'Ground-truth Vocal'
+        } : {
+          zh: '真实 Song · 带伴奏',
+          en: 'Ground-truth Song'
+        });
+        cell.appendChild(label);
+
+        var track = group.recordingGroundTruth[col.key];
+        if (track && track.src) {
+          var fileName = [
+            group.sampleId || group.id,
+            'GT-ground-truth-recording',
+            col.key
+          ].join('__') + '.' + audioExtension(track.src);
+          var player = createPlayer(track, fileName);
+          cell.appendChild(player.node);
+          groupFiles.push(player);
+        }
+        recordingRow.appendChild(cell);
+      });
+
+      section.appendChild(recordingRow);
     }
 
     dlAll.addEventListener('click', function () {

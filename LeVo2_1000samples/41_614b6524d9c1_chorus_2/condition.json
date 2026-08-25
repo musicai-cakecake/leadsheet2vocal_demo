@@ -1,0 +1,9 @@
+{
+  "idx": "41_614b6524d9c1_chorus_2",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] Break another little piece of my heart, darling, yeah, yeah, yeah, yeah.Wow, another little piece of my heart, baby, baby, baby.You know you gotta, if it makes you feel good, I want you to feel good now, yeah",
+  "descriptions": "female, adult, raspy, vibrato-moderate, southern us, powerful, solo, rock, english, fully sung, plate, delay-none, chest, mixed, belt, growl, distortion, vibrato, gritty, husky, energetic, tense",
+  "m6_uid": "614b6524d9c12e5ef8b84d431acb7563/chorus_2",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

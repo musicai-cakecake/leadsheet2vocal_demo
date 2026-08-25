@@ -1,0 +1,39 @@
+==========================================================================
+ 输入条件  0fb9afd8227ce4b4748bd49f0fb88683/verse_5
+ 条件模式  正式（真实歌词 + 参考音频）
+==========================================================================
+
+【1】description（歌词条件，模型看到的原文）
+    [verse] Dead president's corpse in the driver's car.The engine runs on glue and tar.Come on along, not going very far.To the east to meet the Tsar
+
+【2】type_info（风格 tag 条件）
+    [Musicality-very-high], male, adult, modal, light, general american, dynamics-moderate, solo, rock, english, fully sung, plate, delay-none, chest, technique-none, warm, gritty, powerful, tense, energetic.
+
+【3】leadsheet（旋律 + 音素条件）  ← 本实验真正要验证的通路
+    header : [Q:1/4=120][M:4/4][K:F]
+    规模   : 246 tokens / 10 小节
+    解码后 : <bos>  <sec_bos>  [verse]  <tempo_120_130>  <meter_4/4>  <key_F> 
+| ·z6 ·=F2 eh
+| ·E d p r eh ·=F * ·E2 * ·F2 z ih d ah n t s k ao r p ·E s ih ·D n dh ah dr
+| ·E ay ·E2 v er z ·E3 k aa r ·z ·E dh ah eh
+| ·=F * ·E * ·E * ·D n ·E jh ah n ·E r ah n z ·E aa ·^D n
+| ·E g l uw ·E ae ·E n t ·E3 aa r k ah m ·z2
+| ·z ·G aa ·G * ·G n ·E2 ah l ao ·E2 ng
+| ·E n aa ·D t g ow ih ng v ·E eh ·D r iy ·E f aa ·E3 r
+| ·z ·E t ·(3:2:2 ·E2 * ·E uw dh ah iy s ·- ·E2 * ·z ·E t t uw m
+| ·E2 iy t ·E dh ah ·E z aa ·E * ·=F r ·z2 <eos>
+
+【4】prompt_audio（参考音频，只给音色，不含本段内容）
+    来源   : 0fb9afd8227ce4b4748bd49f0fb88683/verse_3（同曲另一段落的前 250 帧真实 codec token）
+
+【5】长度
+    GT     : 18.18 s / 455 帧
+    生成预算: 41.36 s（给足空间让模型自己发 EOS）
+
+--------------------------------------------------------------------------
+【参考】该段真实歌词（isolate 模式下模型**看不到**，仅供你对照听）
+    Dead president's corpse in the driver's car. The engine runs on glue and tar. Come on along, not going very far. To the east to meet the Tsar.
+
+对比方式：gt_vocal.mp3（真值人声）  vs  gen_vocal.flac（模型生成）
+         gt_mixed.mp3 是原始混音，用来听旋律语境。
+==========================================================================

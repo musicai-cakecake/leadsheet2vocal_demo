@@ -1,0 +1,9 @@
+{
+  "idx": "29_378274983647_chorus_2",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] The letters on the bus are all lined up, all lined up, all lined up.The letters on the bus are all lined up from A to Z",
+  "descriptions": "female, adult, modal, vibrato-none, general american, dynamics-moderate, solo, other, english, fully sung, room, delay-none, chest, mixed, technique-none, bright, clear, sweet, happy, playful",
+  "m6_uid": "37827498364707438b54ee1c3fb1309f/chorus_2",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

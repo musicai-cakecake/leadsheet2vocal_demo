@@ -1,0 +1,50 @@
+==========================================================================
+ 输入条件  15361b90cec5d1a2831e47eea3cf052d/bridge_1
+ 条件模式  正式（真实歌词 + 参考音频）
+==========================================================================
+
+【1】description（歌词条件，模型看到的原文）
+    [bridge] I'm not okay, so go ahead and tell me another lie.Goes around, comes around, just to fuck me over one more time.So what? Impressive, I left it be a meaningless step.Pulling carbon, holding my head, and shit is real as it gets.Hallucinating, so sedated, all for the time to fight.I really do not give up, ready for hell.Call for the ring, but tell them all of my meetings be with my demons after Alpha Omega.I'm on the front line.A couple pills in my system now, I'm behind.Jumping back to love, baby, you know I'm not fine.Alpha Omega, baby, we don't die.Alpha Omega, baby, we don't die
+
+【2】type_info（风格 tag 条件）
+    [Musicality-very-high], male, adult, raspy, vibrato-none, general american, powerful, solo, rock, english, rhythmic speech, plate, delay-none, chest, mixed, belt, distortion, gritty, metallic, angry, tense.
+
+【3】leadsheet（旋律 + 音素条件）  ← 本实验真正要验证的通路
+    header : [Q:1/4=97][M:4/4][K:Eb]
+    规模   : 1003 tokens / 21 小节
+    解码后 : <bos>  <sec_bos>  [bridge]  <tempo_90_100>  <meter_4/4>  <key_Eb> 
+| ·z8
+| ·z2 ·(3 ·z ·B, ay m n aa t ow k ey s ow g ow ah hh eh d ae ·=G, * ·(3 ·A, * ·G, * ·A, * ·(3:2:2 ·A, * ·A,2 *
+| ·A,/ n t ·A, eh ·A,/ l m iy ah ·A, * ·A, n ah dh er l ay ·B, * ·A,/ g ow z er ·=G,/ aw ·B, n d k ah ·B,/ * ·G,/ *
+| ·A,/ m z ·A,/ er aw n d jh ah s t t ·B,/ uw f ah k m ·A, iy ·A, ow v er w ah n m ao ·A,/ r t ay ·B,/ * ·A, * ·=C/ m s ow ·=D/ w ah t ·C/ ih m p r ·D/ eh ·D/ s ih v
+| ·=C ay ·D l eh ·D * ·=D * ·C * ·_D f t ih t b iy ah m iy ·D n ih ·=D ng l ah
+| ·E s s t eh ·> ·=E p p uh l ·=D * ·D * ·D ih ng k aa ·> ·D r b ah n hh ow l d ih ·_D ng m ay ·=D hh
+| ·(3 ·=D eh ·E * ·D d ae n sh ih ·E t ih z r ·E iy l ae z ih t ·F g eh ·E t s ·z2
+| ·F/ hh ah ·=C/ * ·E l ·E/ * ·=D/ uw s ah n ey ·E * ·E t ih ng s ow s ih ·E/ * ·E/ d ey ·D * ·D dx ih d ao
+| ·E/ l f ao ·=D/ r ·B, * ·z3 ·F dh ah t ay ·F * ·G m t uw f ay
+| ·=D/ * ·E t ay ·E/ r ih ·E/ l ·G/ iy d uw n ·F aa ·G t g ih ·< ·G v ah p ·z3/2 ·F/ r eh ·-
+| ·F * ·G d iy ·< ·G f ao r hh eh ·F * ·=E/ l k ·E ao ·=G/ l f ao ·F * ·F/ r dh ah r ih ·_E/ ng
+| ·E/ * ·G/ * ·G b ah t ·z/ ·A, * ·F/ t eh ·G/ * ·G/ l dh eh m ao l ah v m ay ·=G m iy ·G/ dx ih ng ·F/ z b iy w ih dh ·F/ m ·F/ ay d
+| ·(3 ·=G iy ·_G m ah n ·G z ae f t er ae l f ah ·A ow m eh g ·< ·F ah ·z2 ·z/ ·=D ay ·E/ * ·-
+| ·E * ·E/ * ·E/ m aa ·- ·(3 ·E * ·E * ·=D n dh ah ·D3 f r ·=C ah n
+| ·E t l ay n ·=D ah k ah p ah l p ih ·(3:2:2 ·E2 l z ih n ·E m ay ·E * ·E s ih s t ah ·E m n aw ·E * ·-
+| ·E * ·< ·=D * ·E * ·D3/2 ay ·_D3/2 * ·=G m b ih hh ay n d jh ah ·_G *
+| ·(3 ·=G m p ih ·G ng ·G b ·(3 ·_G * ·G ae ·=G * ·G3/2 * ·G * ·G3/2 k t uw l ah v b ey b iy y uw n ow ay m n aa
+| ·F t f ay ·G n ae ·F l ·> ·G f ah ow m eh ·G/ g ah b ·G/ ey ·=G/ b iy w iy ·G/ d ·G ow n ·G *
+| ·F * ·G t ·G/ * ·B d ay ·F/ ae ·G/ l f ah ow m ·G/ eh ·=G/ g ah b ey ·G/ b iy w iy d ow n ·G t d ay ·G *
+| ·z8 <eos>
+
+【4】prompt_audio（参考音频，只给音色，不含本段内容）
+    来源   : 15361b90cec5d1a2831e47eea3cf052d/chorus_10（同曲另一段落的前 250 帧真实 codec token）
+
+【5】长度
+    GT     : 37.04 s / 927 帧
+    生成预算: 79.08 s（给足空间让模型自己发 EOS）
+
+--------------------------------------------------------------------------
+【参考】该段真实歌词（isolate 模式下模型**看不到**，仅供你对照听）
+    I'm not okay, so go ahead and tell me another lie. Goes around, comes around, just to fuck me over one more time. So what? Impressive, I left it be a meaningless step. Pulling carbon, holding my head, and shit is real as it gets. Hallucinating, so sedated, all for the time to fight. I really do not give up, ready for hell. Call for the ring, but tell them all of my meetings be with my demons after Alpha Omega. I'm on the front line. A couple pills in my system now, I'm behind. Jumping back to love, baby, you know I'm not fine. Alpha Omega, baby, we don't die. Alpha Omega, baby, we don't die.
+
+对比方式：gt_vocal.mp3（真值人声）  vs  gen_vocal.flac（模型生成）
+         gt_mixed.mp3 是原始混音，用来听旋律语境。
+==========================================================================

@@ -1,0 +1,9 @@
+{
+  "idx": "11_b51fba878c91_verse_1",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[verse] There was a better day, unlike today, where the vision inside decided to stay.Took the words that were true and a picture of you to the room where they rotted away.And then I came back to find out how it all began.Now I know this pen will never leave my hand.Won't you sing me to sleep? I can't stand the leak from the faucet that runs dry and drips like the tear from my eye",
+  "descriptions": "male, adult, pressed, vibrato-none, general american, powerful, solo, rock, english, fully sung, plate, delay-none, chest, mixed, belt, twang, bright, nasal, energetic, angry",
+  "m6_uid": "b51fba878c9114f65a33a53c5ff361d1/verse_1",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

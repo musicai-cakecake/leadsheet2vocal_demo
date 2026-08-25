@@ -1,0 +1,9 @@
+{
+  "idx": "96_6f3a48e796cc_chorus_2",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[chorus] I'm gonna take a tranquilizer and just another tranquilizer.I lost my mind, I lost my voice because I'm hypnotized by too much choice",
+  "descriptions": "male, adult, modal, light, general american, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, vibrato, breath-adlib, husky, mellow, clear, melancholic, sad",
+  "m6_uid": "6f3a48e796ccc6e222bbd8b920eb1d3d/chorus_2",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

@@ -1,0 +1,9 @@
+{
+  "idx": "40_0f06d5001bff_verse_1",
+  "engine": "official SongGeneration (songgeneration_v2_large)",
+  "mode": "text-to-song (no reference audio, no leadsheet)",
+  "gt_lyric": "[verse] On the night I first met you, you made all my dreams come true, and I said to myself that I would never stop dancing",
+  "descriptions": "female, adult, modal, vibrato-moderate, african american vernacular (aave), powerful, solo, r&b, english, fully sung, room, delay-none, chest, mixed, belt, vibrato, melisma, bright, gritty, happy, energetic",
+  "m6_uid": "0f06d5001bff297ced7d96e9b8c49647/verse_1",
+  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
+}

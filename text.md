@@ -31,22 +31,42 @@ M6: The self-developed LeadSheet2Song model, where M6 is the internal model code
 
 ## DEMO
 ### Control Group: With and without lead‑sheet conditioning
-#### Group 1  
-歌词：  [verse] And maybe my God has a trot in her walk, and her coach bags are knockoff, her hair is all dressed up  
-提示词:  [Musicality-very-high], female, adult, breathy, vibrato-none, general american, soft, solo, folk, english, fully sung, reverb-none, delay-none, chest, mixed, glissando-scoop, vocal-fry, airy, delicate, sweet, calm, melancholic.  
-Lead sheet:  <bos>  <sec_bos>  [verse]  <tempo_110_120>  <meter_3/4>  <key_Fmin> \n| ·z3 ·A2 ae ·A n m ey ·-\n| ·A2 * ·B * ·A * ·A b iy m ay ·G g aa d hh ae ·-\n| ·G2 * ·F2 * ·(3:2:2 ·F2 z ah tr ·F aa ·-\n| ·F2 * ·A t ih n hh er ·F2 w ·E *\n| ·D2 * ·C ao k ·B, ae ·B, n hh er k ·A, ow ch\n| ·z2 ·B,2 b ae ·(3:2:2 ·C2 g z aa r ·E n aa ·-\n| ·E3/2 * ·F2 k ao f hh er ·- ·F/ * ·z ·A, hh\n| ·A,2 eh ·A, r ih ·> ·B, z ao l dr ·C * ·< ·_G *\n| ·E2 eh s ·D2 t ah p ·z2 <eos>  
-参考音色音频：M6_1000samples/10_9ccf0f5965c7_verse_6/prompt_vocal.mp3
+#### Group 1  123_b7d086c26a54_verse_4
+歌词：  [verse] Trusting in the Lord has turned my life around.When you call on Him  
+提示词:  [Musicality-very-high], male, senior, modal, vibrato-moderate, southern us, dynamics-moderate, solo, gospel, english, fully sung, hall, delay-none, falsetto, chest, vibrato, glissando-scoop, warm, full, clear, calm, tender.
+Lead sheet:  <bos>  <sec_bos>  [verse]  <tempo_130_140>  <meter_4/4>  <key_E> 
+| ·C,4 ·z4
+| ·z2 ·F, tr ah s ·F, t ih ·F,2 ng ih n ·G,2 dh ah
+| ·B, l ao ·F, * ·(3:2:2 ·G,2 * ·F, * ·- ·F, * ·> ·F, r d ·z ·B,, hh ae z
+| ·F,2 t er ·F, n d m ay ·D, l ·F, ay ·G,2 f er ·B, aw ·-
+| ·B,2 * ·B,2 n d ·A,2 w eh ·B,2 n y
+| ·B,8 uw k ao l aa n ·-
+| ·B,2 * ·z4 ·(3:2:2 ·G,2 hh ·G, ih
+| ·B,8 ·-
+| ·B,2 ·z6 <eos>  
+参考音色音频：M6_1000samples/123_b7d086c26a54_verse_4/prompt_vocal.mp3
 
 M6模型，有lead‑sheet条件和参考音色，只输出vocal：  
-Vocal: M6_1000samples/10_9ccf0f5965c7_verse_6/gen_vocal.mp3   
+Vocal: M6_1000samples/123_b7d086c26a54_verse_4/gen_vocal.mp3  
 
 M6模型，有lead‑sheet条件和参考音色，输出vocal和带伴奏的Song：  
-Vocal: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gen_vocal.mp3  
-Song: M6_1000samples_with_mixed/10_9ccf0f5965c7_verse_6/gen_mixed.mp3
+Vocal: LeVo2_1000samples/123_b7d086c26a54_verse_4/gen_vocal.mp3
+Song: M6_1000samples_with_mixed/123_b7d086c26a54_verse_4/gen_mixed.mp3
 
 LeVo2模型，无lead‑sheet条件：  
 Vocal: LeVo2_1000samples/10_9ccf0f5965c7_verse_6/gen_vocal.mp3
-Song: LeVo2_1000samples/10_9ccf0f5965c7_verse_6/gen_song.mp3
+Song: LeVo2_1000samples/123_b7d086c26a54_verse_4/gen_song.mp3
 
-GT 乐谱：
-Melody: M6_1000samples/10_9ccf0f5965c7_verse_6/gt_melody_cut.wav
+Lead Sheet 旋律乐谱：
+Melody: M6_1000samples/123_b7d086c26a54_verse_4/gt_melody_cut.wav
+
+以上条件如何获取：M6_1000samples/123_b7d086c26a54_verse_4/condition.txt
+歌词、提示词和Lead sheet都在condition.txt中，其中：
+【1】description（歌词条件，模型看到的原文），下一行是歌词。
+【2】type_info（风格 tag 条件），下一行是提示词。
+【3】leadsheet（旋律 + 音素条件）  ← 本实验真正要验证的通路
+    header : [Q:1/4=130][M:4/4][K:E]
+    规模   : 202 tokens / 10 小节
+    解码后 : *这里是 lead sheet**
+
+或者用M6_1000samples/123_b7d086c26a54_verse_4/condition.json也可以获得歌词（"description"）、提示词（"type_info"）和Lead sheet（"leadsheet_decoded"）。

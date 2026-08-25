@@ -1,0 +1,47 @@
+==========================================================================
+ 输入条件  3b8c3834c86b4dbf763d932d68ca3f13/chorus_2
+ 条件模式  正式（真实歌词 + 参考音频）
+==========================================================================
+
+【1】description（歌词条件，模型看到的原文）
+    [chorus] I'll be drinking crooked whiskey and sometimes lemon drops.I'll be wearing diamond grills and Louis Vuittons a lot.Sometimes I can be extreme, I'm never gonna stop.Keep this party going, we'll be dancing till we drop
+
+【2】type_info（风格 tag 条件）
+    [Musicality-very-high], female, adult, modal, light, general american, dynamics-moderate, solo, pop, english, fully sung, plate, present, chest, mixed, head, melisma, vibrato, bright, thin, clear, playful, energetic.
+
+【3】leadsheet（旋律 + 音素条件）  ← 本实验真正要验证的通路
+    header : [Q:1/4=143][M:2/4][K:D]
+    规模   : 347 tokens / 18 小节
+    解码后 : <bos>  <sec_bos>  [chorus]  <tempo_140_150>  <meter_2/4>  <key_D> 
+| ·z4
+| ·(3 ·A ay ·A l b iy ·A dr ·A ih ng k ih ng k r uh k ah ·> ·A d w ih s k iy ae ·-
+| ·A/ * ·A * ·A/ * ·A n s ah ·G m
+| ·G t ay m ·=F z l eh m ah n ·F/ * ·G * ·A/ dr aa p s
+| ·z4
+| ·A ay ·A l b iy w eh ·(3 ·A r ih ng d ay ·A * ·A *
+| ·A m ah ·> ·A n d g r ih l z ae ·A n ·G l uw ih
+| ·G/ * ·=F s ah l ·F3/2 aa t s ah m t ay m ·G z ay
+| ·A2 ·z2
+| ·A, k ·A, ae ·A, n ·A/ * ·A/ b iy
+| ·A3/2 ih k ·A3/2 s tr iy ·G m ay m
+| ·G/ n eh ·=F v er g ·F3/2 aa ·G n ah s
+| ·A2 t aa p k iy p ·z2
+| ·z ·A * ·A dh ih s ·A/ p ·A/ *
+| ·A aa ·> ·A r t iy g ow ih ·A ng w iy l b ·> ·G iy
+| ·G d ae ·=F n s ih ng ·F t ih ·G/ l w iy ·D/ dr aa p
+| ·z4 <eos>
+
+【4】prompt_audio（参考音频，只给音色，不含本段内容）
+    来源   : 3b8c3834c86b4dbf763d932d68ca3f13/chorus_4（同曲另一段落的前 250 帧真实 codec token）
+
+【5】长度
+    GT     : 14.06 s / 352 帧
+    生成预算: 33.12 s（给足空间让模型自己发 EOS）
+
+--------------------------------------------------------------------------
+【参考】该段真实歌词（isolate 模式下模型**看不到**，仅供你对照听）
+    I'll be drinking crooked whiskey and sometimes lemon drops. I'll be wearing diamond grills and Louis Vuittons a lot. Sometimes I can be extreme, I'm never gonna stop. Keep this party going, we'll be dancing till we drop.
+
+对比方式：gt_vocal.mp3（真值人声）  vs  gen_vocal.flac（模型生成）
+         gt_mixed.mp3 是原始混音，用来听旋律语境。
+==========================================================================
