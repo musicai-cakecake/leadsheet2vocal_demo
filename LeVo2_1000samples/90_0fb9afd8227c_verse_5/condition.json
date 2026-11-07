@@ -1,9 +1,0 @@
-{
-  "idx": "90_0fb9afd8227c_verse_5",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] Dead president's corpse in the driver's car.The engine runs on glue and tar.Come on along, not going very far.To the east to meet the Tsar",
-  "descriptions": "male, adult, modal, light, general american, dynamics-moderate, solo, rock, english, fully sung, plate, delay-none, chest, technique-none, warm, gritty, powerful, tense, energetic",
-  "m6_uid": "0fb9afd8227ce4b4748bd49f0fb88683/verse_5",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

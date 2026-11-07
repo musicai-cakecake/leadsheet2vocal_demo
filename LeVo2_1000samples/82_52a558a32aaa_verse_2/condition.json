@@ -1,9 +1,0 @@
-{
-  "idx": "82_52a558a32aaa_verse_2",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] Thousand shall fall at thy side, and ten thousand at thy right hand.But it shall not come nigh thee.Only when thy night shall thou behold and see the reward of the wicked",
-  "descriptions": "male, adult, growl, vibrato-none, general american, powerful, solo, metal, english, rhythmic speech, room, delay-none, chest, distortion, vocal-fry, gritty, dark, angry",
-  "m6_uid": "52a558a32aaa9fc64459f2fbbceef96b/verse_2",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

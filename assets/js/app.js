@@ -1,585 +1,428 @@
-/* ═══════════════════════════════════════════════════════════════
-   Demo page behaviour: theme, language, demo rendering, audio players.
-   Plain script (no ES modules) so the page also works from file://
-   ═══════════════════════════════════════════════════════════════ */
-(function () {
-  'use strict';
+(() => {
+  "use strict";
 
-  var root = document.documentElement;
-  var STORE_THEME = 'velo-theme';
-  var STORE_LANG = 'velo-lang';
-
-  /* ---------- tiny helpers ---------- */
-
-  function el(tag, className, text) {
-    var n = document.createElement(tag);
-    if (className) n.className = className;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-
-  function icon(className, path) {
-    var span = el('span', className);
-    span.setAttribute('aria-hidden', 'true');
-    span.innerHTML = path;
-    return span;
-  }
-
-  function store(key, value) {
-    try {
-      if (value === undefined) return localStorage.getItem(key);
-      localStorage.setItem(key, value);
-    } catch (e) { /* private mode / file:// — ignore */ }
-    return null;
-  }
-
-  function bilingual(parent, pair, tag) {
-    var t = tag || 'span';
-    if (!pair) return parent;
-    if (pair.zh) parent.appendChild(el(t, 'lang lang-zh', pair.zh));
-    if (pair.en) parent.appendChild(el(t, 'lang lang-en', pair.en));
-    return parent;
-  }
-
-  function fmtTime(sec) {
-    if (!isFinite(sec) || sec < 0) return '--:--';
-    var m = Math.floor(sec / 60);
-    var s = Math.floor(sec % 60);
-    return m + ':' + (s < 10 ? '0' : '') + s;
-  }
-
-  function slugify(str) {
-    return String(str)
-      .replace(/[·•]/g, ' ')
-      .replace(/[^a-zA-Z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-      .slice(0, 60) || 'audio';
-  }
-
-  function audioExtension(src) {
-    var clean = String(src || '').split(/[?#]/)[0];
-    var match = clean.match(/\.([a-zA-Z0-9]+)$/);
-    return match ? match[1].toLowerCase() : 'audio';
-  }
-
-  var toastTimer;
-  function toast(msg) {
-    var box = document.getElementById('toast');
-    if (!box) return;
-    box.textContent = msg;
-    box.classList.add('is-on');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { box.classList.remove('is-on'); }, 2400);
-  }
-
-  /* ---------- SVG paths ---------- */
-
-  var SVG = {
-    play: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72L19 12 8 5.14Z"/></svg>',
-    pause: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>',
-    download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11M7.5 10.5 12 15l4.5-4.5M4.5 19.5h15"/></svg>',
-    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v.5"/></svg>'
+  const data = window.VOCAL_DEMOS;
+  const root = document.documentElement;
+  const strings = {
+    sections: ["页面章节", "Page sections"],
+    theme: ["切换深浅色主题", "Toggle light / dark theme"],
+    studioAlt: ["音乐工作室中的企鹅插画", "An illustration of a penguin in a music studio"],
+    searchLabel: ["搜索样本", "Search samples"],
+    searchPlaceholder: ["搜索歌词、提示词、样本 ID…", "Search lyrics, prompts, sample ID…"],
+    genreLabel: ["风格", "Style"],
+    sectionLabel: ["段落", "Section"],
+    clearFilters: ["清除筛选", "Reset filters"],
+    pauseAll: ["暂停全部", "Pause all"],
+    sampleIndex: ["样本快捷跳转", "Jump to a sample"],
+    evaluationTable: ["评价结果表，可横向滚动", "Evaluation table; scroll horizontally if needed"],
+    noResults: ["没有找到匹配样本", "No matching samples"],
+    noResultsHint: ["试试其他歌词、提示词或筛选条件。", "Try different lyrics, prompts, or filters."],
+    nowPlaying: ["当前音轨", "Current audio track"],
+    closePlayer: ["停止并关闭播放器", "Stop and close player"],
+    play: ["播放", "Play"],
+    pause: ["暂停", "Pause"],
+    seek: ["播放进度", "Playback position"],
+    download: ["下载原始 WAV 音频", "Download original WAV audio"],
+    copy: ["复制", "Copy"],
+    copyId: ["复制样本 ID", "Copy sample ID"],
+    copyABC: ["复制完整 ABC", "Copy full ABC"],
+    copied: ["已复制到剪贴板", "Copied to clipboard"],
+    copyError: ["无法复制，请手动选择文本。", "Copy failed. Please select the text manually."],
+    loading: ["正在加载音频…", "Loading audio…"],
+    audioError: ["音频加载失败，可点击重试或下载 WAV。", "Audio failed to load. Retry or download the WAV."],
+    dataError: ["样本数据未能加载，请检查站点文件是否完整。", "Sample data could not load. Check that all site files are present."],
+    count: ["显示 {shown} / {total} 组", "Showing {shown} / {total}"],
+    allStyles: ["全部", "All styles"],
+    allSections: ["全部", "All sections"],
   };
+  const genres = {
+    pop: ["流行", "Pop"],
+    rock: ["摇滚", "Rock"],
+    "r&b": ["R&B", "R&B"],
+    country: ["乡村", "Country"],
+    classical: ["古典", "Classical"],
+    gospel: ["福音", "Gospel"],
+    other: ["其他", "Other"],
+  };
+  const sections = {
+    chorus: ["副歌", "Chorus"],
+    verse: ["主歌", "Verse"],
+    bridge: ["桥段", "Bridge"],
+    outro: ["尾奏", "Outro"],
+  };
+  const voices = {
+    male: ["男声", "Male voice"],
+    female: ["女声", "Female voice"],
+    unspecified: ["音色未标注", "Voice not specified"],
+  };
+  const models = [
+    { id: "gt", label: "GT", role: ["真实参考", "Reference"], kind: "neutral" },
+    { id: "gt_vae", label: "GT VAE", role: ["VAE 重建", "VAE reconstruction"], kind: "neutral" },
+    { id: "v2", label: "V2", role: ["旧版基线", "Baseline"], kind: "baseline" },
+    { id: "v3_forced", label: "V3 Forced", role: ["限总时长", "Duration constrained"], kind: "primary" },
+    { id: "v3_free", label: "V3 Free", role: ["自由时长", "Free duration"], kind: "primary" },
+    { id: "v3_oracle", label: "V3 Oracle", role: ["框架重建", "Reconstruction"], kind: "neutral" },
+  ];
 
-  /* ═══════════════ Theme ═══════════════ */
-
-  function initTheme() {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      store(STORE_THEME, next);
-    });
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
   }
 
-  /* ═══════════════ Language ═══════════════ */
+  function translate(pair, values = {}) {
+    let result = root.dataset.lang === "en" ? pair[1] : root.dataset.lang === "zh" || pair[0] === pair[1] ? pair[0] : `${pair[0]} / ${pair[1]}`;
+    Object.entries(values).forEach(([key, value]) => { result = result.replaceAll(`{${key}}`, String(value)); });
+    return result;
+  }
 
-  function initLang() {
-    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-lang-btn]'));
-    if (!buttons.length) return;
+  const text = (key, values) => translate(strings[key], values);
+  const bilingual = (zh, en) => `<span class="bilingual"><span class="lang-zh" lang="zh-CN">${escapeHTML(zh)}</span><span class="lang-en" lang="en">${escapeHTML(en)}</span></span>`;
+  const icon = (name, className = "") => `<svg class="icon ${className}" aria-hidden="true"><use href="#icon-${name}"/></svg>`;
+  const numberLabel = (sample) => String(sample.number).padStart(2, "0");
+  const shortTitle = (sample) => sample.title.length > 88 ? `${sample.title.slice(0, 88)}…` : sample.title;
 
-    function apply(mode) {
-      root.setAttribute('data-lang', mode);
-      root.setAttribute('lang', mode === 'en' ? 'en' : 'zh-CN');
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.dataset.langBtn === mode));
+  function formatTime(seconds) {
+    const value = Math.max(0, Math.floor(Number.isFinite(seconds) ? seconds : 0));
+    return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, "0")}`;
+  }
+
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function showToast(key) {
+    clearTimeout(toastTimer);
+    toast.dataset.message = key;
+    toast.textContent = text(key);
+    toast.hidden = false;
+    toastTimer = setTimeout(() => { toast.hidden = true; }, 3000);
+  }
+
+  function updateStaticLabels() {
+    document.querySelectorAll("[data-i18n]").forEach((element) => { element.textContent = text(element.dataset.i18n); });
+    document.querySelectorAll("[data-i18n-label]").forEach((element) => { element.setAttribute("aria-label", text(element.dataset.i18nLabel)); });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => { element.placeholder = text(element.dataset.i18nPlaceholder); });
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => { element.alt = text(element.dataset.i18nAlt); });
+    if (!toast.hidden && toast.dataset.message) toast.textContent = text(toast.dataset.message);
+  }
+
+  updateStaticLabels();
+  if (!data || !Array.isArray(data.samples) || data.samples.length === 0) {
+    document.getElementById("demo-list").textContent = text("dataError");
+    window.addEventListener("languagechange", () => {
+      updateStaticLabels();
+      document.getElementById("demo-list").textContent = text("dataError");
+    });
+    return;
+  }
+
+  const priorityIds = (document.getElementById("demo").dataset.prioritySamples || "")
+    .split(/\s+/).filter(Boolean);
+  const priorityOrder = new Map(priorityIds.map((id, index) => [id, index]));
+  data.samples = [...data.samples]
+    .sort((a, b) => (priorityOrder.get(a.id) ?? priorityIds.length) - (priorityOrder.get(b.id) ?? priorityIds.length))
+    .map((sample, index) => ({ ...sample, number: index + 1 }));
+
+  function renderTrack(sample, model) {
+    const track = sample.tracks[model.id];
+    const filename = `${sample.id}_${model.id}.wav`;
+    const audioInfo = `${track.sampleRate / 1000} kHz · ${track.channels} ch · ${track.bitsPerSample} bit · ${(track.bytes / 1024 / 1024).toFixed(2)} MiB`;
+    return `<div class="audio-track ${model.kind === "primary" ? "track-primary" : ""}" id="track-${sample.number}-${model.id}" data-model="${model.id}" data-state="idle">
+      <div class="audio-track-header"><span class="track-name">${model.label}</span><span class="badge badge-${model.kind}">${bilingual(...model.role)}</span></div>
+      <div class="track-controls"><button type="button" class="play-button" aria-label="${escapeHTML(text("play"))} ${model.label}">${icon("play")}</button><input class="audio-seek" type="range" min="0" max="${track.duration}" step="0.1" value="0" disabled aria-label="${escapeHTML(text("seek"))}"></div>
+      <div class="track-footer"><span class="audio-time">0:00 / ${formatTime(track.duration)}</span><a class="audio-download" href="${escapeHTML(track.src)}" download="${filename}" data-i18n-label="download" aria-label="${escapeHTML(text("download"))}" title="${audioInfo}">${icon("download")}WAV</a></div>
+      <span class="track-status"></span><audio preload="none"></audio>
+    </div>`;
+  }
+
+  function renderSample(sample) {
+    const section = sections[sample.section];
+    const language = sample.language === "English" ? ["英语", "English"] : ["语言未标注", "Language not specified"];
+    const tags = [bilingual(...language), bilingual(...genres[sample.genre]), bilingual(...voices[sample.voice]), `${sample.bpm} BPM`, `K: ${escapeHTML(sample.key)}`, `M: ${escapeHTML(sample.meter)}`];
+    return `<article class="sample-card card" id="sample-${numberLabel(sample)}" data-sample="${sample.id}" aria-labelledby="sample-title-${sample.number}">
+      <div class="sample-header"><span class="sample-number">${numberLabel(sample)}</span><div class="sample-heading"><div class="sample-overline"><span>SAMPLE ${numberLabel(sample)}</span><span>·</span>${bilingual(section[0], section[1])}<span>${sample.sectionNumber}</span></div><h3 id="sample-title-${sample.number}" ${sample.language === "English" ? 'lang="en"' : ""}>${escapeHTML(shortTitle(sample))}</h3><div class="sample-id"><code>${sample.id}</code><button type="button" class="copy-id" data-copy="id" data-i18n-label="copyId" aria-label="${escapeHTML(text("copyId"))}">${icon("copy")}</button></div></div></div>
+      <div class="sample-tags">${tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}</div>
+      <div class="sample-input-grid">
+        <section class="input-panel"><div class="input-panel-header"><h4>${bilingual("歌词 · 原始输入", "Lyrics · original input")}</h4><button type="button" class="text-button" data-copy="lyrics">${icon("copy")}<span data-i18n="copy">${escapeHTML(text("copy"))}</span></button></div><pre class="lyrics-text" ${sample.language === "English" ? 'lang="en"' : ""}>${escapeHTML(sample.lyrics)}</pre></section>
+        <section class="input-panel"><div class="input-panel-header"><h4>${bilingual("提示词 · 原始输入", "Prompts · original input")}</h4><button type="button" class="text-button" data-copy="prompt">${icon("copy")}<span data-i18n="copy">${escapeHTML(text("copy"))}</span></button></div><p class="prompt-text" lang="en">${escapeHTML(sample.prompt)}</p></section>
+      </div>
+      <details class="abc-details"><summary>${icon("score")}${bilingual("ABC 领谱 · 查看完整乐谱", "ABC lead sheet · view full score")}${icon("chevron", "chevron")}</summary><div class="abc-body"><div class="abc-actions"><button type="button" class="text-button" data-copy="abc">${icon("copy")}<span data-i18n="copyABC">${escapeHTML(text("copyABC"))}</span></button></div><pre class="abc-text"><code>${escapeHTML(sample.abc)}</code></pre></div></details>
+      <div class="audio-area"><div class="audio-area-heading"><span>${icon("headphones")}${bilingual("音频对照", "Audio comparison")}</span><span class="audio-area-note">${bilingual("原始 WAV · 点击加载", "Original WAV · load on play")}</span></div><div class="audio-grid">${models.map((model) => renderTrack(sample, model)).join("")}</div></div>
+    </article>`;
+  }
+
+  document.getElementById("demo-list").innerHTML = data.samples.map(renderSample).join("");
+  document.getElementById("sample-index").innerHTML = data.samples.map((sample) => `<a href="#sample-${numberLabel(sample)}" data-index="${sample.id}" aria-label="${escapeHTML(translate(["跳到样本", "Jump to sample"]))} ${numberLabel(sample)}">${numberLabel(sample)}</a>`).join("");
+
+  function updateRange(range, duration, currentTime, ready) {
+    const current = Math.min(duration, Math.max(0, currentTime || 0));
+    range.max = String(duration || 1);
+    range.value = String(current);
+    range.disabled = !ready;
+    range.style.setProperty("--progress", `${duration ? current / duration * 100 : 0}%`);
+    range.setAttribute("aria-valuetext", `${formatTime(current)} / ${formatTime(duration)}`);
+  }
+
+  class PlaybackManager {
+    constructor() {
+      this.active = null;
+      this.bar = document.getElementById("now-playing");
+      this.toggleButton = document.getElementById("now-toggle");
+      this.range = document.getElementById("now-seek");
+      this.time = document.getElementById("now-time");
+      this.pauseButton = document.getElementById("pause-all");
+      this.toggleButton.addEventListener("click", () => this.active?.toggle());
+      this.range.addEventListener("input", () => this.active?.seek(Number(this.range.value)));
+      this.pauseButton.addEventListener("click", () => this.active?.pause());
+      document.getElementById("now-close").addEventListener("click", () => this.close());
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") this.active?.pause();
       });
-      store(STORE_LANG, mode);
     }
 
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () { apply(b.dataset.langBtn); });
-    });
+    activate(track) {
+      if (this.active !== track) {
+        this.active?.pause();
+        this.active?.element.classList.remove("is-active");
+        this.active = track;
+        track.element.classList.add("is-active");
+      }
+      this.bar.hidden = false;
+      document.body.classList.add("has-playback");
+      this.update();
+    }
 
-    apply(root.getAttribute('data-lang') || 'both');
+    update() {
+      this.pauseButton.disabled = !this.active || !["playing", "loading"].includes(this.active.state);
+      if (!this.active) return;
+      const track = this.active;
+      const playing = ["playing", "loading"].includes(track.state);
+      this.toggleButton.querySelector("use").setAttribute("href", `#icon-${playing ? "pause" : "play"}`);
+      this.toggleButton.classList.toggle("is-loading", track.state === "loading");
+      this.toggleButton.setAttribute("aria-label", `${text(playing ? "pause" : "play")} ${track.model.label}`);
+      document.getElementById("now-model").textContent = `${track.model.label} · ${translate(["样本", "Sample"])} ${numberLabel(track.sample)}`;
+      document.getElementById("now-title").textContent = shortTitle(track.sample);
+      const link = document.getElementById("now-download");
+      link.href = track.info.src;
+      link.download = `${track.sample.id}_${track.model.id}.wav`;
+      updateRange(this.range, track.duration, track.audio.currentTime, track.ready);
+      this.time.textContent = `${formatTime(track.audio.currentTime)} / ${formatTime(track.duration)}`;
+    }
+
+    close() {
+      this.active?.pause();
+      this.active?.element.classList.remove("is-active");
+      this.active = null;
+      this.bar.hidden = true;
+      document.body.classList.remove("has-playback");
+      this.update();
+    }
   }
 
-  /* ═══════════════ Audio players ═══════════════ */
+  const playback = new PlaybackManager();
 
-  var players = [];
-
-  function pauseAllExcept(keep) {
-    players.forEach(function (p) { if (p !== keep) p.pause(); });
-  }
-
-  /**
-   * Builds one inline audio player. `track` = { src, duration }.
-   */
-  function createPlayer(track, downloadName) {
-    var src = encodeURI(track.src);
-
-    var audio = new Audio();
-    audio.preload = 'none';
-    audio.src = src;
-
-    var wrap = el('div', 'player');
-
-    var playBtn = el('button', 'play');
-    playBtn.type = 'button';
-    playBtn.setAttribute('aria-label', '播放 / Play');
-    playBtn.appendChild(icon('i-play', SVG.play));
-    playBtn.appendChild(icon('i-pause', SVG.pause));
-
-    var body = el('div', 'player-body');
-
-    var seek = document.createElement('input');
-    seek.type = 'range';
-    seek.className = 'seek';
-    seek.min = '0';
-    seek.max = '1000';
-    seek.step = '1';
-    seek.value = '0';
-    seek.setAttribute('aria-label', '播放进度 / Seek');
-
-    var times = el('div', 'times');
-    var cur = el('span', 'cur', '0:00');
-    var dur = el('span', 'dur', track.duration ? fmtTime(track.duration) : '--:--');
-    times.appendChild(cur);
-    times.appendChild(dur);
-
-    body.appendChild(seek);
-    body.appendChild(times);
-
-    var dl = el('a', 'dl');
-    dl.href = src;
-    dl.setAttribute('download', downloadName);
-    dl.setAttribute('aria-label', '下载 / Download ' + downloadName);
-    dl.title = '下载 / Download';
-    dl.appendChild(icon('', SVG.download));
-
-    wrap.appendChild(playBtn);
-    wrap.appendChild(body);
-    wrap.appendChild(dl);
-
-    var seeking = false;
-
-    function total() {
-      return isFinite(audio.duration) && audio.duration > 0 ? audio.duration : (track.duration || 0);
-    }
-
-    function paint() {
-      var d = total();
-      var ratio = d > 0 ? Math.min(audio.currentTime / d, 1) : 0;
-      if (!seeking) seek.value = String(Math.round(ratio * 1000));
-      seek.style.setProperty('--p', ratio);
-      cur.textContent = fmtTime(audio.currentTime);
-    }
-
-    audio.addEventListener('loadedmetadata', function () {
-      dur.textContent = fmtTime(total());
-      paint();
-    });
-    audio.addEventListener('timeupdate', paint);
-    audio.addEventListener('play', function () {
-      wrap.classList.add('is-playing');
-      playBtn.setAttribute('aria-label', '暂停 / Pause');
-    });
-    audio.addEventListener('pause', function () {
-      wrap.classList.remove('is-playing');
-      playBtn.classList.remove('is-loading');
-      playBtn.setAttribute('aria-label', '播放 / Play');
-    });
-    audio.addEventListener('ended', function () {
-      audio.currentTime = 0;
-      paint();
-    });
-    audio.addEventListener('waiting', function () { playBtn.classList.add('is-loading'); });
-    audio.addEventListener('playing', function () { playBtn.classList.remove('is-loading'); });
-    audio.addEventListener('error', function () {
-      wrap.classList.add('is-error');
-      playBtn.classList.remove('is-loading');
-      dur.textContent = '!';
-      toast('音频加载失败 / Failed to load: ' + track.src);
-    });
-
-    seek.addEventListener('pointerdown', function () { seeking = true; });
-    seek.addEventListener('input', function () {
-      var ratio = Number(seek.value) / 1000;
-      seek.style.setProperty('--p', ratio);
-      var d = total();
-      if (d > 0) cur.textContent = fmtTime(ratio * d);
-    });
-    function commitSeek() {
-      if (!seeking) return;
-      seeking = false;
-      var d = total();
-      if (d > 0) audio.currentTime = (Number(seek.value) / 1000) * d;
-    }
-    seek.addEventListener('pointerup', commitSeek);
-    seek.addEventListener('change', function () {
-      var d = total();
-      if (d > 0) audio.currentTime = (Number(seek.value) / 1000) * d;
-      seeking = false;
-    });
-
-    var api = {
-      pause: function () { if (!audio.paused) audio.pause(); }
-    };
-
-    playBtn.addEventListener('click', function () {
-      if (audio.paused) {
-        pauseAllExcept(api);
-        playBtn.classList.add('is-loading');
-        var p = audio.play();
-        if (p && typeof p.catch === 'function') {
-          p.catch(function () { playBtn.classList.remove('is-loading'); });
+  class AudioTrack {
+    constructor(sample, model) {
+      this.sample = sample;
+      this.model = model;
+      this.info = sample.tracks[model.id];
+      this.duration = this.info.duration;
+      this.element = document.getElementById(`track-${sample.number}-${model.id}`);
+      this.audio = this.element.querySelector("audio");
+      this.button = this.element.querySelector(".play-button");
+      this.range = this.element.querySelector(".audio-seek");
+      this.time = this.element.querySelector(".audio-time");
+      this.status = this.element.querySelector(".track-status");
+      this.state = "idle";
+      this.ready = false;
+      this.request = 0;
+      this.button.addEventListener("click", () => this.toggle());
+      this.range.addEventListener("input", () => this.seek(Number(this.range.value)));
+      this.audio.addEventListener("loadedmetadata", () => {
+        if (Number.isFinite(this.audio.duration) && this.audio.duration > 0) {
+          this.duration = this.audio.duration;
+          this.ready = true;
         }
-      } else {
-        audio.pause();
-      }
-    });
-
-    players.push(api);
-    return { node: wrap, href: src, name: downloadName };
-  }
-
-  /* ═══════════════ Rendering ═══════════════ */
-
-  function renderLeadSheet(raw) {
-    var box = el('div', 'sheet');
-    var pre = el('pre');
-    // The source keeps bar lines as a literal two-character "\n" marker.
-    pre.textContent = String(raw).split('\\n').join('\n').trim();
-    box.appendChild(pre);
-
-    var copy = el('button', 'mini-btn sheet-copy');
-    copy.type = 'button';
-    copy.appendChild(icon('', SVG.copy));
-    copy.appendChild(el('span', null, 'Copy'));
-    copy.addEventListener('click', function () {
-      var text = raw;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () { toast('已复制领谱 / Lead sheet copied'); },
-          function () { legacyCopy(text); }
-        );
-      } else {
-        legacyCopy(text);
-      }
-    });
-    box.appendChild(copy);
-    return box;
-  }
-
-  function legacyCopy(text) {
-    var ta = el('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
-    document.body.appendChild(ta);
-    ta.select();
-    try {
-      document.execCommand('copy');
-      toast('已复制领谱 / Lead sheet copied');
-    } catch (e) {
-      toast('复制失败 / Copy failed');
+        this.render();
+      });
+      this.audio.addEventListener("play", () => {
+        if (playback.active !== this) playback.activate(this);
+      });
+      this.audio.addEventListener("playing", () => this.setState("playing"));
+      this.audio.addEventListener("waiting", () => {
+        if (!this.audio.paused && playback.active === this) this.setState("loading");
+      });
+      this.audio.addEventListener("pause", () => {
+        if (!["error", "ended"].includes(this.state)) this.setState("paused");
+      });
+      this.audio.addEventListener("ended", () => this.setState("ended"));
+      this.audio.addEventListener("timeupdate", () => this.renderProgress());
+      this.audio.addEventListener("error", () => {
+        this.setState("error");
+        showToast("audioError");
+      });
+      this.render();
     }
-    document.body.removeChild(ta);
+
+    setState(state) {
+      this.state = state;
+      this.render();
+    }
+
+    toggle() {
+      if (["playing", "loading"].includes(this.state)) this.pause();
+      else this.play();
+    }
+
+    async play() {
+      playback.activate(this);
+      if (!this.audio.getAttribute("src")) this.audio.src = encodeURI(this.info.src);
+      if (this.state === "error") {
+        this.ready = false;
+        this.audio.load();
+      }
+      if (this.audio.ended) this.audio.currentTime = 0;
+      const request = ++this.request;
+      this.setState("loading");
+      try {
+        await this.audio.play();
+      } catch (error) {
+        if (request !== this.request || playback.active !== this || error.name === "AbortError") return;
+        this.setState("error");
+        showToast("audioError");
+      }
+    }
+
+    pause() {
+      this.request += 1;
+      this.audio.pause();
+      if (!["error", "ended"].includes(this.state)) this.setState("paused");
+    }
+
+    seek(seconds) {
+      if (!this.ready || !Number.isFinite(seconds)) return;
+      this.audio.currentTime = Math.max(0, Math.min(seconds, this.duration));
+      this.renderProgress();
+    }
+
+    render() {
+      const playing = ["playing", "loading"].includes(this.state);
+      const context = `${this.model.label} · ${translate(["样本", "Sample"])} ${numberLabel(this.sample)}`;
+      this.element.dataset.state = this.state;
+      this.button.querySelector("use").setAttribute("href", `#icon-${playing ? "pause" : "play"}`);
+      this.button.classList.toggle("is-loading", this.state === "loading");
+      this.button.setAttribute("aria-label", `${text(playing ? "pause" : "play")} ${context}`);
+      this.button.title = `${text(playing ? "pause" : "play")} ${context}`;
+      this.range.setAttribute("aria-label", `${text("seek")} ${context}`);
+      this.status.textContent = this.state === "error" ? text("audioError") : this.state === "loading" ? text("loading") : "";
+      this.renderProgress();
+    }
+
+    renderProgress() {
+      updateRange(this.range, this.duration, this.audio.currentTime, this.ready);
+      this.time.textContent = `${formatTime(this.audio.currentTime)} / ${formatTime(this.duration)}`;
+      if (playback.active === this) playback.update();
+    }
   }
 
-  function metaRow(keyZh, keyEn, valueNode) {
-    var row = el('div', 'meta-row');
-    var key = el('div', 'meta-key');
-    key.appendChild(el('span', 'lang lang-zh', keyZh));
-    key.appendChild(el('span', 'lang lang-en', keyEn));
-    row.appendChild(key);
-    var val = el('div', 'meta-val');
-    val.appendChild(valueNode);
-    row.appendChild(val);
-    return row;
+  const tracks = data.samples.flatMap((sample) => models.map((model) => new AudioTrack(sample, model)));
+  const searchInput = document.getElementById("sample-search");
+  const genreFilter = document.getElementById("genre-filter");
+  const sectionFilter = document.getElementById("section-filter");
+  const cards = data.samples.map((sample) => ({
+    sample,
+    element: document.getElementById(`sample-${numberLabel(sample)}`),
+    index: document.querySelector(`[data-index="${sample.id}"]`),
+    searchable: [sample.id, sample.lyrics, sample.prompt, sample.abc, ...genres[sample.genre], ...sections[sample.section], ...voices[sample.voice], sample.language === "English" ? "英语 English" : "语言未标注", sample.bpm].join(" ").toLowerCase(),
+  }));
+
+  function updateFilterOptions() {
+    const selectedGenre = genreFilter.value || "all";
+    const selectedSection = sectionFilter.value || "all";
+    genreFilter.innerHTML = `<option value="all">${escapeHTML(text("allStyles"))}</option>` + Object.entries(genres).map(([key, value]) => `<option value="${key}">${escapeHTML(translate(value))}</option>`).join("");
+    sectionFilter.innerHTML = `<option value="all">${escapeHTML(text("allSections"))}</option>` + Object.entries(sections).map(([key, value]) => `<option value="${key}">${escapeHTML(translate(value))}</option>`).join("");
+    genreFilter.value = selectedGenre;
+    sectionFilter.value = selectedSection;
   }
 
-  function renderGroup(group, columns) {
-    var section = el('section', 'demo-group');
-    section.id = group.id;
-    var groupFiles = [];
+  function applyFilters() {
+    const terms = searchInput.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    cards.forEach(({ sample, element, index, searchable }) => {
+      const matches = (genreFilter.value === "all" || sample.genre === genreFilter.value)
+        && (sectionFilter.value === "all" || sample.section === sectionFilter.value)
+        && terms.every((term) => searchable.includes(term));
+      element.hidden = !matches;
+      index.hidden = !matches;
+      if (matches) shown += 1;
+      else if (playback.active?.sample.id === sample.id) playback.active.pause();
+    });
+    document.getElementById("sample-count").textContent = text("count", { shown, total: data.sampleCount });
+    document.getElementById("empty-state").hidden = shown !== 0;
+    document.getElementById("clear-filters").hidden = terms.length === 0 && genreFilter.value === "all" && sectionFilter.value === "all";
+  }
 
-    /* --- head --- */
-    var head = el('div', 'group-head');
-    var title = el('h3', 'group-title');
-    bilingual(title, group.title);
-    head.appendChild(title);
-    if (group.sampleId) head.appendChild(el('code', 'group-id', group.sampleId));
+  function clearFilters() {
+    searchInput.value = "";
+    genreFilter.value = "all";
+    sectionFilter.value = "all";
+    applyFilters();
+  }
 
-    var actions = el('div', 'group-actions');
-    var dlAll = el('button', 'mini-btn');
-    dlAll.type = 'button';
-    dlAll.appendChild(icon('', SVG.download));
-    dlAll.appendChild(el('span', 'lang lang-zh', '下载本组音频'));
-    dlAll.appendChild(el('span', 'lang lang-en', 'Download all'));
-    actions.appendChild(dlAll);
-    head.appendChild(actions);
-    section.appendChild(head);
+  updateFilterOptions();
+  applyFilters();
+  searchInput.addEventListener("input", applyFilters);
+  genreFilter.addEventListener("change", applyFilters);
+  sectionFilter.addEventListener("change", applyFilters);
+  document.getElementById("clear-filters").addEventListener("click", clearFilters);
+  document.getElementById("empty-reset").addEventListener("click", () => { clearFilters(); searchInput.focus(); });
 
-    /* --- metadata --- */
-    var hasMeta = group.lyrics || group.prompt ||
-      (group.prompts && group.prompts.length) || group.leadSheet ||
-      (group.referenceAudio && group.referenceAudio.src);
-    if (hasMeta) {
-      var meta = el('div', 'meta');
-      if (group.lyrics) {
-        var lyricsVal = el('div', 'is-lyrics', group.lyrics);
-        meta.appendChild(metaRow('歌词', 'Lyrics', lyricsVal));
-      }
-      if (group.prompt) {
-        meta.appendChild(metaRow('提示词', 'Prompt', el('div', null, group.prompt)));
-      }
-      if (group.prompts && group.prompts.length) {
-        group.prompts.forEach(function (prompt, index) {
-          var label = prompt.label || {
-            zh: '提示词 ' + (index + 1),
-            en: 'Prompts ' + (index + 1)
-          };
-          meta.appendChild(metaRow(
-            label.zh,
-            label.en,
-            el('div', null, prompt.value || '')
-          ));
+  async function copyText(value) {
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(value); return; } catch { /* Fall back for local files or restricted clipboard access. */ }
+    }
+    const focused = document.activeElement;
+    const textarea = document.createElement("textarea");
+    textarea.value = value;
+    textarea.readOnly = true;
+    textarea.className = "visually-hidden";
+    document.body.append(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } finally { textarea.remove(); focused?.focus({ preventScroll: true }); }
+    if (!copied) throw new Error("Clipboard unavailable");
+  }
+
+  const sampleById = new Map(data.samples.map((sample) => [sample.id, sample]));
+  document.getElementById("demo-list").addEventListener("click", async (event) => {
+    const button = event.target.closest("button[data-copy]");
+    if (!button) return;
+    const sample = sampleById.get(button.closest("[data-sample]").dataset.sample);
+    if (!sample || !["id", "lyrics", "prompt", "abc"].includes(button.dataset.copy)) return;
+    try { await copyText(sample[button.dataset.copy]); showToast("copied"); } catch { showToast("copyError"); }
+  });
+
+  window.addEventListener("languagechange", () => {
+    updateStaticLabels();
+    updateFilterOptions();
+    document.querySelectorAll("[data-index]").forEach((link) => { link.setAttribute("aria-label", `${translate(["跳到样本", "Jump to sample"])} ${link.textContent}`); });
+    tracks.forEach((track) => track.render());
+    applyFilters();
+    playback.update();
+  });
+
+  if ("IntersectionObserver" in window) {
+    const navigation = [...document.querySelectorAll(".nav a")];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navigation.forEach((link) => {
+          const active = link.hash === `#${entry.target.id}`;
+          link.classList.toggle("active", active);
+          if (active) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
         });
-      }
-      if (group.leadSheet) {
-        meta.appendChild(metaRow('领谱', 'Lead sheet', renderLeadSheet(group.leadSheet)));
-      }
-      if (group.referenceAudio && group.referenceAudio.src) {
-        var referenceName = [
-          group.sampleId || group.id,
-          'reference-timbre'
-        ].join('__') + '.' + audioExtension(group.referenceAudio.src);
-        var referencePlayer = createPlayer(group.referenceAudio, referenceName);
-        meta.appendChild(metaRow(
-          '参考音色音频',
-          'Reference timbre audio',
-          referencePlayer.node
-        ));
-        groupFiles.push(referencePlayer);
-      }
-      section.appendChild(meta);
-    }
-
-    /* --- comparison grid --- */
-    var tracks = el('div', 'tracks');
-
-    var thead = el('div', 'track-head');
-    var hSys = el('div');
-    hSys.appendChild(el('span', 'lang lang-zh', '模型'));
-    hSys.appendChild(el('span', 'lang lang-en', 'System'));
-    thead.appendChild(hSys);
-    columns.forEach(function (c) { thead.appendChild(bilingual(el('div'), c.label)); });
-    tracks.appendChild(thead);
-
-    group.systems.forEach(function (sys) {
-      var row = el('div', 'track-row');
-      row.setAttribute('data-variant', sys.variant || 'gt');
-
-      var sysCell = el('div', 'sys');
-      sysCell.appendChild(el('span', 'sys-name', sys.model || ''));
-      if (sys.note) {
-        var noteEl = el('span', 'sys-note');
-        bilingual(noteEl, sys.note);
-        sysCell.appendChild(noteEl);
-      }
-      row.appendChild(sysCell);
-
-      columns.forEach(function (col) {
-        var cell = el('div', 'track-cell');
-        var label = el('div', 'cell-label');
-        bilingual(label, col.label);
-        cell.appendChild(label);
-
-        var track = sys.tracks ? sys.tracks[col.key] : null;
-        if (track && track.src) {
-          var fileName = [
-            group.sampleId || group.id,
-            slugify(sys.model || '') + (sys.note && sys.note.en ? '-' + slugify(sys.note.en) : ''),
-            col.key
-          ].join('__') + '.' + audioExtension(track.src);
-          var p = createPlayer(track, fileName);
-          cell.appendChild(p.node);
-          groupFiles.push(p);
-        } else {
-          var dash = el('div', 'no-track');
-          dash.appendChild(el('span', null, '— '));
-          dash.appendChild(el('span', 'lang lang-zh', '无此输出'));
-          dash.appendChild(el('span', 'lang lang-en', 'not produced'));
-          cell.appendChild(dash);
-        }
-        row.appendChild(cell);
       });
-
-      tracks.appendChild(row);
-    });
-
-    section.appendChild(tracks);
-
-    if (group.melodyGroundTruth && group.melodyGroundTruth.src) {
-      var melodyRow = el('div', 'melody-ground-truth');
-      var melodyInfo = el('div', 'melody-info');
-      bilingual(melodyInfo, {
-        zh: 'Lead Sheet 旋律乐谱',
-        en: 'Lead Sheet Melody'
-      }, 'strong');
-      bilingual(melodyInfo, {
-        zh: '领谱渲染音频',
-        en: 'rendered lead-sheet melody'
-      }, 'span');
-
-      var melodyName = [
-        group.sampleId || group.id,
-        'lead-sheet-melody-ground-truth'
-      ].join('__') + '.' + audioExtension(group.melodyGroundTruth.src);
-      var melodyPlayer = createPlayer(group.melodyGroundTruth, melodyName);
-
-      melodyRow.appendChild(melodyInfo);
-      melodyRow.appendChild(melodyPlayer.node);
-      section.appendChild(melodyRow);
-      groupFiles.push(melodyPlayer);
-    }
-
-    if (group.recordingGroundTruth) {
-      var recordingRow = el('div', 'track-row recording-ground-truth');
-      recordingRow.setAttribute('data-variant', 'gt');
-
-      var recordingInfo = el('div', 'sys');
-      recordingInfo.appendChild(el('span', 'sys-name', 'GT'));
-      var recordingNote = el('span', 'sys-note');
-      bilingual(recordingNote, {
-        zh: '真实录音',
-        en: 'ground-truth recording'
-      });
-      recordingInfo.appendChild(recordingNote);
-      recordingRow.appendChild(recordingInfo);
-
-      columns.forEach(function (col) {
-        var cell = el('div', 'track-cell');
-        var label = el('div', 'cell-label');
-        bilingual(label, col.key === 'vocal' ? {
-          zh: '真实 Vocal · 纯人声',
-          en: 'Ground-truth Vocal'
-        } : {
-          zh: '真实 Song · 带伴奏',
-          en: 'Ground-truth Song'
-        });
-        cell.appendChild(label);
-
-        var track = group.recordingGroundTruth[col.key];
-        if (track && track.src) {
-          var fileName = [
-            group.sampleId || group.id,
-            'GT-ground-truth-recording',
-            col.key
-          ].join('__') + '.' + audioExtension(track.src);
-          var player = createPlayer(track, fileName);
-          cell.appendChild(player.node);
-          groupFiles.push(player);
-        }
-        recordingRow.appendChild(cell);
-      });
-
-      section.appendChild(recordingRow);
-    }
-
-    dlAll.addEventListener('click', function () {
-      if (!groupFiles.length) return;
-      toast('开始下载 ' + groupFiles.length + ' 个文件 / Downloading ' + groupFiles.length + ' files');
-      groupFiles.forEach(function (f, i) {
-        setTimeout(function () {
-          var a = el('a');
-          a.href = f.href;
-          a.download = f.name;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        }, i * 350);
-      });
-    });
-
-    return section;
+    }, { rootMargin: "-90px 0px -52% 0px", threshold: 0 });
+    document.querySelectorAll("main section[id].section").forEach((section) => observer.observe(section));
   }
 
-  function renderDemoCollection(mountId, data) {
-    var mount = document.getElementById(mountId);
-    if (!mount) return;
-    if (!data || !data.groups || !data.groups.length) {
-      mount.appendChild(el('p', 'notice', '未找到演示数据 / No demo data found (assets/js/demos.js).'));
-      return;
-    }
-    var columns = data.columns || [
-      { key: 'vocal', label: { zh: '纯人声 Vocal', en: 'Vocal' } },
-      { key: 'song', label: { zh: '带伴奏 Song', en: 'Song' } }
-    ];
-    var frag = document.createDocumentFragment();
-    data.groups.forEach(function (g) { frag.appendChild(renderGroup(g, columns)); });
-    mount.appendChild(frag);
-  }
-
-  function renderDemos() {
-    renderDemoCollection('demo-root', window.DEMO_DATA);
-    renderDemoCollection('prompt-demo-root', window.PROMPT_DEMO_DATA);
-  }
-
-  /* ═══════════════ Nav scroll-spy ═══════════════ */
-
-  function initScrollSpy() {
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
-    if (!links.length || !('IntersectionObserver' in window)) return;
-
-    var map = {};
-    var targets = [];
-    links.forEach(function (a) {
-      var t = document.getElementById(a.getAttribute('href').slice(1));
-      if (t) { map[t.id] = a; targets.push(t); }
-    });
-
-    var visible = {};
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
-      var chosen = null;
-      targets.forEach(function (t) { if (visible[t.id] && !chosen) chosen = t.id; });
-      links.forEach(function (a) { a.classList.remove('is-active'); });
-      if (chosen && map[chosen]) map[chosen].classList.add('is-active');
-    }, { rootMargin: '-70px 0px -65% 0px', threshold: 0 });
-
-    targets.forEach(function (t) { io.observe(t); });
-  }
-
-  /* ═══════════════ Boot ═══════════════ */
-
-  function boot() {
-    initTheme();
-    renderDemos();
-    initLang();          // after render, so generated .lang nodes get the current mode
-    initScrollSpy();
-
-    // Stop playback when the tab is hidden for a while is unnecessary, but a
-    // global Escape to stop everything is handy when comparing many takes.
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') pauseAllExcept(null);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+  if (location.hash) requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" }));
 })();

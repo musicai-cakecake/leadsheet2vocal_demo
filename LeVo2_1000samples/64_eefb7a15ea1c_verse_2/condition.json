@@ -1,9 +1,0 @@
-{
-  "idx": "64_eefb7a15ea1c_verse_2",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] Severed heart, my mistake.I will wait forever.I don't know if I'm awake or if I'm undercover",
-  "descriptions": "male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, pop, english, fully sung, hall, delay-none, chest, technique-none, smooth, clear, mellow, melancholic, calm",
-  "m6_uid": "eefb7a15ea1c314a7c56d53deea3cc39/verse_2",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

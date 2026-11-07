@@ -1,9 +1,0 @@
-{
-  "idx": "96_c36c0b6d0172_chorus_3",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] Safe travels, don't die, don't die.Safe travels, don't die, don't die.Safe travels, don't die, don't die",
-  "descriptions": "male, adult, breathy, vibrato-moderate, received pronunciation (british rp), soft, solo, pop, english, fully sung, room, delay-none, chest, mixed, falsetto, glissando-scoop, vibrato, breath-adlib, airy, delicate, tender, calm",
-  "m6_uid": "c36c0b6d01721816d11e8e69d2be26b7/chorus_3",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

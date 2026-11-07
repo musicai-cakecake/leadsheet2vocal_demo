@@ -1,9 +1,0 @@
-{
-  "idx": "53_9b09daed5c20_chorus_2",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] Love in any language, straight from the heart, pulls us all together, never apart.And once we learn to speak it, all the world will hear.Love in any language, fluently spoken here.Though the rhetoric of government may keep us worlds apart",
-  "descriptions": "female, adult, modal, vibrato-moderate, general american, highly-varied, solo, pop, english, fully sung, hall, delay-none, chest, mixed, head, belt, vibrato, powerful, clear, bright, triumphant, tender",
-  "m6_uid": "9b09daed5c20ac68693616147750803d/chorus_2",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

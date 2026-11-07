@@ -1,9 +1,0 @@
-{
-  "idx": "06_dc8f4c4095e4_chorus_1",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] I bite my tongue, my mouth's full of blood.I bite my tongue, my mouth's full of blood.Feeling swamped out",
-  "descriptions": "female, adult, breathy, vibrato-none, general american, soft, solo, pop, english, fully sung, room, delay-none, chest, mixed, glissando-scoop, vocal-fry, airy, delicate, cool, melancholic, tense",
-  "m6_uid": "dc8f4c4095e4941d4b5ab27d69cc6e1f/chorus_1",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

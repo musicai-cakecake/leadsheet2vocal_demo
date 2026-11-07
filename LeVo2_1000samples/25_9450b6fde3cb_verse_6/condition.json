@@ -1,9 +1,0 @@
-{
-  "idx": "25_9450b6fde3cb_verse_6",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] He'll take me to another world, of which I've only read and heard, and we will share what's left forevermore",
-  "descriptions": "female, adult, modal, light, accent-none, dynamics-moderate, solo, pop, english, fully sung, room, delay-none, chest, mixed, head, glissando-scoop, vibrato, clear, sweet, bright, happy, playful",
-  "m6_uid": "9450b6fde3cbf36ff0c507991e9d4158/verse_6",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

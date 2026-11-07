@@ -1,9 +1,0 @@
-{
-  "idx": "60_1f3cb0da46e2_chorus_1",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] Look into darkness.Where he leads, wait and bleed.Hear his voice.You are close to die, eye to eye.He lives.The embodiment of death",
-  "descriptions": "male, adult, harsh, vibrato-none, general american, powerful, solo, metal, english, fully sung, room, delay-none, chest, mixed, head, belt, growl, distortion, gritty, dark, angry",
-  "m6_uid": "1f3cb0da46e2493d909b28fdb14939b7/chorus_1",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

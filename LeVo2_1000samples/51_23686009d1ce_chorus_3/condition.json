@@ -1,9 +1,0 @@
-{
-  "idx": "51_23686009d1ce_chorus_3",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] It's been a too long time with no peace of mind, and I'm ready for the times to get better.It's been a too long time with no peace of mind, and I'm ready for the times to get better",
-  "descriptions": "male, adult, raspy, light, southern us, dynamics-moderate, solo, country, english, fully sung, room, delay-none, chest, twang, glissando-scoop, gritty, husky, warm, melancholic, sad",
-  "m6_uid": "23686009d1ce45755b5e89cef9ccab03/chorus_3",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

@@ -1,9 +1,0 @@
-{
-  "idx": "34_42a9fb26fd10_verse_5",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] Does the machinery itself fall asleep? Caught between the empty",
-  "descriptions": "male, adult, growl, vibrato-none, accent-none, powerful, solo, metal, english, rhythmic speech, ambience, delay-none, chest, falsetto, vocal-fry, distortion, gritty, dark, angry",
-  "m6_uid": "42a9fb26fd10558dd0702862ff2b7379/verse_5",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

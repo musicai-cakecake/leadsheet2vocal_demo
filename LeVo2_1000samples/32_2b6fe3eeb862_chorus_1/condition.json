@@ -1,9 +1,0 @@
-{
-  "idx": "32_2b6fe3eeb862_chorus_1",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] No one gets out without a scar.When the lights go out, the walls come down.We sell just like animals.Intuitions lost, and I can't trust you get me off.When the lights go out",
-  "descriptions": "male, adult, modal, light, general american, highly-varied, solo, pop, english, fully sung, plate, present, chest, mixed, falsetto, belt, vibrato, bright, powerful, smooth, energetic, tense",
-  "m6_uid": "2b6fe3eeb862207617eb6166ba90ed60/chorus_1",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

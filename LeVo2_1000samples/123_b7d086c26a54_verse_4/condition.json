@@ -1,9 +1,0 @@
-{
-  "idx": "123_b7d086c26a54_verse_4",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] Trusting in the Lord has turned my life around.When you call on Him",
-  "descriptions": "male, senior, modal, vibrato-moderate, southern us, dynamics-moderate, solo, gospel, english, fully sung, hall, delay-none, falsetto, chest, vibrato, glissando-scoop, warm, full, clear, calm, tender",
-  "m6_uid": "b7d086c26a5486b58a15e86368d907a8/verse_4",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

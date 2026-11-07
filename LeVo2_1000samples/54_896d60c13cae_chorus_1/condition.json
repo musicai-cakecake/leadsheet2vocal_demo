@@ -1,9 +1,0 @@
-{
-  "idx": "54_896d60c13cae_chorus_1",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] Who said I had known this from the beginning? Find it hard to work out why we have our doubts.If I talk to you, you know I'm too going to break my heart too.'Cause I would anyway end up like always.Tell me if that is true, that you can see it in my face.'Cause you know we're the same.First things I can say",
-  "descriptions": "female, adult, breathy, light, general american, soft, solo, pop, english, fully sung, room, delay-none, chest, mixed, head, breath-adlib, glissando-scoop, airy, delicate, cool, melancholic, tender",
-  "m6_uid": "896d60c13cae03d03ef55552bc02a9fd/chorus_1",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

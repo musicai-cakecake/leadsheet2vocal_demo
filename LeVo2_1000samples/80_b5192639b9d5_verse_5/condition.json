@@ -1,9 +1,0 @@
-{
-  "idx": "80_b5192639b9d5_verse_5",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] Once a deity, once was a king.The sickness really makes me sick.The soulless frontal backbeat.Mortality's needed, just to ring.What the fuck ever happened to the true spirit of rock? They are raping the pureness, cheating playback, shock",
-  "descriptions": "male, adult, harsh, vibrato-none, general american, powerful, solo, metal, english, fully sung, room, delay-none, chest, belt, growl, distortion, gritty, angry, energetic",
-  "m6_uid": "b5192639b9d529505dbdea3e13d1efb4/verse_5",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

@@ -1,9 +1,0 @@
-{
-  "idx": "56_631a55cf8bd7_verse_1",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[verse] The little chicks say, \"Cheap, cheap, cheap\" when they are chilly, when they sleep.Mother hen looks all day for wheat and corn.She gives them food and keeps them warm.Under her two wings, they will go to sleep until tomorrow without a peep",
-  "descriptions": "female, adult, modal, vibrato-none, general american, dynamics-moderate, solo, traditional, english, fully sung, room, delay-none, mixed, technique-none, sweet, clear, bright, happy, playful",
-  "m6_uid": "631a55cf8bd7eb9f3ed304c17f67ed31/verse_1",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

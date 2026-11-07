@@ -1,9 +1,0 @@
-{
-  "idx": "110_dc46f6c89417_chorus_2",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] Hey Jess, I watch you wake up and get dressed.You left the room, receding like my hairline",
-  "descriptions": "male, adult, modal, vibrato-none, general american, dynamics-moderate, solo, rock, english, fully sung, room, delay-none, chest, mixed, breath-adlib, glissando-scoop, clear, nasal, thin, nostalgic, melancholic",
-  "m6_uid": "dc46f6c894179908ad9d7cef7c729b8f/chorus_2",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

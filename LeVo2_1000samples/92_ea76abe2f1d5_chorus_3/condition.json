@@ -1,9 +1,0 @@
-{
-  "idx": "92_ea76abe2f1d5_chorus_3",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[chorus] Kim Do I dot? Kim Do I blue light? Kim Do I dot? Kim Do I blue light? Kim Do I dot? Kim Do I blue light? Kim Do I dot? Kim Do I blue light?",
-  "descriptions": "female, adult, modal, vibrato-moderate, general american, dynamics-moderate, solo, r&b, english, fully sung, room, delay-none, chest, mixed, vibrato, melisma, smooth, warm, clear, tender, calm",
-  "m6_uid": "ea76abe2f1d52ddcd383d3876d0ccc55/chorus_3",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}

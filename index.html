@@ -1,453 +1,214 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-CN" data-lang="both" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>领谱生成歌声音乐演示 | Lead Sheet &amp; Prompts to Song Generation DEMO</title>
-<meta name="description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs. Audio demo page.">
-<meta property="og:title" content="Lead Sheet &amp; Prompts to Song Generation DEMO">
-<meta property="og:description" content="Given a lead sheet, prompts and reference timbre audio, generate pure vocal singing and accompanied songs.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127925;</text></svg>">
-<link rel="stylesheet" href="assets/css/style.css?v=20260825-evaluation">
-<script>
-  // Applied before first paint so the saved theme never flashes.
-  (function () {
-    try {
-      var t = localStorage.getItem('velo-theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', t);
-      var l = localStorage.getItem('velo-lang') || 'both';
-      document.documentElement.setAttribute('data-lang', l);
-    } catch (e) {}
-  })();
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>领谱生成歌声演示 · V3 | Lead Sheet &amp; Prompts to Vocal Generation</title>
+  <meta name="description" content="V3 技术测试：输入领谱、提示词与可选参考音色生成歌声。展示 20 组样本、6 个音频版本与客观评价结果。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lead Sheet &amp; Prompts to Vocal Generation · V3">
+  <meta property="og:description" content="A technical feasibility preview with 20 samples, six vocal audio variants, and objective evaluation results.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <script src="assets/js/preferences.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/demos.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </head>
 <body>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="icon-wave" viewBox="0 0 24 24"><path d="M3 10v4M7.5 6v12M12 3v18M16.5 7v10M21 10v4"/></symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="4"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.7 14A8.8 8.8 0 0 1 10 3.3 9 9 0 1 0 20.7 14Z"/></symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></symbol>
+      <symbol id="icon-score" viewBox="0 0 24 24"><path d="M3 5h18M3 9h18M3 13h18M3 17h18m-5-2V4l5 2"/><ellipse cx="13.5" cy="16" rx="2.5" ry="2"/></symbol>
+      <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M9 15v-5m5 5V6m5 9v-3"/></symbol>
+      <symbol id="icon-headphones" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="12" width="4" height="8" rx="2"/><rect x="17" y="12" width="4" height="8" rx="2"/></symbol>
+      <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    </defs>
+  </svg>
+  <a class="skip-link" href="#demo"><span class="lang-zh" lang="zh-CN">跳到音频演示</span><span class="lang-en" lang="en">Skip to audio demos</span></a>
 
-<a class="skip-link" href="#demo">跳到 DEMO / Skip to demos</a>
-
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-        </svg>
-      </span>
-      <span class="brand-text">LeadSheet2Song</span>
-    </a>
-
-    <nav class="nav" aria-label="Sections">
-      <a href="#task">任务 Task</a>
-      <a href="#motivation">动机 Motivation</a>
-      <a href="#control">对照组 Control</a>
-      <a href="#models">模型 Models</a>
-      <a href="#demo">DEMO</a>
-    </nav>
-
-    <div class="topbar-actions">
-      <div class="seg" role="group" aria-label="Language / 语言">
-        <button type="button" data-lang-btn="zh">中</button>
-        <button type="button" data-lang-btn="en">EN</button>
-        <button type="button" data-lang-btn="both">双语</button>
+  <header class="topbar">
+    <div class="topbar-inner wrap">
+      <a class="brand" href="#top" aria-label="LeadSheet2Vocal">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#icon-wave"/></svg></span>
+        <span>LeadSheet<span class="brand-light">2</span>Vocal</span>
+        <span class="version-tag">v3</span>
+      </a>
+      <nav class="nav" data-i18n-label="sections" aria-label="页面章节">
+        <a href="#task" class="bilingual"><span class="lang-zh" lang="zh-CN">任务</span><span class="lang-en" lang="en">Task</span></a>
+        <a href="#motivation" class="bilingual"><span class="lang-zh" lang="zh-CN">研究动机</span><span class="lang-en" lang="en">Motivation</span></a>
+        <a href="#models" class="bilingual"><span class="lang-zh" lang="zh-CN">模型</span><span class="lang-en" lang="en">Models</span></a>
+        <a href="#evaluation" class="bilingual"><span class="lang-zh" lang="zh-CN">评价</span><span class="lang-en" lang="en">Evaluation</span></a>
+        <a href="#demo" class="bilingual"><span class="lang-zh" lang="zh-CN">试听</span><span class="lang-en" lang="en">Demos</span></a>
+      </nav>
+      <div class="topbar-actions">
+        <div class="language-switch" role="group" aria-label="Language / 语言">
+          <button type="button" data-language="zh" aria-pressed="false" aria-label="中文">中</button>
+          <button type="button" data-language="en" aria-pressed="false" aria-label="English">EN</button>
+          <button type="button" data-language="both" aria-pressed="true" aria-label="中英双语 / Bilingual">双语</button>
+        </div>
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" data-i18n-label="theme" aria-label="切换深浅色主题" aria-pressed="false">
+          <svg class="icon theme-moon" aria-hidden="true"><use href="#icon-moon"/></svg>
+          <svg class="icon theme-sun" aria-hidden="true"><use href="#icon-sun"/></svg>
+        </button>
       </div>
-      <button type="button" class="icon-btn" id="theme-toggle" aria-label="切换深浅色主题 / Toggle theme">
-        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
-          <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/>
-        </svg>
-        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z"/>
-        </svg>
-      </button>
     </div>
-  </div>
-</header>
+  </header>
 
-<main id="top">
+  <main id="top">
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow"><span class="status-dot"></span> AI VOCAL GENERATION <span class="eyebrow-divider">/</span> V3</p>
+          <h1 class="hero-title">
+            <span class="lang-zh" lang="zh-CN">领谱生成<br><span class="gradient-text">歌声演示</span></span>
+            <span class="lang-en" lang="en">Lead Sheet &amp; Prompts<br><span class="gradient-text">to Vocal Generation</span></span>
+          </h1>
+          <div class="hero-description stacked-lang">
+            <p class="lang-zh" lang="zh-CN">给定旋律与歌词，让模型演唱。<br>输入领谱、提示词与可选参考音色，生成纯人声歌声。</p>
+            <p class="lang-en" lang="en">Give the model a melody and lyrics, and let it sing.<br>Generate vocals from a lead sheet, prompts, and optional reference timbre audio.</p>
+          </div>
+          <div class="hero-chips"><span class="chip">ABC Lead Sheet</span><span class="chip">Prompts</span><span class="chip bilingual"><span class="lang-zh" lang="zh-CN">参考音色 · 可选</span><span class="lang-en" lang="en">Timbre · optional</span></span></div>
+          <div class="hero-actions">
+            <a href="#demo" class="button button-primary"><svg class="icon" aria-hidden="true"><use href="#icon-play"/></svg><span class="bilingual"><span class="lang-zh" lang="zh-CN">收听 20 组 DEMO</span><span class="lang-en" lang="en">Listen to 20 demos</span></span></a>
+            <a href="#evaluation" class="button button-secondary"><svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg><span class="bilingual"><span class="lang-zh" lang="zh-CN">查看评价结果</span><span class="lang-en" lang="en">View evaluation</span></span></a>
+          </div>
+        </div>
+        <figure class="hero-art">
+          <div class="art-topline"><span class="art-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>THE VOCAL STUDIO</span><svg class="icon" aria-hidden="true"><use href="#icon-wave"/></svg></div>
+          <img src="assets/images/qq_studio.png" width="1080" height="810" alt="音乐工作室中的企鹅插画" data-i18n-alt="studioAlt" fetchpriority="high">
+          <figcaption><span class="bilingual"><span class="lang-zh" lang="zh-CN">从一份领谱，到一次演唱。</span><span class="lang-en" lang="en">From a written score to a singing voice.</span></span><span class="art-caption-mark" aria-hidden="true">ABC <svg class="icon"><use href="#icon-arrow"/></svg> VOICE</span></figcaption>
+        </figure>
+      </div>
+      <div class="wrap hero-stats">
+        <div><span class="stat-value">v3<span class="stat-small"> PREVIEW</span></span><span class="bilingual"><span class="lang-zh" lang="zh-CN">技术可行性验证</span><span class="lang-en" lang="en">Technical feasibility study</span></span></div>
+        <div><span class="stat-value">1,345<span class="stat-small"> h</span></span><span class="bilingual"><span class="lang-zh" lang="zh-CN">未经质量筛选的训练音频</span><span class="lang-en" lang="en">Training audio · no quality filtering</span></span></div>
+        <div><span class="stat-value">20<span class="stat-small"> × 6</span></span><span class="bilingual"><span class="lang-zh" lang="zh-CN">样本组 × 音频版本</span><span class="lang-en" lang="en">Samples × audio variants</span></span></div>
+      </div>
+    </section>
 
-  <!-- ───────────────────────── Hero ───────────────────────── -->
-  <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="eyebrow">Audio Demo Page</p>
-      <h1 class="hero-title">
-        <span class="lang lang-zh">领谱生成歌声音乐演示</span>
-        <span class="lang lang-en">Lead Sheet &amp; Prompts to Song Generation</span>
-      </h1>
-      <p class="hero-sub">
-        <span class="lang lang-zh">输入领谱（Lead Sheet）、提示词（prompts）与参考音色音频（refer timbre），生成纯人声歌声（Vocal）与带伴奏的歌曲（Song）。</span>
-        <span class="lang lang-en">Given a lead sheet, prompts, and reference timbre audio, generate pure human voice singing (Vocal) and accompanied songs (Song).</span>
-      </p>
-      <div class="hero-chips">
-        <span class="chip">Lead Sheet · ABC notation</span>
-        <span class="chip">Prompts</span>
-        <span class="chip">Reference Timbre</span>
-        <span class="chip chip-accent">→ Vocal + Song</span>
-      </div>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#demo">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12 8 5.2Z"/></svg>
-          <span class="lang lang-zh">收听 DEMO</span><span class="lang lang-en">Listen to demos</span>
-        </a>
-        <a class="btn btn-primary" href="#evaluation">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 19V9h3v10H5Zm5.5 0V5h3v14h-3ZM16 19v-7h3v7h-3Z"/></svg>
-          <span class="lang lang-zh">评价结果</span><span class="lang lang-en">evaluation result</span>
-        </a>
-        <a class="btn btn-ghost" href="#motivation">
-          <span class="lang lang-zh">为什么要做这件事</span><span class="lang lang-en">Why this matters</span>
-        </a>
-      </div>
+      <aside class="notice preview-notice">
+        <svg class="icon" aria-hidden="true"><use href="#icon-info"/></svg>
+        <div class="stacked-lang"><p class="lang-zh" lang="zh-CN"><strong>技术测试演示，仅用于周报汇报。</strong> 本页不是正式产品发布，音频与指标仅用于内部技术可行性验证。</p><p class="lang-en" lang="en"><strong>Technical test demo for weekly reporting only.</strong> This is not a product release; audio and metrics are for internal feasibility evaluation.</p></div>
+      </aside>
+
+      <section id="task" class="section" aria-labelledby="task-title">
+        <div class="section-heading"><span class="section-number">01</span><div><p class="section-kicker">THE TASK</p><h2 id="task-title" class="bilingual"><span class="lang-zh" lang="zh-CN">用领谱与提示词，生成歌声</span><span class="lang-en" lang="en">Lead sheet &amp; prompts to vocals</span></h2></div></div>
+        <div class="section-intro stacked-lang"><p class="lang-zh" lang="zh-CN">领谱（Lead Sheet）是带有旋律与歌词的乐谱：<strong>Lead Sheet = melody score + lyric</strong>。参考音色音频为可选输入；本次展示的输出均为人声歌声（Vocal），不是带伴奏的歌曲生成任务。</p><p class="lang-en" lang="en">A lead sheet contains the melody score and lyrics: <strong>Lead Sheet = melody score + lyric</strong>. Reference timbre audio is optional. This demonstration focuses on vocal generation, not accompanied-song generation.</p></div>
+        <div class="pipeline">
+          <div class="pipeline-inputs">
+            <div class="pipeline-node"><span class="node-icon"><svg class="icon" aria-hidden="true"><use href="#icon-score"/></svg></span><div><strong>Lead Sheet</strong><span class="bilingual"><span class="lang-zh" lang="zh-CN">ABC 旋律乐谱 + 歌词</span><span class="lang-en" lang="en">ABC melody score + lyrics</span></span></div><span class="input-tag">01</span></div>
+            <div class="pipeline-node"><span class="node-icon text-icon" aria-hidden="true">Aa</span><div><strong>Prompts</strong><span class="bilingual"><span class="lang-zh" lang="zh-CN">风格、音色与演唱表达</span><span class="lang-en" lang="en">Style, timbre &amp; vocal expression</span></span></div><span class="input-tag">02</span></div>
+            <div class="pipeline-node optional"><span class="node-icon"><svg class="icon" aria-hidden="true"><use href="#icon-wave"/></svg></span><div><strong>Reference Timbre</strong><span class="bilingual"><span class="lang-zh" lang="zh-CN">参考音色音频 · 可选 (V3暂时未测试)</span><span class="lang-en" lang="en">Reference audio · optional</span></span></div><span class="input-tag">03</span></div>
+          </div>
+          <svg class="icon pipeline-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          <div class="pipeline-model"><span class="pipeline-label">GENERATIVE MODEL</span><strong>V3</strong><span class="bilingual"><span class="lang-zh" lang="zh-CN">歌声生成模型</span><span class="lang-en" lang="en">Vocal generation model</span></span></div>
+          <svg class="icon pipeline-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          <div class="pipeline-output"><svg class="output-wave" viewBox="0 0 180 60" aria-hidden="true"><path d="M4 26v8m8-14v20m8-27v34m8-23v12m8-31v50m8-39v28m8-34v40m8-24v8m8-18v28m8-35v42m8-51v60m8-44v28m8-23v18m8-34v50m8-42v34m8-24v14m8-31v48m8-32v16m8-12v8m8-18v28m8-20v12m8-10v8"/></svg><strong>Vocal</strong><span class="bilingual"><span class="lang-zh" lang="zh-CN">纯人声歌声</span><span class="lang-en" lang="en">Singing voice</span></span></div>
+        </div>
+      </section>
+
+      <section id="motivation" class="section" aria-labelledby="motivation-title">
+        <div class="section-heading"><span class="section-number">02</span><div><p class="section-kicker">WHY THIS MATTERS</p><h2 id="motivation-title" class="bilingual"><span class="lang-zh" lang="zh-CN">任务动机与研究目标</span><span class="lang-en" lang="en">Motivation &amp; research goals</span></h2></div></div>
+        <div class="motivation-grid">
+          <article class="card motivation-card"><span class="card-overline">LIMITATION 01 <span>TEXT-TO-VOCAL</span></span><h3 class="bilingual"><span class="lang-zh" lang="zh-CN">更细粒度的旋律与歌词跟随</span><span class="lang-en" lang="en">Finer-grained melody &amp; lyric following</span></h3><div class="stacked-lang prose"><div class="lang-zh" lang="zh-CN"><p>现有 Text-to-Vocal（Song）模型在复杂、长上下文旋律条件下的生成能力仍有待提高，尚未充分考虑细粒度的旋律与音素联合跟随。</p><p>采用更规范的 ABC 记谱法：可读、可编辑，既能由大语言模型生成，也支持手动编写，无需依赖数字音频工作站（DAW），降低用户使用门槛。</p></div><div class="lang-en" lang="en"><p>Existing text-to-vocal (song) models still need better generation under complex, long-context melody conditions, with fine-grained joint following of melody and phonemes remaining underexplored.</p><p>ABC notation provides a structured, readable, editable format. It can be generated by an LLM or written manually without a digital audio workstation (DAW), lowering the barrier to use.</p></div></div></article>
+          <article class="card motivation-card"><span class="card-overline">LIMITATION 02 <span>TRADITIONAL SVS</span></span><h3 class="bilingual"><span class="lang-zh" lang="zh-CN">不止是刚性的「人声乐器」</span><span class="lang-en" lang="en">Beyond a rigid “vocal instrument”</span></h3><div class="stacked-lang prose"><div class="lang-zh" lang="zh-CN"><p>传统歌声合成（SVS）忠实还原乐谱，高质量结果高度依赖精准的 MIDI 或 f0 曲线。但多数终端用户不熟悉 DAW，也不愿制作精细的 MIDI 序列。</p><p>大模型生成或数据集中的 ABC 可能有质量缺陷，音频–音素对齐粗糙，会降低 SVS 效果。采用文本到音乐的生成式范式，允许模型有限地二次演绎，在保留旋律–音素结构的前提下，追求更强的音乐表现力与多样性。</p></div><div class="lang-en" lang="en"><p>Traditional singing voice synthesis (SVS) faithfully renders a score, relying on precise MIDI or f0 curves for high-quality results. Most end users are unfamiliar with DAWs and do not want to craft detailed MIDI sequences.</p><p>ABC scores from models or datasets may contain defects and coarse audio–phoneme alignment that degrade SVS. A text-to-music generative approach allows bounded reinterpretation while preserving melody–phoneme structure, aiming for greater musical expression and diversity.</p></div></div></article>
+          <article class="card motivation-card"><span class="card-overline">LIMITATION 03 <span>DEPLOYMENT</span></span><h3 class="bilingual"><span class="lang-zh" lang="zh-CN">专注人声，探索更轻量的应用</span><span class="lang-en" lang="en">Vocal-focused, with lighter deployment in mind</span></h3><div class="stacked-lang prose"><div class="lang-zh" lang="zh-CN"><p>多任务通用音乐模型参数量大，通常依赖大型数据中心服务器，并发推理成本高，应用多限于在线场景。</p><p>专注人声生成有望减少模型参数量，提高端侧部署可行性、降低用户成本，并拓展到多模态智能体、游戏、社交与陪伴机器人等场景。</p></div><div class="lang-en" lang="en"><p>Large multitask music models typically require data-center servers, incur high concurrent inference costs, and are mostly used online.</p><p>Focusing on vocals may reduce parameter count and improve the feasibility of on-device deployment, lowering costs and enabling multimodal agents, games, social applications, and companion robots. </p></div></div></article>
+          <article class="card motivation-card speech-card"><span class="card-overline">RESEARCH DIRECTION <span>SPEECH × SINGING</span></span><h3 class="bilingual"><span class="lang-zh" lang="zh-CN">与语音模型融合的可能性</span><span class="lang-en" lang="en">A possible bridge to speech models</span></h3><div class="stacked-lang prose"><p class="lang-zh" lang="zh-CN">歌声可以理解为具有丰富音高和响度变化的语音。对于无伴奏生成需求，歌声模型可以探索与语音模型融合，进一步增加应用场景。</p><p class="lang-en" lang="en">Singing can be viewed as speech with rich pitch and loudness variation. For unaccompanied generation, combining singing and speech models is a potential direction for expanding use cases.</p></div><div class="speech-visual" aria-hidden="true"><span>SPEECH</span><svg class="icon"><use href="#icon-wave"/></svg><span>SINGING</span></div></article>
+        </div>
+      </section>
+
+      <section id="models" class="section" aria-labelledby="models-title">
+        <div class="section-heading"><span class="section-number">03</span><div><p class="section-kicker">MODEL &amp; DATA</p><h2 id="models-title" class="bilingual"><span class="lang-zh" lang="zh-CN">模型版本与音频对照</span><span class="lang-en" lang="en">Model version &amp; audio variants</span></h2></div></div>
+        <div class="model-overview card">
+          <div class="model-version"><span class="card-overline">CURRENT VERSION</span><strong>v3<span class="status-dot"></span></strong><span class="bilingual"><span class="lang-zh" lang="zh-CN">仅用于技术可行性验证</span><span class="lang-en" lang="en">For feasibility validation only</span></span></div>
+          <div class="stacked-lang prose dataset-description"><div class="lang-zh" lang="zh-CN"><p>训练集是小规模数据集，音频总时长<strong>只有 1,345 小时，且没有质量筛选</strong>，用于内部技术验证与快速迭代调试。</p><p>训练和测试音频均为开源音源分离模型提取的人声。分离过程会降低音质，且无法完全去除伴奏，因此数据质量参差不齐，含有大量低质量、残留伴奏与噪声的音频。</p></div><div class="lang-en" lang="en"><p>The small training set contains <strong>only 1,345 hours of audio, with no quality filtering</strong>, for internal feasibility validation and rapid iteration.</p><p>Both training and test vocals are extracted by an open-source source-separation model. Separation can degrade quality and leave accompaniment behind, so the data include many low-quality recordings, residual instruments, and noise.</p></div></div>
+        </div>
+        <h3 class="subsection-title bilingual"><span class="lang-zh" lang="zh-CN">每组样本的 6 个试听版本</span><span class="lang-en" lang="en">Six audio variants per sample</span></h3>
+        <div class="variant-grid">
+          <article class="card variant-card"><div><span class="variant-number">01</span><span class="badge badge-neutral bilingual"><span class="lang-zh" lang="zh-CN">真实参考</span><span class="lang-en" lang="en">Reference</span></span></div><h4>GT <span>gt</span></h4><p class="lang-zh" lang="zh-CN">测试集真实歌声（Ground Truth），由音源分离提取人声，可能有伴奏残留。</p><p class="lang-en" lang="en">Ground-truth test vocal extracted by source separation; residual accompaniment may remain.</p></article>
+          <article class="card variant-card"><div><span class="variant-number">02</span><span class="badge badge-neutral bilingual"><span class="lang-zh" lang="zh-CN">VAE 重建</span><span class="lang-en" lang="en">Reconstruction</span></span></div><h4>GT VAE <span>gt_vae</span></h4><p class="lang-zh" lang="zh-CN">GT 经 VAE 编解码器重建的音频，作为本实验的编解码音质上限参考。</p><p class="lang-en" lang="en">GT reconstructed by the VAE codec, serving as the codec-quality ceiling reference in this experiment.</p></article>
+          <article class="card variant-card"><div><span class="variant-number">03</span><span class="badge badge-baseline bilingual"><span class="lang-zh" lang="zh-CN">旧版基线</span><span class="lang-en" lang="en">Baseline</span></span></div><h4>V2 <span>v2</span></h4><p class="lang-zh" lang="zh-CN">旧版歌声生成模型，用于内部测试与版本对比。</p><p class="lang-en" lang="en">The previous vocal generation model, used for internal testing and version comparison.</p></article>
+          <article class="card variant-card variant-primary"><div><span class="variant-number">04</span><span class="badge badge-primary bilingual"><span class="lang-zh" lang="zh-CN">主要评价对象</span><span class="lang-en" lang="en">Main evaluation</span></span></div><h4>V3 Forced <span>v3_forced</span></h4><p class="lang-zh" lang="zh-CN">提供总时长限制的 V3 生成音频。Forced 指时长约束。</p><p class="lang-en" lang="en">V3-generated vocals with a specified total-duration constraint. “Forced” refers to duration control.</p></article>
+          <article class="card variant-card variant-primary"><div><span class="variant-number">05</span><span class="badge badge-primary bilingual"><span class="lang-zh" lang="zh-CN">主要评价对象</span><span class="lang-en" lang="en">Main evaluation</span></span></div><h4>V3 Free <span>v3_free</span></h4><p class="lang-zh" lang="zh-CN">不提供总时长限制的 V3 生成音频，由模型自行控制时长。</p><p class="lang-en" lang="en">V3-generated vocals without a total-duration constraint; the model determines the duration.</p></article>
+          <article class="card variant-card"><div><span class="variant-number">06</span><span class="badge badge-neutral bilingual"><span class="lang-zh" lang="zh-CN">框架重建</span><span class="lang-en" lang="en">Reconstruction</span></span></div><h4>V3 Oracle <span>v3_oracle</span></h4><p class="lang-zh" lang="zh-CN">V3 框架中第三方蒸馏模块参与的重建音频，作为 V3 音频信号重建上限参考。</p><p class="lang-en" lang="en">Reconstruction involving a third-party distillation module in the V3 framework; a V3 signal-reconstruction ceiling reference.</p></article>
+        </div>
+      </section>
+
+      <section id="evaluation" class="section" aria-labelledby="evaluation-title">
+        <div class="section-heading"><span class="section-number">04</span><div><p class="section-kicker">OBJECTIVE EVALUATION</p><h2 id="evaluation-title" class="bilingual"><span class="lang-zh" lang="zh-CN">20 组样本试验报告</span><span class="lang-en" lang="en">Evaluation on 20 samples</span></h2></div></div>
+        <div class="metric-grid">
+          <div class="metric-card"><span>MSE <span class="metric-down">↓</span></span><p class="lang-zh" lang="zh-CN">均方误差 · 时域信号指标，常见训练损失。</p><p class="lang-en" lang="en">Mean squared error: a time-domain signal metric and common training loss.</p></div>
+          <div class="metric-card"><span>MCD <span class="metric-down">↓</span></span><p class="lang-zh" lang="zh-CN">梅尔倒谱距离 · 捕捉频谱包络、共振峰与音色特征。</p><p class="lang-en" lang="en">Mel-cepstral distortion: spectral envelope, formants, and timbral features.</p></div>
+          <div class="metric-card"><span>F0 RMSE <span class="metric-down">↓</span></span><p class="lang-zh" lang="zh-CN">cent 域音高均方根误差 · 衡量音高生成准确性。</p><p class="lang-en" lang="en">Pitch root mean square error in cents, measuring pitch accuracy.</p></div>
+          <div class="metric-card"><span>WER <span class="metric-down">↓</span></span><p class="lang-zh" lang="zh-CN">词错误率 · 使用 Qwen3-ASR 衡量歌词生成准确性。</p><p class="lang-en" lang="en">Word error rate, measured by Qwen3-ASR to evaluate lyric accuracy.</p></div>
+        </div>
+        <div class="evaluation-table-wrap card" tabindex="0" data-i18n-label="evaluationTable" aria-label="评价结果表，可横向滚动">
+          <table class="evaluation-table">
+            <caption class="bilingual"><span class="lang-zh" lang="zh-CN">表 1 · 20 组样本评价结果（↓ 越低越好）</span><span class="lang-en" lang="en">Table 1 · Results on 20 samples (↓ lower is better)</span></caption>
+            <thead><tr><th scope="col"><span class="lang-zh" lang="zh-CN">版本</span><span class="lang-en" lang="en">Variant</span></th><th scope="col">MSE ↓</th><th scope="col">MCD ↓</th><th scope="col">F0 RMSE <span>(cent) ↓</span></th><th scope="col">Qwen3-ASR WER <span>(%) ↓</span></th><th scope="col"><span class="lang-zh" lang="zh-CN">比较参照</span><span class="lang-en" lang="en">Compared with</span></th></tr></thead>
+            <tbody>
+              <tr class="reconstruction-row"><th scope="row">gt_vae</th><td>0.001380</td><td>81.137345</td><td>68.207529</td><td>11.475102</td><td><span class="table-reference">GT</span></td></tr>
+              <tr><th scope="row">v2</th><td>0.026665</td><td><strong class="best-score">189.230386</strong></td><td>184.837855</td><td>45.755544</td><td><span class="table-reference">gt_vae</span></td></tr>
+              <tr class="featured-row"><th scope="row">v3_forced <span class="table-dot" aria-hidden="true"></span></th><td><strong class="best-score">0.020145</strong></td><td>192.332409</td><td><strong class="best-score">166.799990</strong></td><td><strong class="best-score">29.973529</strong></td><td><span class="table-reference">gt_vae</span></td></tr>
+              <tr><th scope="row">v3_free</th><td>0.020833</td><td>193.528297</td><td>177.268637</td><td>30.266938</td><td><span class="table-reference">gt_vae</span></td></tr>
+              <tr class="reconstruction-row"><th scope="row">v3_oracle</th><td>0.021476</td><td>97.671676</td><td>102.108075</td><td>21.699464</td><td><span class="table-reference">GT</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evaluation-note stacked-lang"><p class="lang-zh" lang="zh-CN"><strong>比较口径：</strong>gt_vae 与 v3_oracle 为重建音频，指标相对于 GT 计算；v2、v3_forced、v3_free 的指标相对于 gt_vae 计算。粗体仅标出三个生成版本中的最优值。不同参照的行不可直接作为同口径排名。</p><p class="lang-en" lang="en"><strong>Reference protocol:</strong> reconstruction variants gt_vae and v3_oracle are evaluated against GT; generated variants v2, v3_forced, and v3_free are evaluated against gt_vae. Bold values indicate the best among the three generation variants only. Rows with different references are not a like-for-like ranking.</p></div>
+      </section>
+
+      <section id="demo" class="section demo-section" aria-labelledby="demo-title"
+        data-priority-samples="
+          batch_51_4db346a1c394_bridge_1
+          batch_51_307cad0bbef2_chorus_1
+          batch_51_518fc1710a2d_verse_1
+          batch_51_c90361580669_bridge_1
+          batch_51_4d6d002fd16c_chorus_1
+          batch_51_cc747301b566_verse_2
+        ">
+        <div class="section-heading demo-heading"><span class="section-number">05</span><div><p class="section-kicker">LISTEN &amp; COMPARE</p><h2 id="demo-title" class="bilingual"><span class="lang-zh" lang="zh-CN">听见每个版本的差异</span><span class="lang-en" lang="en">Hear the difference</span></h2></div><span class="demo-total">20 <span class="lang-zh" lang="zh-CN">组样本</span><span class="lang-en" lang="en">samples</span></span></div>
+        <div class="section-intro stacked-lang"><p class="lang-zh" lang="zh-CN">逐组查看原始歌词、提示词与 ABC 领谱，对比 6 个音频版本。点击播放时才加载 WAV；同一时间只播放一条音轨。所有输入文本按原始语言保留，不随界面语言切换而改写。</p><p class="lang-en" lang="en">Explore the original lyrics, prompts, and ABC score, then compare six audio variants. WAV files load on play, with one track playing at a time. Original model inputs are preserved unchanged when switching the interface language.</p></div>
+        <div class="demo-toolbar">
+          <div class="filter-controls">
+            <label class="search-field"><svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg><span class="visually-hidden" data-i18n="searchLabel">搜索样本</span><input id="sample-search" type="search" autocomplete="off" placeholder="搜索歌词、提示词、样本 ID…" data-i18n-placeholder="searchPlaceholder"></label>
+            <label class="select-field"><span data-i18n="genreLabel">风格</span><select id="genre-filter" data-i18n-label="genreLabel" aria-label="风格"></select></label>
+            <label class="select-field"><span data-i18n="sectionLabel">段落</span><select id="section-filter" data-i18n-label="sectionLabel" aria-label="段落"></select></label>
+          </div>
+          <div class="filter-summary"><span id="sample-count" role="status" aria-live="polite">20 / 20</span><button type="button" class="text-button" id="clear-filters" hidden data-i18n="clearFilters">清除筛选</button><button type="button" class="text-button pause-all" id="pause-all" disabled><svg class="icon" aria-hidden="true"><use href="#icon-pause"/></svg><span data-i18n="pauseAll">暂停全部</span><kbd>Esc</kbd></button></div>
+        </div>
+        <nav id="sample-index" class="sample-index" data-i18n-label="sampleIndex" aria-label="样本快捷跳转"></nav>
+        <div id="demo-list" class="demo-list"><p class="loading-message"><span class="lang-zh" lang="zh-CN">正在准备样本…</span><span class="lang-en" lang="en">Preparing samples…</span></p></div>
+        <div id="empty-state" class="empty-state card" hidden><svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg><h3 data-i18n="noResults">没有找到匹配样本</h3><p data-i18n="noResultsHint">试试其他歌词、提示词或筛选条件。</p><button type="button" class="button button-secondary" id="empty-reset" data-i18n="clearFilters">清除筛选</button></div>
+        <noscript><div class="notice"><p>请启用 JavaScript 以显示样本与播放器。页面不需要服务器端代码或在线服务。<br>Please enable JavaScript to display samples and players. No backend or online service is required.</p></div></noscript>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <div class="wrap">
+  <footer class="footer"><div class="wrap footer-inner"><a href="#top" class="brand footer-brand"><svg class="icon" aria-hidden="true"><use href="#icon-wave"/></svg>LeadSheet2Vocal <span class="version-tag">v3</span></a><div class="bilingual"><span class="lang-zh" lang="zh-CN">技术测试演示 · 仅用于周报汇报</span><span class="lang-en" lang="en">Technical test demo · weekly reporting only</span></div><a href="#top" class="text-button bilingual"><span class="lang-zh" lang="zh-CN">回到顶部 ↑</span><span class="lang-en" lang="en">Back to top ↑</span></a></div></footer>
 
-    <!-- ───────────────────────── Task ───────────────────────── -->
-    <section id="task" class="section">
-      <h2 class="h2"><span class="num">01</span><span class="lang lang-zh">任务介绍</span><span class="lang lang-en">Task Introduction</span></h2>
-
-      <div class="pipeline" aria-hidden="true">
-        <div class="pipe-col">
-          <span class="pipe-label"><span class="lang lang-zh">输入</span><span class="lang lang-en">Input</span></span>
-          <div class="pipe-box">Lead Sheet</div>
-          <div class="pipe-box">Prompts</div>
-          <div class="pipe-box">Reference Timbre</div>
-        </div>
-        <div class="pipe-arrow">
-          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h42M36 5l7 7-7 7"/></svg>
-        </div>
-        <div class="pipe-col pipe-model">
-          <span class="pipe-label">Model</span>
-          <div class="pipe-box pipe-box-accent">LeadSheet2Song</div>
-        </div>
-        <div class="pipe-arrow">
-          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h42M36 5l7 7-7 7"/></svg>
-        </div>
-        <div class="pipe-col">
-          <span class="pipe-label"><span class="lang lang-zh">输出</span><span class="lang lang-en">Output</span></span>
-          <div class="pipe-box">Vocal</div>
-          <div class="pipe-box">Song</div>
-        </div>
-      </div>
-
-      <div class="prose">
-        <p class="lang lang-zh">输入 领谱（Lead Sheet）、提示词（prompts）和参考音色音频（refer timbre），生成纯人声歌声（Vocal），和带伴奏的歌曲（Song）。</p>
-        <p class="lang lang-en">Given a lead sheet, prompts, and reference timbre audio, generate pure human voice singing (Vocal) and accompanied songs (Song).</p>
-      </div>
-    </section>
-
-    <!-- ───────────────────────── Motivation ───────────────────────── -->
-    <section id="motivation" class="section">
-      <h2 class="h2"><span class="num">02</span><span class="lang lang-zh">任务动机</span><span class="lang lang-en">Task Motivation</span></h2>
-
-      <article class="card card-motivation">
-        <h3 class="h3">
-          <span class="tag tag-warn">Limitation 1</span>
-          <span class="lang lang-zh">现有 Text-to-Music 模型的局限：无法演唱指定旋律</span>
-          <span class="lang lang-en">Limitation of Existing Text-to-Music Models: Inability to Sing Given Melodies</span>
-        </h3>
-        <div class="prose">
-          <div class="lang lang-zh">
-            <p>现有的文本到音乐模型，包括歌词生成歌曲、文本描述生成音乐等系统，不支持旋律（音高）与音素的联合条件输入。这类模型既不具备可控的旋律生成能力，也无法实现长距离下歌声音高与音素的联合跟随。</p>
-            <p>为解决该问题，本文模型引入了领谱（lead-sheet）条件输入模式。领谱由音素与 ABC 格式乐谱构成，约束生成的人声匹配用户指定的旋律与歌词结构。</p>
-            <p>除此之外，ABC 记谱是可读、可编辑的文本格式。它既可由大语言模型生成，也支持用户手动编写，无需依赖数字音频工作站（DAW）。</p>
-          </div>
-          <div class="lang lang-en">
-            <p>Existing text-to-music models, including lyric-to-song and text-description-to-music systems, do not support joint conditioning on melody (pitch) and phonemes. They lack controllable melody generation capability as well as long-range joint tracking of vocal pitch and phonemes.</p>
-            <p>To address this limitation, our model introduces a lead-sheet conditioning modality. The lead-sheet consists of phonemes and ABC-formatted musical notation, which constrains the generated vocal output to conform to the melody and lyric structure specified by users.</p>
-            <p>Furthermore, ABC notation is human-readable and human-editable text format. It can be generated by large language models or manually authored by end-users, without requiring any digital-audio-workstation (DAW) infrastructure.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="card card-motivation">
-        <h3 class="h3">
-          <span class="tag tag-warn">Limitation 2</span>
-          <span class="lang lang-zh">SVS 模型作为刚性「人声乐器」，实际应用场景受限</span>
-          <span class="lang lang-en">SVS Models as Rigid “Vocal Instruments” with Limited Practical Applicability</span>
-        </h3>
-        <div class="prose">
-          <div class="lang lang-zh">
-            <p>现有歌声合成（SVS）模型相当于刚性的严肃的「人声乐器」，会忠实地还原输入乐谱。想要得到高质量的演唱作品，高度依赖精准、高质量的 MIDI 乐谱。</p>
-            <p>但在真实使用场景下，绝大多数终端用户不会编写 MIDI 乐谱，不熟悉 DAW 工具，也不愿耗费精力制作精细的 MIDI 序列。</p>
-            <p>与此同时，由大模型生成或是从数据集获取的 ABC 乐谱普遍存在大量质量缺陷，音频-音素对齐效果粗糙。这类低质量输入会显著降低 SVS 系统的生成效果。</p>
-            <p>为此，本文采用文本到音乐的模型范式，充分发挥生成式模型的创造性与多样性。该方案允许对输入主乐谱进行有限度的二次演绎，在保留用户给定的旋律-音素结构的前提下，产出音乐表现力更强的结果。</p>
-            <p class="callout">类比视频美颜滤镜的思路：即便输入的领谱本身质量不佳，本方法仍可以生成听感悦耳的音乐作品。</p>
-          </div>
-          <div class="lang lang-en">
-            <p>Existing singing-voice-synthesis (SVS) models function as rigid “vocal instruments” that faithfully render input musical scores. High-fidelity singing outputs heavily rely on precise, high-quality MIDI scores.</p>
-            <p>Nevertheless, in real-world scenarios, most end-users cannot author MIDI scores, are unfamiliar with DAW tools, and are unwilling to invest effort in crafting fine-grained MIDI sequences.</p>
-            <p>Moreover, ABC scores produced by large models or sourced from datasets commonly suffer from severe quality defects and coarse audio-phoneme alignment. Such low-quality inputs degrade the generation quality of SVS systems significantly.</p>
-            <p>Accordingly, we adopt the text-to-music paradigm to leverage the creativity and diversity of generative models. Our approach permits bounded reinterpretation of input lead-sheet inputs, producing musically expressive outputs that preserve user-specified melody-phoneme structures.</p>
-            <p class="callout">Analogous to the beautification filter for videos, our method can yield aesthetically pleasing vocal outputs even when the input lead-sheet itself is of suboptimal quality.</p>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- ───────────────────────── Control group ───────────────────────── -->
-    <section id="control" class="section">
-      <h2 class="h2"><span class="num">03</span><span class="lang lang-zh">对照组介绍</span><span class="lang lang-en">Control Group</span></h2>
-      <div class="prose">
-        <p class="lang lang-zh">对照组复用完全一致的歌词输入与提示词，组内各模型参数量、超参数配置严格匹配。</p>
-        <p class="lang lang-zh">测试样本全部来源于测试集，训练‑测试集以完整乐曲划分，杜绝片段数据泄露问题。</p>
-        <p class="lang lang-zh">实验样例均为随机选取，没有刻意挑选高质量样本，客观体现模型平均表现。</p>
-        <p class="lang lang-en">The control groups reuse exactly the same lyric inputs and prompts, with strictly matched parameter counts and hyperparameter configurations across all models within each group.</p>
-        <p class="lang lang-en">All evaluation samples are drawn from the test set. The training and test sets are partitioned at the full-song level to prevent segment-level data leakage.</p>
-        <p class="lang lang-en">All experimental examples are selected at random, without deliberately choosing high-quality samples, to objectively reflect average model performance.</p>
-      </div>
-    </section>
-
-    <!-- ───────────────────────── Models ───────────────────────── -->
-    <section id="models" class="section">
-      <h2 class="h2"><span class="num">04</span><span class="lang lang-zh">模型介绍</span><span class="lang lang-en">Model Introduction</span></h2>
-      <div class="model-grid">
-        <article class="card model-card is-ours">
-          <div class="model-head">
-            <span class="model-name">M6</span>
-            <span class="tag tag-ours">Ours</span>
-          </div>
-          <p class="lang lang-zh">自研的 LeadSheet2Song 模型，M6 为内部模型代号。本实验采用小规模训练数据集，音频总时长仅为 1364 小时；M6 模型仅完成 3 轮后训练epoch，仅作早期技术验证使用。</p>
-          <p class="lang lang-en">Our self-developed LeadSheet2Song model, with M6 as its internal code name. This experiment uses a small-scale training dataset containing only 1,364 hours of audio; M6 underwent only three post-training epochs and is intended solely for early-stage technical validation.</p>
-        </article>
-        <article class="card model-card">
-          <div class="model-head">
-            <span class="model-name">LeVo2</span>
-            <span class="tag">Baseline</span>
-          </div>
-          <p class="lang lang-zh">开源 SongGeneration2 模型。</p>
-          <p class="lang lang-en">The open-source SongGeneration2 model.</p>
-        </article>
-      </div>
-
-      <div id="evaluation" class="evaluation-block">
-        <div class="evaluation-head">
-          <p class="eyebrow">Paired Objective Evaluation</p>
-          <h3 class="evaluation-title">
-            <span class="lang lang-zh">M6 vs LeVo2：纯人声音高与节奏配对实验</span>
-            <span class="lang lang-en">M6 vs LeVo2: Paired Vocal Pitch and Rhythm Evaluation</span>
-          </h3>
-          <p class="evaluation-lead">
-            <span class="lang lang-zh">严格使用相同的 21 个测试样例，对每个模型生成的 <strong>gen_vocal.mp3</strong> 与同一 <strong>gt_vocal.mp3</strong> 进行比较；两组 GT 文件已逐一通过 SHA-256 一致性检查。</span>
-            <span class="lang lang-en">The evaluation uses the same 21 test samples for both models, comparing each generated <strong>gen_vocal.mp3</strong> against the identical <strong>gt_vocal.mp3</strong>. All paired GT files were verified by SHA-256.</span>
-          </p>
-          <div class="evaluation-badges" aria-label="Evaluation setup">
-            <span class="tag tag-ours">M6 · Ours</span>
-            <span class="tag tag-baseline">LeVo2 · Baseline</span>
-            <span class="chip"><span class="lang lang-zh">21 对相同样例</span><span class="lang lang-en">21 matched samples</span></span>
-            <span class="chip"><span class="lang lang-zh">21 / 21 运行成功</span><span class="lang lang-en">21 / 21 completed</span></span>
-          </div>
-        </div>
-
-        <div class="evaluation-note">
-          <strong>Δ = LeVo2 − M6</strong>
-          <span class="lang lang-zh">。所有指标均越低越好，因此正差值表示 M6 的距离更低。</span>
-          <span class="lang lang-en">. All metrics are lower-is-better, so a positive delta means that M6 has the lower distance.</span>
-        </div>
-
-        <div class="evaluation-stats">
-          <article class="card evaluation-stat">
-            <span class="evaluation-stat-label"><span class="lang lang-zh">平均音高距离</span><span class="lang lang-en">Mean pitch distance</span></span>
-            <strong><span class="value-ours">268.7</span><span class="value-vs">vs</span><span class="value-baseline">481.8</span></strong>
-            <small>cent · M6 / LeVo2</small>
-          </article>
-          <article class="card evaluation-stat">
-            <span class="evaluation-stat-label"><span class="lang lang-zh">平均全局节奏距离</span><span class="lang lang-en">Mean global rhythm distance</span></span>
-            <strong><span class="value-ours">0.115</span><span class="value-vs">vs</span><span class="value-baseline">0.230</span></strong>
-            <small>M6 / LeVo2</small>
-          </article>
-          <article class="card evaluation-stat">
-            <span class="evaluation-stat-label"><span class="lang lang-zh">平均速度 log 距离</span><span class="lang lang-en">Mean tempo log distance</span></span>
-            <strong><span class="value-ours">0.095</span><span class="value-vs">vs</span><span class="value-baseline">0.349</span></strong>
-            <small>M6 / LeVo2</small>
-          </article>
-          <article class="card evaluation-stat">
-            <span class="evaluation-stat-label"><span class="lang lang-zh">平均伪音符编辑距离</span><span class="lang lang-en">Mean pseudo-note edit distance</span></span>
-            <strong><span class="value-ours">0.370</span><span class="value-vs">vs</span><span class="value-baseline">0.528</span></strong>
-            <small>M6 / LeVo2</small>
-          </article>
-        </div>
-
-        <div class="evaluation-panel">
-          <h4 class="evaluation-subtitle">
-            <span class="lang lang-zh">组级配对结果</span>
-            <span class="lang lang-en">Group-level paired results</span>
-          </h4>
-          <div class="evaluation-table-wrap" role="region" tabindex="0" aria-label="M6 and LeVo2 group-level paired results">
-            <table class="evaluation-table">
-              <thead>
-                <tr>
-                  <th scope="col"><span class="lang lang-zh">指标</span><span class="lang lang-en">Metric</span></th>
-                  <th scope="col">M6</th>
-                  <th scope="col">LeVo2</th>
-                  <th scope="col"><span class="lang lang-zh">平均 Δ</span><span class="lang lang-en">Mean Δ</span></th>
-                  <th scope="col">95% bootstrap CI</th>
-                  <th scope="col"><span class="lang lang-zh">较低样例数</span><span class="lang lang-en">Lower count</span><br><small>M6 / LeVo2</small></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"><span class="lang lang-zh">音高距离（cent）</span><span class="lang lang-en">Pitch distance (cent)</span></th>
-                  <td>268.73</td><td>481.76</td><td class="delta-positive">+213.04</td><td>[+133.33, +299.62]</td><td>19 / 2</td>
-                </tr>
-                <tr>
-                  <th scope="row"><span class="lang lang-zh">全局 onset-duration 节奏</span><span class="lang lang-en">Global onset-duration rhythm</span></th>
-                  <td>0.1150</td><td>0.2295</td><td class="delta-positive">+0.1146</td><td>[+0.0712, +0.1559]</td><td>17 / 4</td>
-                </tr>
-                <tr>
-                  <th scope="row"><span class="lang lang-zh">速度 log 距离</span><span class="lang lang-en">Tempo log distance</span></th>
-                  <td>0.0953</td><td>0.3492</td><td class="delta-positive">+0.2540</td><td>[+0.1583, +0.3442]</td><td>19 / 2</td>
-                </tr>
-                <tr>
-                  <th scope="row"><span class="lang lang-zh">伪音符编辑距离</span><span class="lang lang-en">Pseudo-note edit distance</span></th>
-                  <td>0.3697</td><td>0.5281</td><td class="delta-positive">+0.1584</td><td>[+0.1015, +0.2209]</td><td>18 / 3</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="evaluation-panel">
-          <h4 class="evaluation-subtitle">
-            <span class="lang lang-zh">全局节奏分量</span>
-            <span class="lang lang-en">Global rhythm components</span>
-          </h4>
-          <div class="evaluation-table-wrap" role="region" tabindex="0" aria-label="Global rhythm component comparison">
-            <table class="evaluation-table">
-              <thead>
-                <tr>
-                  <th scope="col"><span class="lang lang-zh">分量</span><span class="lang lang-en">Component</span></th>
-                  <th scope="col">M6</th>
-                  <th scope="col">LeVo2</th>
-                  <th scope="col"><span class="lang lang-zh">平均 Δ</span><span class="lang lang-en">Mean Δ</span></th>
-                  <th scope="col">95% CI</th>
-                  <th scope="col"><span class="lang lang-zh">解释</span><span class="lang lang-en">Interpretation</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Onset (50%)</th>
-                  <td>0.0218</td><td>0.0486</td><td class="delta-positive">+0.0269</td><td>[+0.0142, +0.0404]</td>
-                  <td><span class="lang lang-zh">M6 更低</span><span class="lang lang-en">M6 lower</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Duration <span class="lang lang-zh">合计</span><span class="lang lang-en">total</span> (50%)</th>
-                  <td>0.0932</td><td>0.1809</td><td class="delta-positive">+0.0877</td><td>[+0.0527, +0.1207]</td>
-                  <td><span class="lang lang-zh">M6 更低</span><span class="lang lang-en">M6 lower</span></td>
-                </tr>
-                <tr>
-                  <th scope="row"><span class="lang lang-zh">全句时长比</span><span class="lang lang-en">Whole-phrase duration</span> (25%)</th>
-                  <td>0.0344</td><td>0.1248</td><td class="delta-positive">+0.0904</td><td>[+0.0565, +0.1221]</td>
-                  <td><span class="lang lang-zh">M6 更低</span><span class="lang lang-en">M6 lower</span></td>
-                </tr>
-                <tr class="row-diagnostic">
-                  <th scope="row"><span class="lang lang-zh">对齐 gap（诊断）</span><span class="lang lang-en">Alignment gap (diagnostic)</span></th>
-                  <td>6.648%</td><td>16.476%</td><td class="delta-positive">+9.827 pp</td><td>[+3.737, +16.443]</td>
-                  <td><span class="lang lang-zh">不计入总分</span><span class="lang lang-en">Excluded from score</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="evaluation-figures">
-          <figure class="card evaluation-figure">
-            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/01_pitch_global_rhythm.svg" target="_blank" rel="noopener">
-              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/01_pitch_global_rhythm.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 mean pitch distance versus mean global rhythm distance scatter plot">
-            </a>
-            <figcaption><span class="lang lang-zh">平均音高距离 × 平均全局节奏距离</span><span class="lang lang-en">Mean pitch distance × mean global rhythm distance</span></figcaption>
-          </figure>
-          <figure class="card evaluation-figure">
-            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/02_note_edit_tempo.svg" target="_blank" rel="noopener">
-              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/02_note_edit_tempo.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 pseudo-note edit distance versus tempo log distance scatter plot">
-            </a>
-            <figcaption><span class="lang lang-zh">平均伪音符编辑距离 × 平均速度 log 距离</span><span class="lang lang-en">Mean pseudo-note edit distance × mean tempo log distance</span></figcaption>
-          </figure>
-          <figure class="card evaluation-figure">
-            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/03_pitch_note_edit.svg" target="_blank" rel="noopener">
-              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/03_pitch_note_edit.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 mean pitch distance versus pseudo-note edit distance scatter plot">
-            </a>
-            <figcaption><span class="lang lang-zh">音高分布：平均音高距离 × 平均伪音符编辑距离</span><span class="lang lang-en">Pitch distribution: mean pitch distance × pseudo-note edit distance</span></figcaption>
-          </figure>
-          <figure class="card evaluation-figure">
-            <a class="evaluation-figure-link" href="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/04_global_rhythm_tempo.svg" target="_blank" rel="noopener">
-              <img src="estimate_tools/results/M6_vs_LeVo2_matched21/svg_figures/04_global_rhythm_tempo.svg" width="1000" height="760" loading="lazy" decoding="async" alt="M6 and LeVo2 global rhythm distance versus tempo log distance scatter plot">
-            </a>
-            <figcaption><span class="lang lang-zh">节奏分布：平均全局节奏距离 × 平均速度 log 距离</span><span class="lang lang-en">Rhythm distribution: mean global rhythm distance × mean tempo log distance</span></figcaption>
-          </figure>
-        </div>
-
-        <div class="card evaluation-conclusion">
-          <h4><span class="lang lang-zh">结论范围</span><span class="lang lang-en">Scope of conclusion</span></h4>
-          <p class="lang lang-zh">在这 21 个严格匹配样例上，音高距离、全局节奏距离、速度距离与伪音符编辑距离均支持 M6 整体优于 LeVo2。全局节奏的 onset 与 duration 合计均支持 M6，duration 优势主要来自更接近的全句时长比。</p>
-          <p class="lang lang-en">Across these 21 strictly matched samples, pitch, global rhythm, tempo, and pseudo-note edit distances all support an overall M6 advantage over LeVo2. Both onset and aggregate duration components favor M6; the duration advantage is driven primarily by a closer whole-phrase duration ratio.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────────────────── Demos ───────────────────────── -->
-    <section id="demo" class="section">
-      <h2 class="h2"><span class="num">05</span><span class="lang lang-zh">音频试听</span><span class="lang lang-en">DEMO</span></h2>
-
-      <div class="demo-intro">
-        <h3 class="h3-plain">
-          <span class="lang lang-zh">对照组：有 / 无领谱条件</span>
-          <span class="lang lang-en">Control Group: With and without lead-sheet conditioning</span>
-        </h3>
-        <p class="muted">
-          <span class="lang lang-zh">每个样例在领谱下方展示参考音色音频，在模型结果下方展示领谱旋律乐谱，并在末尾展示真实 Vocal 与真实 Song。同一时间只会播放一条音频；点击音轨右侧的 <strong>下载</strong> 图标可保存到本地。</span>
-          <span class="lang lang-en">Each sample shows its reference-timbre audio below the lead sheet, its lead-sheet melody below the model outputs, and its ground-truth Vocal and Song at the end. Only one track plays at a time; use the <strong>download</strong> icon to save it locally.</span>
-        </p>
-      </div>
-
-      <div id="demo-root" class="demo-root">
-        <noscript>
-          <p class="notice">
-            此页面的播放器需要 JavaScript。 / This demo player requires JavaScript to be enabled.
-          </p>
-        </noscript>
-      </div>
-
-      <div class="demo-intro prompt-comparison-intro">
-        <h3 class="h3-plain">
-          <span class="lang lang-zh">对照组：相同领谱，不同提示词</span>
-          <span class="lang lang-en">Control Group: Same lead sheet, different prompts</span>
-        </h3>
-        <p class="muted">
-          <span class="lang lang-zh">保持歌词与领谱一致，对比两组不同 Prompts 的生成结果。Prompts 1 使用原始提示词与参考音频；Prompts 2 来自其他歌曲，且不使用参考音频。每个样例末尾同时展示真实 Vocal 与真实 Song。</span>
-          <span class="lang lang-en">The lyrics and lead sheet remain fixed while comparing outputs from two different prompts. Prompts 1 uses the original prompts and reference audio; Prompts 2 comes from another song and uses no reference audio. Ground-truth Vocal and Song are also shown at the end of each sample.</span>
-        </p>
-      </div>
-
-      <div id="prompt-demo-root" class="demo-root">
-        <noscript>
-          <p class="notice">
-            此页面的播放器需要 JavaScript。 / This demo player requires JavaScript to be enabled.
-          </p>
-        </noscript>
-      </div>
-    </section>
-
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <p>
-      <span class="lang lang-zh">领谱生成歌声音乐演示 · LeadSheet2Song</span>
-      <span class="lang lang-en">Lead Sheet &amp; Prompts to Song Generation · LeadSheet2Song</span>
-    </p>
-    <p class="muted small">
-      <span class="lang lang-zh">所有音频仅用于学术研究演示。</span>
-      <span class="lang lang-en">All audio is provided for academic research demonstration only.</span>
-    </p>
-  </div>
-</footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script src="assets/js/demos.js?v=20260825-all-gt"></script>
-<script src="assets/js/app.js?v=20260825-recording-gt"></script>
+  <aside id="now-playing" class="now-playing" hidden data-i18n-label="nowPlaying" aria-label="当前音轨">
+    <div class="wrap now-playing-inner">
+      <button type="button" id="now-toggle" class="play-button" data-i18n-label="play" aria-label="播放"><svg class="icon" aria-hidden="true"><use href="#icon-play"/></svg></button>
+      <div class="now-track"><span id="now-model" class="now-model"></span><span id="now-title" class="now-title"></span></div>
+      <div class="now-progress"><input id="now-seek" class="audio-seek" type="range" min="0" max="1" step="0.1" value="0" disabled data-i18n-label="seek" aria-label="播放进度"><span id="now-time" class="audio-time">0:00 / 0:00</span></div>
+      <a id="now-download" class="icon-button" download data-i18n-label="download" aria-label="下载音频"><svg class="icon" aria-hidden="true"><use href="#icon-download"/></svg></a>
+      <button type="button" id="now-close" class="icon-button" data-i18n-label="closePlayer" aria-label="关闭播放器"><svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg></button>
+    </div>
+  </aside>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>

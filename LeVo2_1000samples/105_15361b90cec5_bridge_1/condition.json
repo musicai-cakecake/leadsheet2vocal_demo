@@ -1,9 +1,0 @@
-{
-  "idx": "105_15361b90cec5_bridge_1",
-  "engine": "official SongGeneration (songgeneration_v2_large)",
-  "mode": "text-to-song (no reference audio, no leadsheet)",
-  "gt_lyric": "[bridge] I'm not okay, so go ahead and tell me another lie.Goes around, comes around, just to fuck me over one more time.So what? Impressive, I left it be a meaningless step.Pulling carbon, holding my head, and shit is real as it gets.Hallucinating, so sedated, all for the time to fight.I really do not give up, ready for hell.Call for the ring, but tell them all of my meetings be with my demons after Alpha Omega.I'm on the front line.A couple pills in my system now, I'm behind.Jumping back to love, baby, you know I'm not fine.Alpha Omega, baby, we don't die.Alpha Omega, baby, we don't die",
-  "descriptions": "male, adult, raspy, vibrato-none, general american, powerful, solo, rock, english, rhythmic speech, plate, delay-none, chest, mixed, belt, distortion, gritty, metallic, angry, tense",
-  "m6_uid": "15361b90cec5d1a2831e47eea3cf052d/bridge_1",
-  "note": "官方会自动在 descriptions 前加 [Musicality-very-high]"
-}
