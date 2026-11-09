@@ -114,7 +114,7 @@ button { border: 0; }
 .button-primary:hover { background: #5144c4; }
 .button-secondary { background: var(--surface); color: var(--text); border-color: var(--line); }
 .button-secondary:hover { background: var(--surface-soft); }
-.hero-art { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: 0 22px 60px rgb(65 49 110 / 9%); transform: rotate(1deg); }
+.hero-art { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: 0 22px 60px rgb(65 49 110 / 9%); transform: none; }
 .art-topline { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--muted); font: 9px var(--mono); letter-spacing: 1.6px; }
 .art-topline > .icon { width: 15px; height: 15px; color: var(--primary); }
 .art-dots { display: flex; gap: 4px; }
