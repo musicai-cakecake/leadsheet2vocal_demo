@@ -71,7 +71,7 @@ button { border: 0; }
 .topbar { position: sticky; z-index: 50; top: 0; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(18px); }
 .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 76px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-size: 17px; font-weight: 750; letter-spacing: -.5px; }
-.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; color: white; background: linear-gradient(135deg, #7665ee, #5547ce); box-shadow: 0 4px 12px rgb(97 84 217 / 18%); }
+.brand-mark { display: block; flex-shrink: 0; width: 34px; height: 34px; border-radius: 11px; object-fit: contain; box-shadow: 0 4px 12px rgb(97 84 217 / 18%); }
 .brand-light { color: var(--muted); font-weight: 450; }
 .version-tag { padding: 1px 7px; border: 1px solid var(--primary-line); border-radius: 6px; color: var(--primary); background: var(--primary-soft); font: 11px/1.7 var(--mono); font-weight: 600; letter-spacing: 0; }
 .nav { display: flex; align-items: center; gap: 25px; }
